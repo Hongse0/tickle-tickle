@@ -8,7 +8,7 @@ import Navbar from "@/examples/Navbars/Navbar.vue";
 import AppFooter from "@/examples/Footer.vue";
 
 const store = useStore();
-// const layout = computed(() => store.state.layout);
+const layout = computed(() => store.state.layout);
 const showSidenav = computed(() => store.state.showSidenav);
 const showNavbar = computed(() => store.state.showNavbar);
 const showFooter = computed(() => store.state.showFooter);

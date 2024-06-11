@@ -110,7 +110,7 @@ onBeforeUpdate(() => {
         <ul class="navbar-nav justify-content-end">
           <li class="nav-item d-flex align-items-center">
             <router-link
-              :to="{ name: 'Signin Basic' }"
+              to="/"
               class="px-0 nav-link font-weight-bold"
               :class="
                 isNavFixed && !darkMode ? ' opacity-8 text-dark' : 'text-white'
