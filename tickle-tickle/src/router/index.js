@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "../views/Home.vue";
-import Investment from "../views/Investment.vue";
+import Investment from "../views/investment/Investment.vue";
 import ChallengeList from "../views/ChallengeList.vue";
 import Userstats from "../views/stats/dashboards/Userstats.vue";
-import Investment from "../views/investment/Investment.vue";
 // import lockIllustration from "../views/auth/lock/Illustration.vue";
 
 const routes = [
