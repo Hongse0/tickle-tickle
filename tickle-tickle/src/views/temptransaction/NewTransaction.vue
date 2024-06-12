@@ -153,14 +153,11 @@ onMounted(() => {
               <label class="form-label">날짜</label>
               <flat-pickr v-model="date" class="form-control datetimepicker" placeholder="날짜 선택"
                 :config="config"></flat-pickr>
-
             </div>
 
             <div class="col-6">
-
               <label for="inputPrice" class="form-label">금액</label>
               <input id="inputPrice" type="text" class="form-control mb-3" />
-
             </div>
           </div>
 
