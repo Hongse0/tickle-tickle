@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Investment from "../views/investment/Investment.vue";
 import ChallengeList from "../views/challenge/ChallengeList.vue";
 import Userstats from "../views/stats/dashboards/Userstats.vue";
+import NewTransaction from "../views/Transaction/NewTransaction.vue";
 // import lockIllustration from "../views/auth/lock/Illustration.vue";
 
 const routes = [
@@ -27,6 +28,11 @@ const routes = [
     path: "/stats/users",
     name: "Stats",
     component: Userstats,
+  },
+  {
+    path: "/Transaction/NewTransaction",
+    name: "NewTransaction",
+    component: NewTransaction
   },
 ];
 
