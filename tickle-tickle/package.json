@@ -9,6 +9,7 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/ct-vue-argon-dashboard-pro/issues"
   },
+  "proxy": "https://openapi.naver.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creativetimofficial/ct-vue-argon-dashboard-pro.git"
