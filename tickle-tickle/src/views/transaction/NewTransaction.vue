@@ -2,7 +2,6 @@
 import { onMounted } from "vue";
 import flatPickr from "vue-flatpickr-component";
 //import Dropzone from "dropzone";
-//import Choices from "choices.js";
 import Quill from "quill";
 import Choices from "choices.js";
 
@@ -16,6 +15,11 @@ const getChoices = (id) => {
   }
 };
 
+import { ref } from "vue";
+
+const selectedCategory = ref("income"); // 초기값으로 수입을 선택함
+const selectedExpendCategory = ref(""); // 지출 카테고리 선택
+const selectedIncomeCategory = ref(""); // 수입 카테고리 선택
 
 
 const date = "";
@@ -95,22 +99,36 @@ onMounted(() => {
           <div class="row my-3">
             <div class="col-auto">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="income">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="income"
+                  v-model="selectedCategory"
+                  value="income"
+                />
                 <label class="form-check-label" for="income">수입</label>
               </div>
             </div>
             <div class="col-auto">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="expend">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="expend"
+                  v-model="selectedCategory"
+                  value="expend"
+                />
                 <label class="form-check-label" for="expend">지출</label>
               </div>
             </div>
           </div>
 
-          <div class="my-3">
-            <label>지출 카테고리</label>
+          <div v-if="selectedCategory === 'expend'" class="my-3">
+            <label>카테고리</label>
             <select
-              id="choices-category-expend"
+              v-model="selectedExpendCategory"
               class="form-control"
               name="choices-sizes"
             >
@@ -119,7 +137,7 @@ onMounted(() => {
               <option value="cafe">카페/간식</option>
               <option value="alcohol">술/유흥</option>
               <option value="health">의료/건강</option>
-              <option value="food" selected>식비</option>
+              <option value="food">식비</option>
               <option value="life">생활</option>
               <option value="present">경조/선물</option>
               <option value="culture">문화/여가</option>
@@ -128,10 +146,10 @@ onMounted(() => {
               <option value="etc">기타</option>
             </select>
           </div>
-          <div class="my-3">
-            <label>수입 카테고리</label>
+          <div v-else-if="selectedCategory === 'income'" class="my-3">
+            <label>카테고리</label>
             <select
-              id="choices-category-income"
+              v-model="selectedIncomeCategory"
               class="form-control"
               name="choices-sizes"
             >
