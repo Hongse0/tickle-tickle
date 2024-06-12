@@ -7,6 +7,7 @@ import Userstats from "../views/stats/dashboards/Userstats.vue";
 import TransactionList from "../views/transaction/TransactionList.vue";
 import NewTransaction from "../views/transaction/NewTransaction.vue"
 import Starstats from "../views/stats/dashboards/Starstats.vue";
+import TransactionDetail from "../views/transaction/TransactionDetail.vue";
 
 // import lockIllustration from "../views/auth/lock/Illustration.vue";
 
@@ -47,6 +48,11 @@ const routes = [
     path: "/transaction/TransactionList",
     name: "TransactionList",
     component: TransactionList
+  },
+  {
+    path: "/transaction/TransactionDetail",
+    name: "TransactionDetail",
+    component: TransactionDetail
   },
   {
     path: "/stats/stars",
