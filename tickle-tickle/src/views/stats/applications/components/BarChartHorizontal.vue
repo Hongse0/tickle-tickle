@@ -99,6 +99,8 @@ onMounted(() => {
     <div class="p-3 pb-0 card-header">
       <h1>별별 통계</h1>
       <br>
+      <h2>이 그래프는 비슷한 수입을 가진 사람들의 자금 
+사용처를 분석한 결과에요.</h2>
       <h6>{{ props.title }}</h6>
     </div>
     <div class="p-3 card-body">

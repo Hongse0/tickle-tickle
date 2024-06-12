@@ -65,7 +65,7 @@ const getRoute = () => {
             <ul class="nav ms-4">
               <!-- nav links -->
               <sidenav-item to="/transaction/NewTransaction" mini-icon="K" text="거래등록" />
-              <sidenav-item to="/" mini-icon="W" text="거래조회" />
+              <sidenav-item to="/transaction/TransactionList" mini-icon="W" text="거래조회" />
             </ul>
           </template>
         </sidenav-collapse>
