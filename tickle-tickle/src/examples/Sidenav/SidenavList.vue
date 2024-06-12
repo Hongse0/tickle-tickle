@@ -71,7 +71,7 @@ const getRoute = () => {
               <!-- nav links -->
 
               <sidenav-item to="/stats/users" mini-icon="P" text="개인 통계" />
-              <sidenav-item to="/" mini-icon="R" text="별별 통계" />
+              <sidenav-item to="/stats/stars" mini-icon="R" text="별별 통계" />
             </ul>
           </template>
         </sidenav-collapse>
