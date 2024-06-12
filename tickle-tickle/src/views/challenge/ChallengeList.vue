@@ -35,11 +35,14 @@
       </div>
     </div>
 
-    <!-- body -->
-
+    <!-- 아래 -->
     <div>
       <br v-if="!showComponent" />
-      <AuthorsTable :challengeList="challengeList"> </AuthorsTable>
+      <AuthorsTable
+        style="width: 80%; margin-left: 50px"
+        :challengeList="challengeList"
+      >
+      </AuthorsTable>
       <br />
     </div>
   </div>
