@@ -5,16 +5,20 @@
 
       <!-- Card header -->
       <div class="my-1 card-header col-8">
-        <div class="text-center"><h2 class="mb-0">무지출 챌린지</h2></div>
+        <div class="text-center">
+          <h2 class="mb-0">무지출 챌린지</h2>
+        </div>
 
-        <div class="card-body border border-dark">
-          <h1>body</h1>
+        <div class="card-body">
+          <!-- 28개 컴포넌트 -->
+          <div>
+            <MonthChallenge> </MonthChallenge>
+          </div>
 
-          <br /><br />
-          <br /><br /><br /><br /><br />
-          <br /><br /><br /><br /><br />
-
-          <div class="card p-4">
+          <br />
+          <br />
+          <!-- 입력 뷰 -->
+          <div class="card p-4" style="margin-left: 80px; width: 80%">
             <EditChallenge></EditChallenge>
           </div>
         </div>
@@ -43,9 +47,10 @@
 <script setup>
 import { ref } from "vue";
 
-import AuthorsTable from "./components/MothChallenge.vue";
+import AuthorsTable from "./components/MonthChallengeItem.vue";
 import PastChallengeSideBar from "./components/PastChallengeSideBar.vue";
 import EditChallenge from "./components/EditChallenge.vue";
+import MonthChallenge from "./components/MonthChallenge.vue";
 // todo - axios, pinina
 const challengeList = ref([
   {

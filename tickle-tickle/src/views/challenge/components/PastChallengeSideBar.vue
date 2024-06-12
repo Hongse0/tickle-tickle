@@ -1,5 +1,5 @@
 <template>
-  <div class="card mt-5 w-80 h-40">
+  <div class="card mt-6 w-80 h-40">
     <h6 class="m-3 text-dark font-weight-bold text-sm">과거 챌린지 목록</h6>
 
     <ul class="list-group">
