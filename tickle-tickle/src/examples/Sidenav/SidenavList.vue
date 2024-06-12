@@ -1,14 +1,10 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
-
 import SidenavItem from "./SidenavItem.vue";
 import SidenavCollapse from "./SidenavCollapse.vue";
-
 import SidenavCollapseItem from "./SidenavCollapseItem.vue";
-
 const store = useStore();
-
 const getRoute = () => {
   const route = useRoute();
   const routeArr = route.path.split("/");
@@ -33,7 +29,6 @@ const getRoute = () => {
           <template #list>
             <ul class="nav ms-4">
               <!-- nav links -->
-
               <sidenav-collapse-item
                 refer="vrExamples"
                 mini-icon="V"
@@ -69,14 +64,12 @@ const getRoute = () => {
           <template #list>
             <ul class="nav ms-4">
               <!-- nav links -->
-
               <sidenav-item to="/stats/users" mini-icon="P" text="개인 통계" />
               <sidenav-item to="/" mini-icon="R" text="별별 통계" />
             </ul>
           </template>
         </sidenav-collapse>
       </li>
-
       <li class="nav-item">
         <sidenav-collapse
           collapse-ref="applicationsExamples"
@@ -89,7 +82,6 @@ const getRoute = () => {
           <template #list>
             <ul class="nav ms-4">
               <!-- nav links -->
-
               <sidenav-item
               to="/Transaction/NewTransaction"
                 mini-icon="K"
@@ -100,7 +92,6 @@ const getRoute = () => {
           </template>
         </sidenav-collapse>
       </li>
-
       <li class="nav-item">
         <sidenav-collapse
           collapse-ref="ecommerceExamples"
@@ -113,18 +104,16 @@ const getRoute = () => {
           <template #list>
             <ul class="nav ms-4">
               <!-- nav links -->
-
               <sidenav-item
                 to="/challenge/list"
                 mini-icon="O"
                 text="챌린지 목록"
               />
-              <sidenav-item to="/" mini-icon="O" text="챌린지 생성" />
+              <sidenav-item to="/challenge/create" mini-icon="O" text="챌린지 생성" />
             </ul>
           </template>
         </sidenav-collapse>
       </li>
-
       <li class="nav-item">
         <sidenav-collapse
           collapse-ref="authExamples"
