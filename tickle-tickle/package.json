@@ -31,6 +31,7 @@
     "axios": "^1.7.2",
     "bootstrap": "5.3.3",
     "chart.js": "4.4.1",
+    "cheerio": "^1.0.0-rc.12",
     "choices.js": "10.2.0",
     "core-js": "3.36.0",
     "dragula": "3.7.3",
