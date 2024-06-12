@@ -4,8 +4,11 @@ import axios from "axios";
 
 export default {
     data() {
+        ``
         return {
             NewsListNaver: [],
+            title: '',
+            description: '',
         };
     },
 
@@ -29,8 +32,11 @@ export default {
                 })
                 .then((response) => {
                     console.log(response.data);
-                    this.NewsListNaver = this.NewsListNaver.concat(response.data.items);
-                    console.log(this.NewsListNaver);
+                    // this.NewsListNaver = this.NewsListNaver.concat(response.data.items);
+                    // console.log(this.NewsListNaver);
+                    console.log(response.data.items[0].title)
+                    this.title = response.data.items[0].title;
+                    this.description = response.data.items[0].description;
                 });
         },
     },
@@ -48,41 +54,43 @@ export default {
         </div>
     </div> -->
     <div class="py-4 container-fluid">
-        <div class="mb-3 card">
-            <div class="p-3 card-body">
-                <div class="row mt-4">
-                    <div class="col-md-7">
-                        <div class="card">
-                            <div class="card-header pb-0 px-3">
-                                <h6 class="mb-0">gdgd</h6>
-                            </div>
-                            <div class="card-body pt-4 p-3">
-                                <ul class="list-group">
+        <div class="card h-100">
+            <div class="mb-3 card">
+                <div class="p-3 card-body">
+                    <div class="row mt-4">
+                        <div class="col-md-7">
+                            <div class="card">
+                                <div class="card-header pb-0 px-3">
+                                    <h6 class="mb-0"></h6>
+                                </div>
+                                <div class="card-body pt-4 p-3">
+                                    <ul class="list-group">
 
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-3 text-sm"> name </h6>
-                                        <span class="mb-2 text-xs">
-                                            Company Name:
-                                            <span class="text-dark font-weight-bold ms-sm-2">
-                                                company </span>
-                                        </span>
-                                        <span class="mb-2 text-xs">
-                                            Email Address:
-                                            <span class="text-dark ms-sm-2 font-weight-bold">
-                                                email </span>
-                                        </span>
-                                        <span class="text-xs">
-                                            VAT Number:
-                                            <span class="text-dark ms-sm-2 font-weight-bold"> id </span>
-                                        </span>
-                                    </div>
+                                        <div class="d-flex flex-column">
+                                            <h6 class="mb-3 text-sm"> name </h6>
+                                            <span class="mb-2 text-xs">
+                                                Company Name:
+                                                <span class="text-dark font-weight-bold ms-sm-2">
+                                                    company </span>
+                                            </span>
+                                            <span class="mb-2 text-xs">
+                                                Email Address:
+                                                <span class="text-dark ms-sm-2 font-weight-bold">
+                                                    email </span>
+                                            </span>
+                                            <span class="text-xs">
+                                                VAT Number:
+                                                <span class="text-dark ms-sm-2 font-weight-bold"> id </span>
+                                            </span>
+                                        </div>
 
-                                </ul>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-5">
+                        <div class="col-md-5">
 
+                        </div>
                     </div>
                 </div>
             </div>
