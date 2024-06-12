@@ -87,7 +87,7 @@ const getRoute = () => {
               
 
               <sidenav-item
-                to="/"
+                to="/stats/users"
                 mini-icon="P"
                 text="개인 통계"
               />

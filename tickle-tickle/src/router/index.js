@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "../views/Home.vue";
 import Investment from "../views/Investment.vue";
+import Userstats from "../views/stats/dashboards/Userstats.vue";
 // import lockIllustration from "../views/auth/lock/Illustration.vue";
 
 const routes = [
@@ -14,6 +15,11 @@ const routes = [
     path: "/invertment",
     name: "Investment",
     component: Investment
+  },
+  {
+    path: "/stats/users",
+    name: "Stats",
+    component: Userstats
   }
 ];
 
