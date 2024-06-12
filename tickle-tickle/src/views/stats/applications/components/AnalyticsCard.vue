@@ -21,6 +21,7 @@ defineProps({
 
 
 <template>
+  <div class="container">
   <div class="mt-4 card h-100 mt-md-0">
     <div class="p-3 pb-0 card-header">
       <h1>개인 통계</h1>
@@ -71,4 +72,5 @@ defineProps({
       </div>
     </div>
   </div>
+</div>
 </template>

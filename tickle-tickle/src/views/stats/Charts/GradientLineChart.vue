@@ -221,6 +221,7 @@ onMounted(() => {
 });
 </script>
 <template>
+  <div class="container">
   <div class="card z-index-2">
     <div class="pb-0 card-header mb-0">
       <h1>이 그래프는 홍세영님의 1년간 월별 소비를 보여주고 있어요.</h1>
@@ -241,4 +242,5 @@ onMounted(() => {
       </div>
     </div>
   </div>
+</div>
 </template>

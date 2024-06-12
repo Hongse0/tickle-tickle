@@ -50,7 +50,7 @@ const getRoute = () => {
             <ul class="nav ms-4">
               <!-- nav links -->
               <sidenav-item to="/stats/users" mini-icon="P" text="개인 통계" />
-              <sidenav-item to="/" mini-icon="R" text="별별 통계" />
+              <sidenav-item to="/stats/stars" mini-icon="R" text="별별 통계" />
             </ul>
           </template>
         </sidenav-collapse>
@@ -64,8 +64,8 @@ const getRoute = () => {
           <template #list>
             <ul class="nav ms-4">
               <!-- nav links -->
-              <sidenav-item to="/Transaction/NewTransaction" mini-icon="K" text="거래등록" />
-              <sidenav-item to="/" mini-icon="W" text="거래조회" />
+              <sidenav-item to="/transaction/NewTransaction" mini-icon="K" text="거래등록" />
+              <sidenav-item to="/transaction/TransactionList" mini-icon="W" text="거래조회" />
             </ul>
           </template>
         </sidenav-collapse>
