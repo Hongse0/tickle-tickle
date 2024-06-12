@@ -33,24 +33,15 @@ const getRoute = () => {
           <template #list>
             <ul class="nav ms-4">
               <!-- nav links -->
-              
-              
+
               <sidenav-collapse-item
                 refer="vrExamples"
                 mini-icon="V"
                 text="Virtual Reality"
               >
                 <template #nav-child-item>
-                  <sidenav-item
-                    to="/"
-                    mini-icon="V"
-                    text="VR Default"
-                  />
-                  <sidenav-item
-                    to="/"
-                    mini-icon="V"
-                    text="VR Info"
-                  />
+                  <sidenav-item to="/" mini-icon="V" text="VR Default" />
+                  <sidenav-item to="/" mini-icon="V" text="VR Info" />
                 </template>
               </sidenav-collapse-item>
               <sidenav-item to="/" mini-icon="C" text="CRM" />
@@ -78,24 +69,9 @@ const getRoute = () => {
           <template #list>
             <ul class="nav ms-4">
               <!-- nav links -->
-              
 
-              
-
-              
-
-              
-
-              <sidenav-item
-                to="/"
-                mini-icon="P"
-                text="개인 통계"
-              />
-              <sidenav-item 
-                to="/"
-                mini-icon="R" 
-                text="별별 통계" />
-              
+              <sidenav-item to="/" mini-icon="P" text="개인 통계" />
+              <sidenav-item to="/" mini-icon="R" text="별별 통계" />
             </ul>
           </template>
         </sidenav-collapse>
@@ -114,17 +90,8 @@ const getRoute = () => {
             <ul class="nav ms-4">
               <!-- nav links -->
 
-              <sidenav-item
-                to="/"
-                mini-icon="K"
-                text="거래등록"
-              />
-              <sidenav-item
-                to="/"    
-                mini-icon="W"
-                text="거래조회"
-              />
-              
+              <sidenav-item to="/" mini-icon="K" text="거래등록" />
+              <sidenav-item to="/" mini-icon="W" text="거래조회" />
             </ul>
           </template>
         </sidenav-collapse>
@@ -144,16 +111,11 @@ const getRoute = () => {
               <!-- nav links -->
 
               <sidenav-item
-              to="/"
+                to="/challenge/list"
                 mini-icon="O"
                 text="챌린지 목록"
               />
-              <sidenav-item
-              to="/"
-                mini-icon="O"
-                text="챌린지 생성"
-              />
-            
+              <sidenav-item to="/" mini-icon="O" text="챌린지 생성" />
             </ul>
           </template>
         </sidenav-collapse>
@@ -171,24 +133,11 @@ const getRoute = () => {
           <template #list>
             <ul class="nav ms-4">
               <!-- nav links -->
-              <sidenav-item
-              to="/"
-                mini-icon="O"
-                text="투자 추천"
-              />
-
-              
-
-              
+              <sidenav-item to="/" mini-icon="O" text="투자 추천" />
             </ul>
           </template>
         </sidenav-collapse>
       </li>
-      
-      
-      
-     
     </ul>
   </div>
-  
 </template>

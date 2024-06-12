@@ -1,10 +1,6 @@
-<script setup>
-
-</script>
+<script setup></script>
 <template>
-  <h1>test!!!</h1>
-
-  
+  <h1>가희</h1>
 
   <router-view></router-view>
 </template>
