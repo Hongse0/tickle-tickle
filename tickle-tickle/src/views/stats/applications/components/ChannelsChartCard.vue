@@ -85,6 +85,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <div class="container">
   <div class="card h-100">
     <div class="p-3 pb-0 card-header">
       <div class="d-flex justify-content-between">
@@ -116,4 +117,5 @@ onMounted(() => {
       <div class="w-40 text-end"></div>
     </div>
   </div>
+</div>
 </template>

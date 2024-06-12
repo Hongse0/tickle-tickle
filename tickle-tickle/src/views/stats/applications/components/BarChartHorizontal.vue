@@ -94,6 +94,7 @@ onMounted(() => {
 });
 </script>
 <template>
+  <div class="container">
   <div class="card z-index-2">
     
     <div class="p-3 pb-0 card-header">
@@ -113,4 +114,5 @@ onMounted(() => {
       </div>
     </div>
   </div>
+</div>
 </template>
