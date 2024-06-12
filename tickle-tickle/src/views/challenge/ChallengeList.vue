@@ -12,13 +12,16 @@
         <div class="card-body">
           <!-- 28개 컴포넌트 -->
           <div>
-            <MonthChallenge> </MonthChallenge>
+            <MonthChallenge @click="toggleComponent"> </MonthChallenge>
           </div>
 
           <br />
-          <br />
           <!-- 입력 뷰 -->
-          <div class="card p-4" style="margin-left: 80px; width: 80%">
+          <div
+            v-if="showComponent"
+            class="card p-4"
+            style="margin-left: 80px; width: 80%"
+          >
             <EditChallenge></EditChallenge>
           </div>
         </div>
@@ -34,11 +37,8 @@
 
     <!-- body -->
 
-    <hr class="border border-dark" />
-
-    <br /><br /><br />
     <div>
-      <h1>Section2</h1>
+      <br v-if="!showComponent" />
       <AuthorsTable :challengeList="challengeList"> </AuthorsTable>
       <br />
     </div>
@@ -46,11 +46,15 @@
 </template>
 <script setup>
 import { ref } from "vue";
-
 import AuthorsTable from "./components/MonthChallengeItem.vue";
 import PastChallengeSideBar from "./components/PastChallengeSideBar.vue";
 import EditChallenge from "./components/EditChallenge.vue";
 import MonthChallenge from "./components/MonthChallenge.vue";
+
+const showComponent = ref(false);
+const toggleComponent = () => {
+  showComponent.value = !showComponent.value;
+};
 // todo - axios, pinina
 const challengeList = ref([
   {

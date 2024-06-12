@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex">
       <div class="col-9">
-        <h4 class="mb-2 py-1">수정</h4>
+        <h5 class="py-1">수정</h5>
       </div>
 
       <div class="col-3">
