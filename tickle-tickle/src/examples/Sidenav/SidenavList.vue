@@ -70,7 +70,7 @@ const getRoute = () => {
             <ul class="nav ms-4">
               <!-- nav links -->
 
-              <sidenav-item to="/" mini-icon="P" text="개인 통계" />
+              <sidenav-item to="/stats/users" mini-icon="P" text="개인 통계" />
               <sidenav-item to="/" mini-icon="R" text="별별 통계" />
             </ul>
           </template>
