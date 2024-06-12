@@ -11,6 +11,8 @@
             </p>
         </div>
             <hr class="my-3 horizontal dark" />
+            <div class="row">
+              <div class="col-8">
           <label for="projectName" class="form-label">나만의 챌린지 이름</label>
           <input id="projectName" type="text" class="form-control" />
           
@@ -21,13 +23,10 @@
             name="choices-multiple-remove-button"
             multiple
           >
-            <option value="Choice 1" selected>노카페인 챌린지</option>
-            <option value="Choice 2">대중교통 챌린지</option>
-            <option value="Choice 3">집밥 챌린지</option>
-            <option value="Choice 4">금연 챌린지</option>
           </select>
+          </div></div>
           <div class="row">
-            <div class="col-6">
+            <div class="col-4">
               <label class="form-label">챌린지 시작일</label>
               <flat-pickr
                 v-model="date"
@@ -36,7 +35,7 @@
                 :config="config"
               ></flat-pickr>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <label class="form-label">챌린지 종료일</label>
               <flat-pickr
                 v-model="endDate"
@@ -45,6 +44,11 @@
                 :config="config"
               ></flat-pickr>
             </div>
+            <complex-background-card
+                image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/window-desk.jpg"
+                description="User #hashtag in a photo on social media and get $10 for each purchase you make."
+                :action="{ route: 'javascript:;', label: 'Read more' }"
+              />
           </div>
           <div class="card-body p-3">
             <div class="row d-flex justify-content-center">
@@ -69,7 +73,73 @@
           </div>
         </div>
         <hr class="my-3 horizontal dark" />
-        
+        <div class="mt-4">
+          <div class="container">
+            <div class="tab-content tab-space">
+              <div id="monthly" class="tab-pane active">
+                <div class="row">
+                  <div class="mb-4 col-lg-4 mb-lg-0">
+                    <pricing-card
+                      badge="Starter"
+                      :price="{ currency: '$', value: '59' }"
+                      :specifications="[
+                        { label: '2 team members', includes: true },
+                        { label: '20GB Cloud storage', includes: true },
+                        { label: 'Integration help', includes: false },
+                        { label: 'Sketch Files', includes: false },
+                        { label: 'API Access', includes: false },
+                        { label: 'Complete documentation', includes: false },
+                      ]"
+                      :action="{
+                        color: 'dark',
+                        route: 'javascript:;',
+                        label: 'Join',
+                      }"
+                    />
+                  </div>
+                  <div class="mb-4 col-lg-4 mb-lg-0">
+                    <pricing-card
+                      badge="premium"
+                      :price="{ currency: '$', value: '89' }"
+                      :specifications="[
+                        { label: '10 team members', includes: true },
+                        { label: '40GB Cloud storage', includes: true },
+                        { label: 'Integration help', includes: true },
+                        { label: 'Sketch Files', includes: true },
+                        { label: 'API Access', includes: false },
+                        { label: 'Complete documentation', includes: false },
+                      ]"
+                      :action="{
+                        color: 'success',
+                        route: 'javascript:;',
+                        label: 'Try Premium',
+                      }"
+                    />
+                  </div>
+                  <div class="mb-4 col-lg-4 mb-lg-0">
+                    <pricing-card
+                      badge="Enterprise"
+                      :price="{ currency: '$', value: '99' }"
+                      :specifications="[
+                        { label: 'Unlimited team members', includes: true },
+                        { label: '100GB Cloud storage', includes: true },
+                        { label: 'Integration help', includes: true },
+                        { label: 'Sketch Files', includes: true },
+                        { label: 'API Access', includes: true },
+                        { label: 'Complete documentation', includes: true },
+                      ]"
+                      :action="{
+                        color: 'dark',
+                        route: 'javascript:;',
+                        label: 'Join',
+                      }"
+                    />
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+              </div>
       </div>
     </div>
   </div>
@@ -81,6 +151,8 @@ import flatPickr from "vue-flatpickr-component";
 import Choices from "choices.js";
 import Quill from "quill";
 import OutlinedCounterCard from ".//OutlinedCounterCard";;
+import ComplexBackgroundCard from "./ComplexBackgroundCard.vue";
+import PricingCard from "./PricingCard.vue";
 
 const date = "";
 const endDate = "";
@@ -89,6 +161,11 @@ const config = {
 };
 
 onMounted(() => {
+  update();
+});
+
+
+const update= ()=>{
   if (document.getElementById("editor")) {
     new Quill("#editor", {
       theme: "snow", // Specify theme in configuration
@@ -101,13 +178,29 @@ onMounted(() => {
       removeItemButton: true,
       allowHTML: true,
     });
-
+    
     example.setChoices(
-      [],
+      [{
+          value: "One",
+          label: "노카페인 챌린지"
+        },
+        {
+          value: "Two",
+          label: "대중교통 챌린지",
+          selected: true,
+        },
+        {
+          value: "Three",
+          label: "집밥 챌린지",
+        },
+        {
+          value: "Four",
+          label: "금연 챌린지",
+        }],
       "value",
       "label",
       false
     );
   }
-});
+}
 </script>
