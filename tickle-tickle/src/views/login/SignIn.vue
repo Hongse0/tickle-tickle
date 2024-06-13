@@ -39,7 +39,7 @@ const login = async () => {
     const user = response.data.find(user => user.id === email.value);
     if (user && user.password === password.value) {
       localStorage.setItem("userId", user.userId);
-      router.push("/home");
+      router.push("/main");
     } else {
       alert("로그인 실패: 잘못된 이메일 또는 비밀번호입니다.");
     }

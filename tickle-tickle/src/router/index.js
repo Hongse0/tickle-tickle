@@ -13,8 +13,8 @@ import Main from "../views/main/Main.vue";
 const routes = [
   {
     path: "/",
-    // name: "Main",
-    component: Main,
+    name: "Main",
+    component: SignIn,
   },
   {
     path: "/main",
