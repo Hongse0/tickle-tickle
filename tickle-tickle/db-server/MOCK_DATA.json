@@ -219,7 +219,7 @@
       "category": "finance"
     },
     {
-      "id": 22,
+      "id": "22",
       "userId": 1,
       "start": "2024-07-01",
       "cost": 12150,
@@ -229,7 +229,7 @@
       "category": "cafe"
     },
     {
-      "id": 22,
+      "id": "22",
       "userId": 1,
       "start": "2024-07-01",
       "cost": 12150,
@@ -237,6 +237,28 @@
       "memo": "레몬이 맛있더라",
       "isIncome": false,
       "category": "cafe"
+    },
+    {
+      "id": "ef11",
+      "title": "마라탕",
+      "memo": "안녕하세요",
+      "isIncome": false,
+      "selectedExpendCategory": "food",
+      "category": "food",
+      "start": "2024-06-04",
+      "cost": "10000",
+      "userId": 1
+    },
+    {
+      "id": "01ad",
+      "title": "용돈데이",
+      "memo": "아빠가 용돈 줬어요 최고",
+      "isIncome": true,
+      "selectedExpendCategory": "food",
+      "category": "pin",
+      "start": "2024-06-05",
+      "cost": "50000",
+      "userId": 1
     }
   ],
   "stats": [
