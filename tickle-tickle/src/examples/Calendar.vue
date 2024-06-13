@@ -45,7 +45,26 @@ onMounted(async () => {
   try {
     const response = await axios.get('http://localhost:3000/transactions');
     if (response.data && response.data.length > 0) {
-      const events = response.data;
+      const event = response.data; // title에 cost 결과값을 넣기
+
+
+      // 날짜별 cost 합산을 위한 객체
+      const groupedEvents = event.reduce((acc, event) => {
+        const date = event.start.split('T')[0]; // 날짜만 추출
+        if (!acc[date]) {
+          acc[date] = 0;
+        }
+        acc[date] += parseInt(event.cost);
+        return acc;
+      }, {});
+
+      // 합산된 cost 값을 이벤트 객체 배열로 변환
+      const summedEvents = Object.keys(groupedEvents).map(date => ({
+        id: date,
+        start: date,
+        title: `+ ${groupedEvents[date]}`,
+      }));
+
 
 
       calendar = new Calendar(document.getElementById(props.id), {
@@ -54,7 +73,7 @@ onMounted(async () => {
         initialView: props.initialView,
         selectable: props.selectable,
         editable: props.editable,
-        events: events,
+        events: summedEvents,
         initialDate: props.initialDate,
         headerToolbar: {
           start: "title",
@@ -84,7 +103,6 @@ onMounted(async () => {
           },
         },
       });
-
       calendar.render();
     } else {
       console.error("No events data found.");
@@ -116,7 +134,9 @@ onBeforeUnmount(() => {
       </div>
     </div>
     <div class="p-3 card-body">
-      <div :id="props.id" data-toggle="widget-calendar"></div>
+      <div :id="props.id" data-toggle="widget-calendar">
+        
+      </div>
     </div>
   </div>
 </template>

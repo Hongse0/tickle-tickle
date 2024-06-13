@@ -73,8 +73,7 @@ const expendTotal = computed(() => {
               <a href="javascript:;" class="card-title h5 d-block text-darker">
                 월별 총합
               </a>
-              <div v-if="transactions.length > 0">
-
+              <div v-if="transactions.length > 0" class="card-description mb-4">
                 {{ costTotal }} 원
               </div>
               <a href="javascript:;">
@@ -86,7 +85,6 @@ const expendTotal = computed(() => {
             <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
 
             </div>
-
             <div class="card-body pt-2">
               <a href="javascript:;" class="card-title h5 d-block text-darker">
                 월별 수익
