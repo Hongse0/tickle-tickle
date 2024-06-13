@@ -10,13 +10,16 @@ const chartValues = ref([]);
 // 데이터를 가져와서 차트를 업데이트하는 함수
 const fetchChartData = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/twenty");
+    const response = await axios.get("http://localhost:3000/stats");
     const jsonData = response.data;
     console.log(jsonData);
 
-    chartLabels.value = Object.keys(jsonData); // 카테고리 레이블
-    chartValues.value = Object.values(jsonData); // 각 카테고리의 값
+    // userId가 1인 데이터 필터링
+    const filteredData = jsonData.filter(item => item.userId === 1);
 
+    // chartLabels와 chartValues 업데이트
+    chartLabels.value = filteredData.map(item => item.category);
+    chartValues.value = filteredData.map(item => item.total);
 
     console.log(chartLabels.value);
     console.log(chartValues.value);

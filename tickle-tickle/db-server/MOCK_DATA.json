@@ -1,43 +1,152 @@
 {
-
-      "user": {
-        "id": "seyeong",
-        "password": "1234",
-        "name": "홍세영",
-        "age":"27",
-        "use": {
-          "쇼핑": 4,
-          "교육": 46,
-          "식비": 84,
-          "생활": 35,
-          "기타": 87,
-          "술/유흥": 17
-        },
-        "get": {
-          "급여": 4,
-          "용돈": 46,
-          "금융": 84,
-          "장학금": 35,
-          "부동산": 87,
-          "보험금": 17
-        },
-        "month": {
-          "1월": 4,
-          "2월": 46,
-          "3월": 84,
-          "4월": 35,
-          "5월": 87,
-          "6월": 17,
-          "7월": 4,
-          "8월": 46,
-          "9월": 84,
-          "10월": 35,
-          "11월": 87,
-          "12월": 17
-        },
-        "challenge": {
-
-        }
-      }
-  
+  "users": [
+    {
+      "userId": 1,
+      "name": "가희",
+      "id": "u1879@naver.com",
+      "password": "123456",
+      "gender": "girl",
+      "age": 20
+    },
+    {
+      "userId": 2,
+      "name": "세영",
+      "id": "p1879@naver.com",
+      "password": "123456",
+      "gender": "man",
+      "age": 25
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "userId": 1,
+      "start": "2024-06-11",
+      "cost": 6000,
+      "title": "Real MY SQL 구입",
+      "memo": "책 엄청 비싸네;;",
+      "isIncome": true,
+      "category": "쇼핑"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "start": "2024-06-12",
+      "cost": 18000,
+      "title": "vue.js 마스터 구입",
+      "memo": "뷰 마스터가 되어야지!",
+      "isIncome": true,
+      "category": "쇼핑"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "start": "2024-06-13",
+      "cost": 26000,
+      "title": "Spring 시작 구입",
+      "memo": "어려워보인당...",
+      "isIncome": false,
+      "category": "쇼핑"
+    }
+  ],
+  "stats":[
+    {
+      "userId":1,
+      "year":"2024-06",
+      "category":"쇼핑",
+      "total" : 20000
+    },
+    {
+      "userId":1,
+      "year":"2024-06",
+      "category":"술/유흥",
+      "total" : 103000
+    },
+    {
+      "userId":1,
+      "year":"2024-06",
+      "category":"교통",
+      "total" : 100020
+    },
+    {
+      "userId":1,
+      "year":"2024-06",
+      "category":"식비",
+      "total" : 15000
+    },
+    {
+      "userId":1,
+      "year":"2024-06",
+      "category":"금융",
+      "total" : 120000
+    },
+    {
+      "userId":1,
+      "year":"2024-06",
+      "category":"생활",
+      "total" : 300000
+    }
+  ],
+  "monthUse":[
+    {
+      "userId":1,
+      "year":"2024-01",
+      "total": 1000000
+    },
+    {
+      "userId":1,
+      "year":"2024-02",
+      "total": 500000
+    },
+    {
+      "userId":1,
+      "year":"2024-03",
+      "total": 800000
+    },
+    {
+      "userId":1,
+      "year":"2024-04",
+      "total": 800040
+    },
+    {
+      "userId":1,
+      "year":"2024-05",
+      "total": 300001
+    },
+    {
+      "userId":1,
+      "year":"2024-06",
+      "total": 500000
+    },
+    {
+      "userId":1,
+      "year":"2024-07",
+      "total": 750000
+    },
+    {
+      "userId":1,
+      "year":"2024-08",
+      "total": 400001
+    },
+    {
+      "userId":1,
+      "year":"2024-09",
+      "total": 301020
+    },
+    {
+      "userId":1,
+      "year":"2024-10",
+      "total": 430278
+    },
+    {
+      "userId":1,
+      "year":"2024-11",
+      "total": 242124
+    },
+    {
+      "userId":1,
+      "year":"2024-12",
+      "total": 1000000
+    }
+  ]
 }

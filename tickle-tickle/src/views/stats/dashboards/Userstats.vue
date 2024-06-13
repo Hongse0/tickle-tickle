@@ -1,50 +1,72 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, onMounted, computed } from 'vue';
+import axios from 'axios';
 import GradientLineChart from '../Charts/GradientLineChart.vue';
 import AnalyticsCard from '../applications/components/AnalyticsCard.vue';
 
-// JSON 데이터를 직접 정의
+// 차트 데이터 초기화
 const chartData = ref({
   labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
   datasets: [
     {
-      data: [100, 200, 300, 50, 40, 300, 220, 500, 300, 400, 230, 500],
+      label: "월별 소비",
+      data: [],
     },
   ],
 });
 
-// AnalyticsCard 데이터 정의
-const analyticsData = ref([
-  {
-    category: '식비',
-    views: 345,
-  },
-  {
-    category: '생활',
-    views: 520,
-  },
-  {
-    category: '쇼핑',
-    views: 122,
-  },
-  {
-    category: '교통',
-    views: 1220,
-  },
-  {
-    category: '술/유흥',
-    views: 13222,
-  },
-  {
-    category: '교육',
-    views: 122,
-  },
-]);
+const analyticsData = ref([]);
 
-// views 값을 기준으로 상위 5개 데이터를 추출
+// 데이터를 가져와서 차트를 업데이트하는 함수
+const fetchChartData = async () => {
+  try {
+    const response = await axios.get("http://localhost:3000/monthUse");
+    const jsonData = response.data;
+    console.log(jsonData);
+
+    // userId가 1인 데이터를 필터링
+    const filteredData = jsonData.filter(item => item.userId === 1);
+
+    // chartData 업데이트 (각 월의 total 값을 사용)
+    chartData.value.datasets[0].data = filteredData.map(item => item.total);
+
+    console.log(chartData.value);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+const fetchAnalyticsData = async () => {
+  try {
+    const response = await axios.get("http://localhost:3000/stats");
+    const jsonData = response.data;
+    console.log(jsonData);
+
+    // userId가 1인 데이터 필터링
+    const filteredData = jsonData.filter(item => item.userId === 1 && item.year === '2024-06');
+
+    // 각 카테고리의 total 값을 analyticsData에 업데이트
+    analyticsData.value = filteredData.map(item => ({
+      category: item.category,
+      total: item.total,
+    }));
+
+    console.log(analyticsData.value);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+// 컴포넌트가 마운트되면 데이터 가져오기
+onMounted(() => {
+  fetchChartData();
+  fetchAnalyticsData();
+});
+
+// total 값을 기준으로 상위 5개 데이터를 추출
 const top5AnalyticsData = computed(() => {
   return [...analyticsData.value] // 원본 데이터 복사
-    .sort((a, b) => b.views - a.views)  // 내림차순 정렬
+    .sort((a, b) => b.total - a.total)  // 내림차순 정렬
     .slice(0, 5);  // 상위 5개 데이터 추출
 });
 </script>
@@ -56,7 +78,7 @@ const top5AnalyticsData = computed(() => {
         <div class="row">
           <div class="col-lg-12 col-md-6 col-12">
             <analytics-card
-              title="지출 카테고리 순위"
+              title="월별 지출 카테고리 순위"
               :headers="['카테고리', '사용 금액']"
               :pages="top5AnalyticsData"
             />

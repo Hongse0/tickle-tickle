@@ -13,7 +13,7 @@ defineProps({
     required: true,
     validator: (value) => {
       // 각 객체가 정확한 속성을 갖고 있는지 확인
-      return value.every(item => 'category' in item && 'views' in item);
+      return value.every(item => 'category' in item && 'total' in item);
     }
   },
 });
@@ -48,7 +48,7 @@ defineProps({
           </thead>
           <tbody>
             <tr
-              v-for="({ category, views }, index) of pages"
+              v-for="({ category, total }, index) of pages"
               :key="index"
             >
               <td>
@@ -57,7 +57,7 @@ defineProps({
                 </p>
               </td>
               <td>
-                <p class="mb-0 text-sm font-weight-bold">{{ views }}</p>
+                <p class="mb-0 text-sm font-weight-bold">{{ total }}</p>
               </td>
               <!-- <td>
                 <p class="mb-0 text-sm font-weight-bold">{{ time }}</p>
