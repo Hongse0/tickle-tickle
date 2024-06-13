@@ -729,5 +729,30 @@
         "memo": "안먹음 ㅋ "
       }
     ]
-  }
+  },
+  "pastChallenge": [
+    {
+      "pastId": 1,
+      "pastTag": "노카페인 챌린지",
+      "pastStartDate": "2024-03-01",
+      "pastEndDate": "2024-03-31",
+      "pastMoney": 224224
+    },
+    {
+      "pastId": 2,
+      "pastTag": "집밥 챌린지",
+      "pastStartDate": "2024-04-01",
+      "pastEndDate": "2024-04-31",
+      "pastMoney": 5252521
+    },
+    {
+      "pastId": 3,
+      "pastTag": "금연 챌린지",
+      "pastStartDate": "2024-05-01",
+      "pastEndDate": "2024-05-31",
+      "pastMoney": 12000
+    }
+  ],
+  "newChallenge": [
+  ]
 }
