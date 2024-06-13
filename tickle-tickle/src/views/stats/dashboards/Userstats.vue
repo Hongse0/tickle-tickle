@@ -9,7 +9,6 @@ const chartData = ref({
   labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
   datasets: [
     {
-      label: "월별 소비",
       data: [],
     },
   ],
@@ -28,9 +27,19 @@ const fetchChartData = async () => {
     const filteredData = jsonData.filter(item => item.userId === 1);
 
     // chartData 업데이트 (각 월의 total 값을 사용)
-    chartData.value.datasets[0].data = filteredData.map(item => item.total);
+    // chartData.value.datasets[0].data = filteredData.map(item => item.total);
+    
+    chartData.value = {
+      ...chartData.value,
+      datasets: [{
+        data: filteredData.map(item => item.total)
+      }]
+    };
 
+    console.log('chartData.value');
     console.log(chartData.value);
+
+    console.log(chartData.value.datasets[0]);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
