@@ -357,7 +357,7 @@
       "id": "a749"
     }
   ],
-  "twenty": [
+  "similar": [
     {
       "userId": 1,
       "year": "2024-06",
@@ -393,6 +393,36 @@
       "year": "2024-06",
       "category": "생활",
       "total": 15064
+    }
+  ],
+  "twenty": [
+    {
+      "category": "쇼핑",
+      "total": 20000
+    },
+    {
+      "category": "술/유흥",
+      "total": 10300
+    },
+    {
+     "category": "교통",
+      "total": 11029
+    },
+    {
+      "category": "식비",
+      "total": 8373
+    },
+    {
+      "category": "금융",
+      "total": 9012
+    },
+    {
+      "category": "생활",
+      "total": 15064
+    }, 
+    {
+      "category": "기타",
+      "total":3838
     }
   ]
 }
