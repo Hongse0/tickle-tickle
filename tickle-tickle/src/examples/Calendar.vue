@@ -47,8 +47,6 @@ onMounted(async () => {
     if (response.data && response.data.length > 0) {
       const events = response.data;
 
-      // Calculate total income per day
-      const totalIncomePerDay = calculateTotalIncomePerDay(events);
 
       calendar = new Calendar(document.getElementById(props.id), {
         contentHeight: "auto",
@@ -63,7 +61,6 @@ onMounted(async () => {
           center: "",
           end: "today prev,next",
         },
-        eventContent: eventContent(totalIncomePerDay),
         views: {
           month: {
             titleFormat: {
@@ -103,38 +100,6 @@ onBeforeUnmount(() => {
   }
 });
 
-const calculateTotalIncomePerDay = (events) => {
-
-  const totalIncomePerDay = {};
-  events.forEach(event => {
-    console.log(event);
-
-    console.log(event.isIncome);
-    if (event.isIncome) {
-      const date = event.start;
-      if (totalIncomePerDay[date]) {
-        totalIncomePerDay[date] += event.cost;
-      }
-      else {
-        totalIncomePerDay[date] = event.cost;
-      }
-    }
-    
-  });
-  return totalIncomePerDay;
-};
-
-const eventContent = (totalIncomePerDay) => {
-  return (info) => {
-    console.log(totalIncomePerDay);
-    const date = info.event.startStr.split('T')[0]; 
-    const totalIncome = totalIncomePerDay[date] || 0; // 해당 날짜의 총 수입 또는 기본값 0
-    console.log(totalIncomePerDay[date]);
-    return {
-      html: `<div class="text-center">${totalIncome}</div>`
-    };
-  };
-};
 </script>
 
 <template>

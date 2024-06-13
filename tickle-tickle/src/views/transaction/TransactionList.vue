@@ -26,7 +26,7 @@ onMounted(fetchTransactions);
 const costTotal = computed(() => {
   return transactions.value.reduce((total, transaction) => {
 
-    return total + transaction.cost;
+    return total + parseInt(transaction.cost);
   }, 0);
 
 });
@@ -35,7 +35,7 @@ const costTotal = computed(() => {
 const incomeTotal = computed(() => {
   return transactions.value.reduce((total, transaction) => {
     if (transaction.isIncome) {
-      return total + transaction.cost;
+      return total + parseInt(transaction.cost);
     }
 
     return total;
@@ -47,7 +47,7 @@ const incomeTotal = computed(() => {
 const expendTotal = computed(() => {
   return transactions.value.reduce((total, transaction) => {
     if (!transaction.isIncome) {
-      return total + transaction.cost;
+      return total + parseInt(transaction.cost);
     }
 
     return total;
