@@ -113,10 +113,10 @@ const calculateTotalIncomePerDay = (events) => {
     if (event.isIncome) {
       const date = event.start;
       if (totalIncomePerDay[date]) {
-        totalIncomePerDay[date] += event.price;
+        totalIncomePerDay[date] += event.cost;
       }
       else {
-        totalIncomePerDay[date] = event.price;
+        totalIncomePerDay[date] = event.cost;
       }
     }
     
@@ -126,10 +126,10 @@ const calculateTotalIncomePerDay = (events) => {
 
 const eventContent = (totalIncomePerDay) => {
   return (info) => {
-    console.log(info.event);
+    console.log(totalIncomePerDay);
     const date = info.event.startStr.split('T')[0]; 
     const totalIncome = totalIncomePerDay[date] || 0; // 해당 날짜의 총 수입 또는 기본값 0
-
+    console.log(totalIncomePerDay[date]);
     return {
       html: `<div class="text-center">${totalIncome}</div>`
     };
