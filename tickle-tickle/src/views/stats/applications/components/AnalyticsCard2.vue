@@ -21,6 +21,7 @@ defineProps({
 
 
 <template>
+
   <div class="container">
     <div class="mt-4 card h-100 mt-md-0">
       <div class="p-3 pb-0 card-header">
@@ -48,6 +49,40 @@ defineProps({
                   <p class="mb-0 text-sm font-weight-bold">{{ total }}</p>
                 </td>
                 <!-- <td>
+=======
+  <div>
+  <div class="mt-4 card h-100 mt-md-0">
+    <div class="p-3 pb-0 card-header">
+      <h1>지출 카테고리 순위</h1>
+    </div>
+    <div class="px-3 pt-0 pb-2 card-body">
+      <div class="p-0 table-responsive">
+        <table class="table mb-0 align-items-center justify-content-center">
+          <thead>
+            <tr>
+              <th
+                v-for="(header, index) of headers"
+                :key="index"
+                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+              >
+                {{ header }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="({ category, total }, index) of pages"
+              :key="index"
+            >
+              <td>
+                <p class="mb-0 text-sm font-weight-bold">
+                  {{ index + 1 }}. {{ category }}
+                </p>
+              </td>
+              <td>
+                <p class="mb-0 text-sm font-weight-bold">{{ total }}</p>
+              </td>
+
                 <p class="mb-0 text-sm font-weight-bold">{{ time }}</p>
               </td>
               <td>

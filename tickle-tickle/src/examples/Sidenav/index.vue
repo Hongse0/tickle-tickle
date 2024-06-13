@@ -52,7 +52,7 @@ const darkMode = computed(() => store.state.darkMode);
           class="navbar-brand-img h-100"
           alt="main_logo"
         />
-        <span class="ms-2 font-weight-bold">Argon Dashboard 2 PRO</span>
+        <span class="ms-2 font-weight-bold">티끌티끌</span>
       </router-link>
     </div>
     <hr class="mt-0 horizontal dark" />

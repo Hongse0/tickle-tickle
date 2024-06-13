@@ -2,9 +2,10 @@
 import { onMounted, ref } from "vue";
 import { DataTable } from "simple-datatables";
 import axios from 'axios';
-
+import { useRoute } from 'vue-router';
+const route = useRoute();
 const result = ref([]);
-
+const date = route.params.date;
 
 // 카테고리 변환 함수
 const getCategoryDisplayName = (category) => {
@@ -62,14 +63,12 @@ const getCategoryDisplayName = (category) => {
 
 // };
 onMounted(async () => {
+    try {
+        const response = await axios.get("http://localhost:3000/transactions");
+        const allData = response.data;
 
-    const response = await axios.get('http://localhost:3000/transactions');
-    result.value = response.data;  // 데이터를 result.value에 저장
+        result.value = allData.filter((transaction) => transaction.start.split("T")[0] === date);
 
-
-    // const result = await getData();
-
-    if (result.value.length > 0) {
         const dataTableBasic = new DataTable("#datatable-basic", {
             searchable: false,
             fixedHeight: true,
@@ -92,6 +91,8 @@ onMounted(async () => {
         if (tableRows.length > 0) {
             dataTableBasic.rows.add(tableRows);
         }
+    } catch (error) {
+        console.error("Error fetching data:", error);
     }
 });
 </script>

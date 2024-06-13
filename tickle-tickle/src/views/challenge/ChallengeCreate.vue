@@ -14,14 +14,15 @@
 
           <div class="row">
             <div class="col-8">
-        <label for="projectName" class="form-label">나만의 챌린지 이름</label>
-        <input id="projectName" type="text" class="form-control" />
+        <label for="challengeName" class="form-label">나만의 챌린지 이름</label>
+        <input id="projectName" type="text" class="form-control"  :v-model="challengeName"/>
         <label class="mt-2 form-label">챌린지 태그</label>
         <div class="col-12">
           <select
             id="choices-category-edit"
             class="form-control"
             name="choices-category"
+            :v-model="challengeTag"
           >
             <option value="Choice 1" selected>노카페인 챌린지</option>
             <option value="Choice 2">대중교통 챌린지</option>
@@ -32,7 +33,7 @@
           <div class="col-6">
             <label class="form-label">챌린지 시작일</label>
             <flat-pickr
-              v-model="date"
+              :v-model="startDate"
               class="form-control datetimepicker"
               placeholder="Please select start date"
               :config="config"
@@ -41,7 +42,7 @@
           <div class="col-6">
             <label class="form-label">챌린지 종료일</label>
             <flat-pickr
-              v-model="endDate"
+              :v-model="endDate"
               class="form-control datetimepicker"
               placeholder="Please select end date"
               :config="config"
@@ -53,14 +54,14 @@
         <complex-background-card
               image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/window-desk.jpg"
               description="AI추천 챌린지"
-              :action="{ route: 'javascript:;', label: 'Read more' }"
+              :action="{ route: 'https://chatgpt.com/', label: 'Read more' }"
             />
         <div class="card-body p-3">
           <div class="row d-flex justify-content-center">
             <outlined-counter-card
               :duration="2500"
               prefix="$"
-              :count="23980"
+              :count="10000"
               title="이정도 금액을 아낄 수 있어요"
             /></div></div>
 
@@ -68,13 +69,15 @@
           <button type="button" name="button" class="m-0 btn btn-light">
             Cancel
           </button>
+          <router-link to="/challenge/list">
           <button
             type="button"
             name="button"
             class="m-0 btn bg-gradient-success ms-2"
+            @click="newChallenge"
           >
             Create Project
-          </button>
+          </button></router-link>
         </div>
       </div>
       <hr class="my-3 horizontal dark" />
@@ -83,54 +86,46 @@
           <div class="tab-content tab-space">
             <div id="monthly" class="tab-pane active">
               <div class="row">
-                <div class="mb-4 col-lg-4 mb-lg-0">
-                  <pricing-card
-                    badge="과거챌린지1"
-                    :specifications="[
-                      { label: '', includes: true },
-                      { label: '20GB Cloud storage', includes: true },
-                      { label: 'Integration help', includes: false },
-                      { label: 'Sketch Files', includes: false },
-                      { label: 'API Access', includes: false },
-                      { label: 'Complete documentation', includes: false },
-                    ]"
-                    :action="{
-                      color: 'dark',
-                      route: '/challenge/list',
-                      label: '챌린지 보러가기',
-                    }"
-                  />
+
+                <div class="mb-4 col-lg-4 mb-lg-0"  v-for="(challenge, index) in pastChallenges" :key="index">
+                  <div class="card">
+                    <div class="pt-4 pb-3 text-center card-header">
+                      <span class="text-uppercase font-weight-bold text-dark">PastChallenge</span>
+                    </div>
+                    <div class="pt-0 text-center card-body text-lg-start">
+                      <div
+                        class="p-2 d-flex justify-content-lg-start justify-content-center"
+                      >
+                
+                        <div>
+                          <span class="ps-3">
+                            <ul>
+                            Tag :{{ challenge.pastTag }}
+                            </ul>
+                            <ul>
+                            Start Date :{{ challenge.pastStartDate }}
+                            </ul>
+                            <ul>
+                            End Date :{{ challenge.pastEndDate }}
+                            </ul>
+                            <ul>
+                            Save Money : ${{ challenge.pastMoney }} 
+                            </ul>
+                          </span>
+                        </div>
+                      </div>
+                      <a
+                        class="mt-3 mb-0 btn btn-icon d-lg-block"
+                        href="http://localhost:8080/challenge/list"
+                      >
+                        Go to Past Challenge
+                        <i class="fas fa-arrow-right ms-1"></i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div class="mb-4 col-lg-4 mb-lg-0">
-                  <pricing-card
-                    badge="과거챌린지2"
-                    
-                    :action="{
-                      color: 'success',
-                      route: '/challenge/list',
-                      label: '챌린지 보러가기',
-                    }"
-                  />
-                </div>
-                <div class="mb-4 col-lg-4 mb-lg-0">
-                  <pricing-card
-                    badge="과거챌린지3"
-                    :specifications="[
-                      { label: 'Unlimited team members', includes: true },
-                      { label: '100GB Cloud storage', includes: true },
-                      { label: 'Integration help', includes: true },
-                      { label: 'Sketch Files', includes: true },
-                      { label: 'API Access', includes: true },
-                      { label: 'Complete documentation', includes: true },
-                    ]"
-                    :action="{
-                      color: 'dark',
-                      route: '/challenge/list',
-                      label: '챌린지 보러가기',
-                    }"
-                  />
-                </div>
-              </div>
+                
+            </div>
             </div>
             </div>
             </div>
@@ -142,13 +137,37 @@
 
 </template>
 <script setup>
+import {onMounted, ref} from "vue"
 import flatPickr from "vue-flatpickr-component";
 import OutlinedCounterCard from "./components/OutlinedCounterCard.vue"
-import ComplexBackgroundCard from "./components/ComplexBackgroundCard.vue";
-import PricingCard from "./components/PricingCard.vue";
+import ComplexBackgroundCard from "./components/ComplexBackgroundCard.vue";;
+import axios from "axios"
+import { useRouter } from 'vue-router';
+const router = useRouter();
+// const result = await getData();
 
-const date = "";
-const endDate = "";
+
+const challengeName = ref(""); // 챌린지 이름 설정
+const challengeTag = ref(""); // 챌린지 카테고리 선택
+const startDate = ref(""); //시작날짜
+const endDate = ref(""); // 마감날짜
+const pastChallenges = ref();
+const fetchPastChallenges = async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/pastChallenge');
+    pastChallenges.value = response.data;
+    // alert(pastChallenges.value);
+  } catch (error) {
+    console.error('Error fetching past challenges:', error);
+  }
+};
+
+onMounted(() => {
+  fetchPastChallenges();
+  fetchData();
+});
+
+
 const config = {
 allowInput: true,
 onDayCreate: (dObj, dStr, fp, dayElem) => {
@@ -158,8 +177,34 @@ onDayCreate: (dObj, dStr, fp, dayElem) => {
     }
   }
 };
+const fetchData = async () => {
+  try {
+    const response = await axios.get("http://localhost:3000/newChallenge");
+    const jsonData = response.data;
+    console.log(jsonData);
+  }
+  catch (error) {
+    console.error(error)
+  }
+};
 
+const newChallenge = async () => {
+  const data = {
+    Name: challengeName.value,
+    Tag: challengeTag.value,
+    sDate: startDate.value,
+    eDate: endDate.value,
+    userId: 1,
+    newChallengeId : 1
+  };
 
-
+  try {
+    await axios.post("http://localhost:3000/newChallenge", data);
+    console.log("Challenge created successfully!")
+    await router.push('/challenge/list');
+  } catch (error) {
+    console.error("Error creating challenge:", error);
+  }
+}
 
 </script>

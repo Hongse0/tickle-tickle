@@ -75,15 +75,13 @@
           <div class="card-body">
             <!-- 28개 컴포넌트 -->
             <div>
-              <MonthChallenge :weeks="weeks"> </MonthChallenge>
+              <MonthChallenge> </MonthChallenge>
               <br />
               <!-- 입력창 -->
-              <div
-                class="card p-4"
-                :editChallengeDay="editChallengeDay"
-                style="margin-left: 80px; width: 80%"
-              >
-                <EditChallenge></EditChallenge>
+              <div class="card p-4" style="margin-left: 80px; width: 80%">
+                <EditChallenge
+                  :editChallengeDay="editChallengeDay"
+                ></EditChallenge>
               </div>
             </div>
           </div>
@@ -149,49 +147,6 @@ onMounted(() => {
   getPastChallengeList();
   getChallengeDays();
 });
-
-// 잘 되는 코드
-// 하단
-// const challengeList = ref([
-//   {
-//     id: 1,
-//     name: "챌린지 1",
-//     memo: "개휘1",
-//     status: true,
-//     date: "2024-06-12",
-//   },
-//   {
-//     id: 2,
-//     name: "챌린지 2",
-//     memo: "개휘",
-//     status: false,
-//     date: "2024-06-11",
-//   },
-// ]);
-
-// 옆에
-// const pastChallengeList = ref([
-//   {
-//     challengeId: 4,
-//     name: "챌린지4 ",
-//     date: "2024-06-14",
-//   },
-//   {
-//     challengeId: 3,
-//     name: "챌린지 3",
-//     date: "2024-06-13",
-//   },
-//   {
-//     challengeId: 2,
-//     name: "챌린지 2",
-//     date: "2024-06-12",
-//   },
-//   {
-//     challengeId: 1,
-//     name: "챌린지 1",
-//     date: "2024-06-11",
-//   },
-// ]);
 
 const editChallengeDay = ref({
   day: 1,

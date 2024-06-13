@@ -3,6 +3,7 @@ import { onBeforeUnmount, onMounted } from "vue";
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import axios from 'axios';
+import { useRouter } from 'vue-router';
 
 const props = defineProps({
   id: {
@@ -40,13 +41,14 @@ const props = defineProps({
 });
 
 let calendar;
+const router = useRouter();
 
 onMounted(async () => {
   try {
     const response = await axios.get('http://localhost:3000/transactions');
     if (response.data && response.data.length > 0) {
       const event = response.data; // title에 cost 결과값을 넣기
-     
+
       // 날짜별 cost 합산을 위한 객체
       const groupedIncomeEvents = event.reduce((acc, event) => {
         if (event.isIncome) { // isIncome이 true인 경우에만 cost를 더함
@@ -121,6 +123,10 @@ onMounted(async () => {
               day: "numeric",
             },
           },
+        },
+        eventClick: (info) => {
+          const date = info.event.startStr.split('T')[0];
+          router.push({ name: 'TransactionDetail', params: { date } });
         },
       });
       calendar.render();
