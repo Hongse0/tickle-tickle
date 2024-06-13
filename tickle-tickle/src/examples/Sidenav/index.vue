@@ -2,8 +2,8 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
 import SidenavList from "./SidenavList.vue";
-import logo from "@/assets/img/logo-ct-dark.png";
-import logoWhite from "@/assets/img/logo-ct.png";
+import logo from "@/assets/img/pink.png";
+import logoWhite from "@/assets/img/pink.png";
 import image from "@/assets/img/profile-layout-header.jpg";
 
 const store = useStore();
