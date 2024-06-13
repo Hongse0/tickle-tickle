@@ -21,131 +21,301 @@
     {
       "id": 1,
       "userId": 1,
-      "start": "2024-06-11",
-      "cost": 6000,
-      "title": "Real MY SQL 구입",
-      "memo": "책 엄청 비싸네;;",
-      "isIncome": true,
-      "category": "쇼핑"
+      "start": "2023-06-10",
+      "cost": 18630,
+      "title": "MySQL 정복",
+      "memo": "어렵당...",
+      "isIncome": false,
+      "category": "education"
     },
     {
       "id": 2,
       "userId": 1,
-      "start": "2024-06-12",
-      "cost": 18000,
-      "title": "vue.js 마스터 구입",
-      "memo": "뷰 마스터가 되어야지!",
+      "start": "2023-06-04",
+      "cost": 7290,
+      "title": "토익 단어장",
+      "memo": "토익 990점 맞고 졸업~~~",
       "isIncome": true,
-      "category": "쇼핑"
+      "category": "used"
     },
     {
       "id": 3,
-      "userId": 1,
-      "start": "2024-06-13",
-      "cost": 26000,
-      "title": "Spring 시작 구입",
-      "memo": "어려워보인당...",
+      "userId": 2,
+      "start": "2023-06-03",
+      "cost": 8200,
+      "title": "학식",
+      "memo": "지겨워 ㅠㅠ",
       "isIncome": false,
-      "category": "쇼핑"
+      "category": "food"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "start": "2023-06-01",
+      "cost": 45000,
+      "title": "삼구포차",
+      "memo": "가성비 갑이다ㅋㅋ",
+      "isIncome": false,
+      "category": "alcohol"
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "start": "2023-06-11",
+      "cost": 7500,
+      "title": "할매국밥",
+      "memo": "역시 국밥은 돼지국밥",
+      "isIncome": false,
+      "category": "food"
+    },
+    {
+      "id": 6,
+      "userId": 2,
+      "start": "2023-06-12",
+      "cost": 8900,
+      "title": "점심 커피 내기",
+      "memo": "내가 지다니...",
+      "isIncome": false,
+      "category": "cafe"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "start": "2023-06-11",
+      "cost": 8200,
+      "title": "실비보험",
+      "memo": "실비보험이 짱이지",
+      "isIncome": true,
+      "category": "insurance"
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "start": "2023-06-02",
+      "cost": 1700,
+      "title": "빗자루",
+      "memo": "돈벌었당 ㅋㅋ",
+      "isIncome": true,
+      "category": "used"
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "start": "2023-06-05",
+      "cost": 9600,
+      "title": "오예스",
+      "memo": "과자는 오예스지",
+      "isIncome": false,
+      "category": "cafe"
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "start": "2023-06-02",
+      "cost": 16000,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "start": "2023-06-01",
+      "cost": 8900,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 13,
+      "userId": 2,
+      "start": "2023-06-01",
+      "cost": 8200,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 14,
+      "userId": 2,
+      "start": "2023-06-03",
+      "cost": 16000,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 15,
+      "userId": 2,
+      "start": "2023-06-10",
+      "cost": 45000,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "start": "2023-06-10",
+      "cost": 1700,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 17,
+      "userId": 1,
+      "start": "2023-06-10",
+      "cost": 9600,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 18,
+      "userId": 2,
+      "start": "2023-06-11",
+      "cost": 8200,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 19,
+      "userId": 1,
+      "start": "2023-06-12",
+      "cost": 7290,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 20,
+      "userId": 1,
+      "start": "2023-06-07",
+      "cost": 16000,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
+    },
+    {
+      "id": 21,
+      "userId": 2,
+      "start": "2023-06-09",
+      "cost": 18630,
+      "title": "주식 배당금",
+      "memo": "오 나름 많이 벌었네 ㅋㅋㅋㅋ",
+      "isIncome": true,
+      "category": "finance"
     }
   ],
-  "stats":[
+  "stats": [
     {
-      "userId":1,
-      "year":"2024-06",
-      "category":"쇼핑",
-      "total" : 20000
+      "userId": 1,
+      "year": "2024-06",
+      "category": "쇼핑",
+      "total": 20000
     },
     {
-      "userId":1,
-      "year":"2024-06",
-      "category":"술/유흥",
-      "total" : 103000
+      "userId": 1,
+      "year": "2024-06",
+      "category": "술/유흥",
+      "total": 103000
     },
     {
-      "userId":1,
-      "year":"2024-06",
-      "category":"교통",
-      "total" : 100020
+      "userId": 1,
+      "year": "2024-06",
+      "category": "교통",
+      "total": 100020
     },
     {
-      "userId":1,
-      "year":"2024-06",
-      "category":"식비",
-      "total" : 15000
+      "userId": 1,
+      "year": "2024-06",
+      "category": "식비",
+      "total": 15000
     },
     {
-      "userId":1,
-      "year":"2024-06",
-      "category":"금융",
-      "total" : 120000
+      "userId": 1,
+      "year": "2024-06",
+      "category": "금융",
+      "total": 120000
     },
     {
-      "userId":1,
-      "year":"2024-06",
-      "category":"생활",
-      "total" : 300000
+      "userId": 1,
+      "year": "2024-06",
+      "category": "생활",
+      "total": 300000
     }
   ],
-  "monthUse":[
+  "monthUse": [
     {
-      "userId":1,
-      "year":"2024-01",
+      "userId": 1,
+      "year": "2024-01",
       "total": 1000000
     },
     {
-      "userId":1,
-      "year":"2024-02",
+      "userId": 1,
+      "year": "2024-02",
       "total": 500000
     },
     {
-      "userId":1,
-      "year":"2024-03",
+      "userId": 1,
+      "year": "2024-03",
       "total": 800000
     },
     {
-      "userId":1,
-      "year":"2024-04",
+      "userId": 1,
+      "year": "2024-04",
       "total": 800040
     },
     {
-      "userId":1,
-      "year":"2024-05",
+      "userId": 1,
+      "year": "2024-05",
       "total": 300001
     },
     {
-      "userId":1,
-      "year":"2024-06",
+      "userId": 1,
+      "year": "2024-06",
       "total": 500000
     },
     {
-      "userId":1,
-      "year":"2024-07",
+      "userId": 1,
+      "year": "2024-07",
       "total": 750000
     },
     {
-      "userId":1,
-      "year":"2024-08",
+      "userId": 1,
+      "year": "2024-08",
       "total": 400001
     },
     {
-      "userId":1,
-      "year":"2024-09",
+      "userId": 1,
+      "year": "2024-09",
       "total": 301020
     },
     {
-      "userId":1,
-      "year":"2024-10",
+      "userId": 1,
+      "year": "2024-10",
       "total": 430278
     },
     {
-      "userId":1,
-      "year":"2024-11",
+      "userId": 1,
+      "year": "2024-11",
       "total": 242124
     },
     {
-      "userId":1,
-      "year":"2024-12",
+      "userId": 1,
+      "year": "2024-12",
       "total": 1000000
     }
   ]
