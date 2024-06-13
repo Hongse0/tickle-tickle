@@ -95,16 +95,13 @@ onMounted(async () => {
           <h2 class="mb-0 mx-3 mt-3">지출 루트</h2>
         </div>
       </div>
-      <div class="p-3 pb-0 mt-4 card-body">
+      <div class="p-3 pb-0 mt-4 card-body text-center">
         <div class="d-flex justify-content-center">
-          <div class="col-7 text-start">
+          <div class="col-12 text-start">
             <div class="chart">
 
               <canvas :id="chartId" class="chart-canvas" width="400" height="400"></canvas>
             </div>
-          </div>
-          <div class="my-auto col-5">
-
           </div>
         </div>
       </div>
