@@ -15,14 +15,14 @@
           <div class="row">
             <div class="col-8">
         <label for="challengeName" class="form-label">나만의 챌린지 이름</label>
-        <input id="projectName" type="text" class="form-control"  :v-model="challengeName"/>
+        <input id="projectName" type="text" class="form-control"  v-model="challengeName"/>
         <label class="mt-2 form-label">챌린지 태그</label>
         <div class="col-12">
           <select
             id="choices-category-edit"
             class="form-control"
             name="choices-category"
-            :v-model="challengeTag"
+            v-model="challengeTag"
           >
             <option value="Choice 1" selected>노카페인 챌린지</option>
             <option value="Choice 2">대중교통 챌린지</option>
@@ -33,7 +33,7 @@
           <div class="col-6">
             <label class="form-label">챌린지 시작일</label>
             <flat-pickr
-              :v-model="startDate"
+              v-model="startDate"
               class="form-control datetimepicker"
               placeholder="Please select start date"
               :config="config"
@@ -42,7 +42,7 @@
           <div class="col-6">
             <label class="form-label">챌린지 종료일</label>
             <flat-pickr
-              :v-model="endDate"
+              v-model="endDate"
               class="form-control datetimepicker"
               placeholder="Please select end date"
               :config="config"
@@ -71,10 +71,10 @@
           </button>
           <router-link to="/challenge/list">
           <button
-            type="button"
+            type="submit"
             name="button"
             class="m-0 btn bg-gradient-success ms-2"
-            @click="newChallenge"
+            @click="createChallenge"
           >
             Create Project
           </button></router-link>
@@ -179,7 +179,7 @@ onDayCreate: (dObj, dStr, fp, dayElem) => {
 };
 const fetchData = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/newChallenge");
+    const response = await axios.get("http://localhost:3000/pastChallenge");
     const jsonData = response.data;
     console.log(jsonData);
   }
@@ -188,16 +188,18 @@ const fetchData = async () => {
   }
 };
 
-const newChallenge = async () => {
+const createChallenge = async () => {
   const data = {
-    Name: challengeName.value,
-    Tag: challengeTag.value,
-    sDate: startDate.value,
-    eDate: endDate.value,
+    challengeName: challengeName.value,
+    challengeTag: challengeTag.value,
+    startDate: startDate.value,
+    endDate: endDate.value,
     userId: 1,
     newChallengeId : 1
   };
 
+  console.log(data)
+  
   try {
     await axios.post("http://localhost:3000/newChallenge", data);
     console.log("Challenge created successfully!")
