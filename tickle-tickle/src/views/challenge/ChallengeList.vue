@@ -125,7 +125,7 @@ const weeks = ref({});
 
 const getPastChallengeList = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/challenge");
+    const response = await axios.get("http://localhost:3000/challenge");
     const jsonData = response.data;
     pastChallengeList.value = jsonData;
   } catch (error) {
@@ -135,7 +135,7 @@ const getPastChallengeList = async () => {
 
 const getChallengeDays = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/challengeDays");
+    const response = await axios.get("http://localhost:3000/challengeDays");
     const jsonData = response.data;
     const allChallenges = Object.values(jsonData).flat();
     console.log(allChallenges);

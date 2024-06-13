@@ -95,7 +95,7 @@ const weeks = ref({});
 
 const getWeeks = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/challengeDays");
+    const response = await axios.get("http://localhost:3000/challengeDays");
     const jsonData = response.data;
     weeks.value = jsonData;
   } catch (error) {
