@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { useStore } from "vuex";
-
+import "./assets/css/fonts.css"
 import Sidenav from "./examples/Sidenav";
 // import Configurator from "@/examples/Configurator.vue";
 import Navbar from "@/examples/Navbars/Navbar.vue";

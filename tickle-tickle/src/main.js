@@ -23,6 +23,7 @@ import VueTilt from "vue-tilt.js";
 import VueSweetalert2 from "vue-sweetalert2";
 import ArgonDashboard from "./argon-dashboard";
 import mitt from "mitt";
+import "./assets/css/fonts.css"
 
 const emitter = mitt();
 const appInstance = createApp(App);
