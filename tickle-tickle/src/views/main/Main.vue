@@ -17,6 +17,29 @@ const chartData = ref({
 const analyticsData = ref([]);
 
 const userId = Number(localStorage.getItem("userId"));
+console.log(userId);
+
+const loginUser = async () => {
+  try {
+    const response = await axios.get("http://localhost:3000/users");
+    const users = response.data;
+    
+    // userId와 일치하는 사용자를 찾기
+    const user = users.find(user => user.userId === userId);
+
+    console.log()
+    if (user) {
+      console.log(`User found: ${user.name}`);
+      return user.name;
+    } else {
+      console.log('User not found');
+      return null; // 사용자를 찾지 못한 경우 null 반환
+    }
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    return null; // 네트워크 오류 등으로 인한 처리
+  }
+};
 
 
 // 데이터를 가져와서 차트를 업데이트하는 함수
@@ -70,10 +93,20 @@ const fetchAnalyticsData = async () => {
 };
 
 // 컴포넌트가 마운트되면 데이터 가져오기
-onMounted(() => {
+onMounted(async () => {
+  const userName = await loginUser(); // 사용자 정보 가져오기
+  
+  if (userName) {
+    greeting.value = `${userName}님! 안녕하세요`;
+  } else {
+    greeting.value = '사용자를 찾을 수 없습니다.'; // 사용자를 찾지 못한 경우 처리
+  }
+  
   fetchChartData();
   fetchAnalyticsData();
 });
+
+let greeting = ref('로딩 중...');
 
 // total 값을 기준으로 상위 5개 데이터를 추출
 const top5AnalyticsData = computed(() => {
@@ -87,18 +120,18 @@ const top5AnalyticsData = computed(() => {
   <div>
   <br><br>
   <div class="container">
-    <h1>홍세영님!</h1>
-    <h1>안녕하세요</h1>
-  </div>
+      <h4 style="color: white;">{{ greeting }}</h4>
+      <!-- <h5>안녕하세요</h5> -->
+    </div>
   
-  <br><br><br>
+  <br>
     <div class="container row justify-content-center d-flex">
       <!-- 연간 지출 그래프 쪽 -->
       <div class="container col-8 justify-content-center border border-dark">
         <!-- 연간 지출 그래프  -->
-        <div class="card">
-          <div class="card-body">
-            <h1>연간 지출 그래프</h1>
+       
+          
+            
             <gradient-line-chart
               id="chart-line"
               title="연간 지출 그래프"
@@ -107,14 +140,12 @@ const top5AnalyticsData = computed(() => {
 
             <br />
             
-          </div>
-        </div>
+          
+        
 
         <br />
         <!-- 지출 카테고리 순위 -->
-        <div class="card">
-          <div class="card-body">
-            <h1>지출 카테고리 순위</h1>
+        
             <analytics-card
               title="월별 지출 카테고리 순위"
               :headers="['카테고리', '사용 금액']"
@@ -122,8 +153,7 @@ const top5AnalyticsData = computed(() => {
             />
             <br>
             
-          </div>
-        </div>
+          
       </div>
 
       <!-- ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->

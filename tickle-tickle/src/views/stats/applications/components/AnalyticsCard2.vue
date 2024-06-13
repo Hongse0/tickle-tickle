@@ -21,10 +21,10 @@ defineProps({
 
 
 <template>
-  <div class="container">
+  <div>
   <div class="mt-4 card h-100 mt-md-0">
     <div class="p-3 pb-0 card-header">
-      
+      <h1>지출 카테고리 순위</h1>
     </div>
     <div class="px-3 pt-0 pb-2 card-body">
       <div class="p-0 table-responsive">
