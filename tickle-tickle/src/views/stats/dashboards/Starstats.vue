@@ -10,7 +10,7 @@ const chartValues = ref([]);
 // 데이터를 가져와서 차트를 업데이트하는 함수
 const fetchChartData = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/stats");
+    const response = await axios.get("http://localhost:3000/twenty");
     const jsonData = response.data;
     console.log(jsonData);
 

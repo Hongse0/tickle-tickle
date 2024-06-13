@@ -318,5 +318,43 @@
       "year": "2024-12",
       "total": 1000000
     }
+  ],
+  "twenty": [
+    {
+      "userId": 1,
+      "year": "2024-06",
+      "category": "쇼핑",
+      "total": 20000
+    },
+    {
+      "userId": 1,
+      "year": "2024-06",
+      "category": "술/유흥",
+      "total": 10300
+    },
+    {
+      "userId": 1,
+      "year": "2024-06",
+      "category": "교통",
+      "total": 11029
+    },
+    {
+      "userId": 1,
+      "year": "2024-06",
+      "category": "식비",
+      "total": 8373
+    },
+    {
+      "userId": 1,
+      "year": "2024-06",
+      "category": "금융",
+      "total": 9012
+    },
+    {
+      "userId": 1,
+      "year": "2024-06",
+      "category": "생활",
+      "total": 15064
+    }
   ]
 }
