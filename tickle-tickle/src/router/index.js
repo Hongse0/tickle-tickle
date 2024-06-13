@@ -8,6 +8,7 @@ import TransactionList from "../views/transaction/TransactionList.vue";
 import NewTransaction from "../views/transaction/NewTransaction.vue"
 import Starstats from "../views/stats/dashboards/Starstats.vue";
 import TransactionDetail from "../views/transaction/TransactionDetail.vue";
+import SignIn from "../views/login/SignIn.vue";
 
 // import lockIllustration from "../views/auth/lock/Illustration.vue";
 
@@ -59,6 +60,11 @@ const routes = [
     name: "stars",
     component: Starstats
   },
+  {
+    path: "/login/signIn",
+    name: "signIn",
+    component: SignIn
+  }
 
 
 

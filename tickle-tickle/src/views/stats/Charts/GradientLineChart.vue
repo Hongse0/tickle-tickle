@@ -240,6 +240,7 @@ onMounted(() => {
           :height="props.height"
         ></canvas>
       </div>
+      <h2>소비 분석을 통해 불필요한 지출을 줄이고, 저축을 늘려보세요.</h2>
     </div>
   </div>
 </div>

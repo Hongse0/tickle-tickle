@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from "vue";
+import { onUpdated } from "vue";
 import Chart from "chart.js/auto";
 
 const props = defineProps({
@@ -27,14 +27,19 @@ const props = defineProps({
     },
   },
 });
-onMounted(() => {
+
+onUpdated(() => {
   var ctx = document.getElementById(props.id).getContext("2d");
 
   let chartStatus = Chart.getChart(props.id);
   if (chartStatus != undefined) {
     chartStatus.destroy();
   }
+  console.log('data');
+  console.log(props.chart.datasets.data);
+  console.log('data');
 
+  
   new Chart(ctx, {
     type: "bar",
     data: {
@@ -91,7 +96,8 @@ onMounted(() => {
       },
     },
   });
-});
+}
+);
 </script>
 <template>
   <div class="container">
