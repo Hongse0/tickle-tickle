@@ -67,6 +67,12 @@ const routes = [
     name: "signIn",
     component: SignIn,
   },
+  {
+    path: "/transaction/TransactionDetail/:date", // 날짜 파라미터 추가
+    name: "TransactionDetail",
+    component: TransactionDetail,
+    props: true,
+  },
 ];
 
 const router = createRouter({
