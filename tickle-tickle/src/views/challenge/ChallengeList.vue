@@ -69,7 +69,7 @@
         <!-- Card header -->
         <div class="my-1 card-header col-8">
           <div class="text-center">
-            <h2 class="mb-0">무지출 챌린지</h2>
+            <h2 class="mb-0">{{ currentChallenge.challengeName }}</h2>
           </div>
 
           <div class="card-body">
@@ -121,13 +121,14 @@ import axios from "axios";
 
 const challengeList = ref([]);
 const pastChallengeList = ref([]);
-const weeks = ref({});
+const currentChallenge = ref({});
 
 const getPastChallengeList = async () => {
   try {
     const response = await axios.get("http://localhost:3000/challenge");
     const jsonData = response.data;
     pastChallengeList.value = jsonData;
+    currentChallenge.value = pastChallengeList.value[0];
   } catch (error) {
     console.log("Error fetch data ", error);
   }
@@ -138,9 +139,6 @@ const getChallengeDays = async () => {
     const response = await axios.get("http://localhost:3000/challengeDays");
     const jsonData = response.data;
     const allChallenges = Object.values(jsonData).flat();
-    console.log(allChallenges);
-    // weeks todo
-    weeks.value = weeks;
     challengeList.value = allChallenges;
   } catch (error) {
     console.log("Error fetch data", error);
