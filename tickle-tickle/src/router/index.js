@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+
 import Investment from "../views/investment/Investment.vue";
 import ChallengeList from "../views/challenge/ChallengeList.vue";
 import ChallengeCreate from "../views/challenge/ChallengeCreate.vue";
@@ -9,6 +9,7 @@ import NewTransaction from "../views/transaction/NewTransaction.vue"
 import Starstats from "../views/stats/dashboards/Starstats.vue";
 import TransactionDetail from "../views/transaction/TransactionDetail.vue";
 import SignIn from "../views/login/SignIn.vue";
+import Home from "../views/Home.vue";
 
 // import lockIllustration from "../views/auth/lock/Illustration.vue";
 
@@ -16,6 +17,11 @@ import SignIn from "../views/login/SignIn.vue";
 const routes = [
   {
     path: "/",
+    name: "Login",
+    component: SignIn,
+  },
+  {
+    path: "/home",
     name: "Home",
     component: Home,
   },

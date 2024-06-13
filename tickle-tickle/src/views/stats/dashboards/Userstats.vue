@@ -16,6 +16,9 @@ const chartData = ref({
 
 const analyticsData = ref([]);
 
+const userId = Number(localStorage.getItem("userId"));
+
+
 // 데이터를 가져와서 차트를 업데이트하는 함수
 const fetchChartData = async () => {
   try {
@@ -24,7 +27,7 @@ const fetchChartData = async () => {
     console.log(jsonData);
 
     // userId가 1인 데이터를 필터링
-    const filteredData = jsonData.filter(item => item.userId === 1);
+    const filteredData = jsonData.filter(item => item.userId === userId);
 
     // chartData 업데이트 (각 월의 total 값을 사용)
     // chartData.value.datasets[0].data = filteredData.map(item => item.total);
@@ -52,7 +55,7 @@ const fetchAnalyticsData = async () => {
     console.log(jsonData);
 
     // userId가 1인 데이터 필터링
-    const filteredData = jsonData.filter(item => item.userId === 1 && item.year === '2024-06');
+    const filteredData = jsonData.filter(item => item.userId === userId && item.year === '2024-06');
 
     // 각 카테고리의 total 값을 analyticsData에 업데이트
     analyticsData.value = filteredData.map(item => ({
