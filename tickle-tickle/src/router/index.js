@@ -1,29 +1,25 @@
 import { createRouter, createWebHistory } from "vue-router";
-
 import Investment from "../views/investment/Investment.vue";
 import ChallengeList from "../views/challenge/ChallengeList.vue";
 import ChallengeCreate from "../views/challenge/ChallengeCreate.vue";
 import Userstats from "../views/stats/dashboards/Userstats.vue";
 import TransactionList from "../views/transaction/TransactionList.vue";
-import NewTransaction from "../views/transaction/NewTransaction.vue"
+import NewTransaction from "../views/transaction/NewTransaction.vue";
 import Starstats from "../views/stats/dashboards/Starstats.vue";
 import TransactionDetail from "../views/transaction/TransactionDetail.vue";
 import SignIn from "../views/login/SignIn.vue";
-import Home from "../views/Home.vue";
-
-// import lockIllustration from "../views/auth/lock/Illustration.vue";
-
+import Main from "../views/main/Main.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Login",
-    component: SignIn,
+    // name: "Main",
+    component: Main,
   },
   {
-    path: "/home",
-    name: "Home",
-    component: Home,
+    path: "/main",
+    // name: "Main2",
+    component: Main,
   },
   {
     path: "/investment",
@@ -49,31 +45,28 @@ const routes = [
   {
     path: "/transaction/NewTransaction",
     name: "NewTransaction",
-    component: NewTransaction
+    component: NewTransaction,
   },
   {
     path: "/transaction/TransactionList",
     name: "TransactionList",
-    component: TransactionList
+    component: TransactionList,
   },
   {
     path: "/transaction/TransactionDetail",
     name: "TransactionDetail",
-    component: TransactionDetail
+    component: TransactionDetail,
   },
   {
     path: "/stats/stars",
     name: "stars",
-    component: Starstats
+    component: Starstats,
   },
   {
     path: "/login/signIn",
     name: "signIn",
-    component: SignIn
-  }
-
-
-
+    component: SignIn,
+  },
 ];
 
 const router = createRouter({
