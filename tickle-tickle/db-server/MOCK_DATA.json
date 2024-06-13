@@ -259,6 +259,28 @@
       "start": "2024-06-05",
       "cost": "50000",
       "userId": 1
+    },
+    {
+      "id": "1662",
+      "title": "주식 떡락이슈",
+      "memo": "안돼 ~~!",
+      "isIncome": false,
+      "selectedExpendCategory": "finance",
+      "category": "finance",
+      "start": "2024-06-04",
+      "cost": "10000",
+      "userId": 1
+    },
+    {
+      "id": "e9b3",
+      "title": "주식 다시 또 떡락 ..",
+      "memo": "안돼 ~~!2",
+      "isIncome": false,
+      "selectedExpendCategory": "finance",
+      "category": "finance",
+      "start": "2024-06-19",
+      "cost": "10000",
+      "userId": 1
     }
   ],
   "stats": [
@@ -384,70 +406,82 @@
       "userId": 1,
       "year": "2024-06",
       "category": "쇼핑",
-      "total": 20000
+      "total": 20000,
+      "id": "beda"
     },
     {
       "userId": 1,
       "year": "2024-06",
       "category": "술/유흥",
-      "total": 10300
+      "total": 10300,
+      "id": "278b"
     },
     {
       "userId": 1,
       "year": "2024-06",
       "category": "교통",
-      "total": 11029
+      "total": 11029,
+      "id": "1238"
     },
     {
       "userId": 1,
       "year": "2024-06",
       "category": "식비",
-      "total": 8373
+      "total": 8373,
+      "id": "2fb0"
     },
     {
       "userId": 1,
       "year": "2024-06",
       "category": "금융",
-      "total": 9012
+      "total": 9012,
+      "id": "1bcd"
     },
     {
       "userId": 1,
       "year": "2024-06",
       "category": "생활",
-      "total": 15064
+      "total": 15064,
+      "id": "26fc"
     }
   ],
   "twenty": [
     {
       "category": "쇼핑",
-      "total": 20000
+      "total": 20000,
+      "id": "4942"
     },
     {
       "category": "술/유흥",
-      "total": 10300
+      "total": 10300,
+      "id": "ffb2"
     },
     {
       "category": "교통",
-      "total": 11029
+      "total": 11029,
+      "id": "ebbd"
     },
     {
       "category": "식비",
-      "total": 8373
+      "total": 8373,
+      "id": "d495"
     },
     {
       "category": "금융",
-      "total": 9012
+      "total": 9012,
+      "id": "a1b4"
     },
     {
       "category": "생활",
-      "total": 15064
+      "total": 15064,
+      "id": "efa4"
     },
     {
       "category": "기타",
-      "total": 3838
+      "total": 3838,
+      "id": "24b9"
     }
   ],
-
   "challenge": [
     {
       "userId": 1,
@@ -456,7 +490,8 @@
       "challengeTag": "노카페인 챌린지",
       "startDate": "2024-06-13",
       "endDate": "2024-07-13",
-      "perDayCost": 1500
+      "perDayCost": 1500,
+      "id": "fe0d"
     },
     {
       "userId": 1,
@@ -465,7 +500,8 @@
       "challengeTag": "대중교통 챌린지",
       "startDate": "2024-05-13",
       "endDate": "2024-06-13",
-      "perDayCost": 40000
+      "perDayCost": 40000,
+      "id": "4d66"
     },
     {
       "userId": 1,
@@ -474,7 +510,8 @@
       "challengeTag": "집밥 챌린지",
       "startDate": "2024-04-13",
       "endDate": "2024-05-13",
-      "perDayCost": 80000
+      "perDayCost": 80000,
+      "id": "6f35"
     },
     {
       "userId": 1,
@@ -483,10 +520,10 @@
       "challengeTag": "금연 챌린지",
       "startDate": "2024-03-13",
       "endDate": "2024-04-13",
-      "perDayCost": 180000
+      "perDayCost": 180000,
+      "id": "9fa5"
     }
   ],
-
   "challengeDays": {
     "week1": [
       {
