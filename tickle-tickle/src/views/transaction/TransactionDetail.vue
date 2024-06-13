@@ -76,6 +76,9 @@ onMounted(async () => {
 
         result.value = allData.filter((transaction) => transaction.start.split("T")[0] === date);
 
+
+        
+
         const dataTableBasic = new DataTable("#datatable-basic", {
             searchable: false,
             fixedHeight: true,
@@ -83,6 +86,10 @@ onMounted(async () => {
 
         const tableRows = result.value.map((obj) => {  // result.value를 사용
             const { start, cost, title, memo, isIncome, category } = obj;
+            const deleteBtn = `<div class="col text-end mx-3 float-right">
+                            <a href="aaa" class="text-right btn btn-danger btn-sm active fw-light" role="button"
+                                aria-pressed="true" @click="goToTransactionList">삭제</a>
+                        </div>`
             return [
                 // 컬럼 순서 여기서 지정
                 title,
@@ -92,6 +99,7 @@ onMounted(async () => {
                 start,
                 cost.toString(),
                 memo,
+                deleteBtn
             ];
         });
 
@@ -115,7 +123,7 @@ onMounted(async () => {
                             오늘의 수입과 지출을 확인해보세요.
                         </p>
                         <div class="col text-end mx-3 float-right">
-                            <a href="#" class="text-right btn btn-primary btn-sm active" role="button"
+                            <a href="#" class="fw-light text-right btn btn-primary btn-sm active" role="button"
                                 aria-pressed="true" @click="goToTransactionList">목록</a>
                         </div>
                     </div>
@@ -141,6 +149,9 @@ onMounted(async () => {
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         메모
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        삭제
                                     </th>
                                 </tr>
                             </thead>
