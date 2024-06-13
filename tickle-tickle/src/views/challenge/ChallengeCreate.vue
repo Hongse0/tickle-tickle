@@ -9,15 +9,13 @@
               나만의 챌린지를 만들어보세요!
           </p>
       </div>
-      
           <hr class="my-3 horizontal dark" />
+          </div>
 
-        </div>
           <div class="row">
             <div class="col-8">
         <label for="projectName" class="form-label">나만의 챌린지 이름</label>
         <input id="projectName" type="text" class="form-control" />
-        
         <label class="mt-2 form-label">챌린지 태그</label>
         <div class="col-12">
           <select
@@ -30,10 +28,8 @@
             <option value="Choice 3">집밥 챌린지</option>
             <option value="Choice 4">금연 챌린지</option>
           </select>
-          
-        </div></div>
-        <div class="row">
-          <div class="col-4">
+          <div class="row">
+          <div class="col-6">
             <label class="form-label">챌린지 시작일</label>
             <flat-pickr
               v-model="date"
@@ -42,7 +38,7 @@
               :config="config"
             ></flat-pickr>
           </div>
-          <div class="col-4">
+          <div class="col-6">
             <label class="form-label">챌린지 종료일</label>
             <flat-pickr
               v-model="endDate"
@@ -50,13 +46,15 @@
               placeholder="Please select end date"
               :config="config"
             ></flat-pickr>
+          </div> 
           </div>
-          <complex-background-card
+      </div>
+        </div>
+        <complex-background-card
               image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/window-desk.jpg"
-              description="User #hashtag in a photo on social media and get $10 for each purchase you make."
+              description="AI추천 챌린지"
               :action="{ route: 'javascript:;', label: 'Read more' }"
             />
-        </div>
         <div class="card-body p-3">
           <div class="row d-flex justify-content-center">
             <outlined-counter-card
@@ -153,6 +151,12 @@ const date = "";
 const endDate = "";
 const config = {
 allowInput: true,
+onDayCreate: (dObj, dStr, fp, dayElem) => {
+    // 오늘 날짜에서 "today" 클래스 제거
+    if (dayElem.classList.contains("today")) {
+      dayElem.classList.remove("today");
+    }
+  }
 };
 
 
