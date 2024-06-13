@@ -28,5 +28,4 @@ const showNavbar = computed(() => store.state.showNavbar);
     /> -->
   </main>
   <!-- <div v-if="layout === 'landing'">Landing Page Content</div> -->
-
 </template>

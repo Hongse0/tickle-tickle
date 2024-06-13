@@ -4,7 +4,7 @@
       <!-- 카드  -->
 
       <!-- Card header -->
-      <div class="my-1 card-header col-8">
+      <div @click="deleteEditView" class="my-1 card-header col-8">
         <div class="text-center">
           <h2 class="mb-0">무지출 챌린지</h2>
         </div>
@@ -12,17 +12,16 @@
         <div class="card-body">
           <!-- 28개 컴포넌트 -->
           <div>
-            <MonthChallenge @click="toggleComponent"> </MonthChallenge>
-          </div>
-
-          <br />
-          <!-- 입력 뷰 -->
-          <div
-            v-if="showComponent"
-            class="card p-4"
-            style="margin-left: 80px; width: 80%"
-          >
-            <EditChallenge></EditChallenge>
+            <MonthChallenge> </MonthChallenge>
+            <br />
+            <!-- 입력창 -->
+            <div
+              class="card p-4"
+              :editChallengeDay="editChallengeDay"
+              style="margin-left: 80px; width: 80%"
+            >
+              <EditChallenge></EditChallenge>
+            </div>
           </div>
         </div>
       </div>
@@ -37,7 +36,6 @@
 
     <!-- 아래 -->
     <div>
-      <br v-if="!showComponent" />
       <AuthorsTable
         style="width: 80%; margin-left: 50px"
         :challengeList="challengeList"
@@ -54,18 +52,15 @@ import PastChallengeSideBar from "./components/PastChallengeSideBar.vue";
 import EditChallenge from "./components/EditChallenge.vue";
 import MonthChallenge from "./components/MonthChallenge.vue";
 
-const showComponent = ref(false);
-const toggleComponent = () => {
-  showComponent.value = !showComponent.value;
-};
 // todo - axios, pinina
+
+// 하단
 const challengeList = ref([
   {
     id: 1,
     name: "챌린지 1",
     memo: "개휘1",
     status: true,
-
     date: "2024-06-12",
   },
   {
@@ -77,26 +72,33 @@ const challengeList = ref([
   },
 ]);
 
+// 옆에
 const pastChallengeList = ref([
   {
-    id: 4,
+    challengeId: 4,
     name: "챌린지4 ",
     date: "2024-06-14",
   },
   {
-    id: 3,
+    challengeId: 3,
     name: "챌린지 3",
     date: "2024-06-13",
   },
   {
-    id: 2,
+    challengeId: 2,
     name: "챌린지 2",
     date: "2024-06-12",
   },
   {
-    id: 1,
+    challengeId: 1,
     name: "챌린지 1",
     date: "2024-06-11",
   },
 ]);
+
+const editChallengeDay = ref({
+  day: 1,
+  status: true,
+  memo: "날짜",
+});
 </script>

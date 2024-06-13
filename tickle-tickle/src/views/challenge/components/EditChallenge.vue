@@ -12,28 +12,44 @@
       </div>
     </div>
 
-    <label class="form-label mb-2 text-sm">날짜</label>
-    <flat-pickr
-      style="width: 90%"
-      v-model="date"
-      class="form-control datetimepicker"
-      placeholder="날짜를 선택하세요"
-      :config="config"
-    ></flat-pickr>
+    <label class="form-label mb-2 text-sm">Day</label>
+    <label class="form-label mb-2 text-sm">{{ day.id }}</label>
+    <div></div>
 
     <label class="form-label my-2 mt-2 text-sm">상태</label>
-    <argon-input style="width: 90%" placeholder="상태" />
+    <argon-input v-model="day.status" style="width: 90%" placeholder="상태" />
     <label class="form-label my-2 text-sm">메모</label>
-    <argon-input style="width: 90%" placeholder="메모" />
+    <argon-input v-model="day.memo" style="width: 90%" placeholder="메모" />
   </div>
 </template>
 
 <script setup>
-import flatPickr from "vue-flatpickr-component";
 import ArgonInput from "@/components/ArgonInput.vue";
 import ArgonButton from "@/components/ArgonButton.vue";
+import { defineProps, ref } from "vue";
+import accessEmitter from "@/config/accessEmitter.js";
+const emitter = accessEmitter();
 
-const config = {
-  allowInput: true,
-};
+const day = ref({
+  id: 1,
+  status: false,
+  date: "2024-06-12",
+  memo: "1일",
+});
+
+function handleDayChallengeInfo(event) {
+  day.value = event;
+}
+
+// update ,
+// 다른변수, 갱신
+emitter.on("postDayChallengeInfo", handleDayChallengeInfo);
+
+defineProps({
+  editChallengeDay: {
+    type: Object,
+    required: false,
+    default: () => {},
+  },
+});
 </script>

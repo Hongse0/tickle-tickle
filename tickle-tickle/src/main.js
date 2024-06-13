@@ -22,8 +22,11 @@ import "./assets/css/nucleo-svg.css";
 import VueTilt from "vue-tilt.js";
 import VueSweetalert2 from "vue-sweetalert2";
 import ArgonDashboard from "./argon-dashboard";
+import mitt from "mitt";
 
+const emitter = mitt();
 const appInstance = createApp(App);
+appInstance.config.globalProperties.emitter = emitter;
 appInstance.use(store);
 appInstance.use(router);
 appInstance.use(VueTilt);

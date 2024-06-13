@@ -5,7 +5,7 @@
     <ul class="list-group">
       <li
         v-for="challenge in pastChallengeList"
-        :key="challenge.id"
+        :key="challenge.challengeId"
         class="list-group-item mx-3 border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg"
       >
         <div class="d-flex flex-column">
