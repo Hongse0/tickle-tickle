@@ -1,15 +1,49 @@
 <script>
 import axios from "axios";
-
+import US from "@/assets/img/icons/flags/US.png";
+import DE from "@/assets/img/icons/flags/DE.png";
+import GB from "@/assets/img/icons/flags/GB.png";
+import BR from "@/assets/img/icons/flags/BR.png";
+import AU from "@/assets/img/icons/flags/AU.png";
 
 export default {
     data() {
-        ``
         return {
             NewsListNaver: [],
             title: '',
             description: '',
-
+            sales: {
+                us: {
+                    country: "United States",
+                    sale: "1,367.00",
+                    bounce: "-0.44%",
+                    flag: US,
+                },
+                germany: {
+                    country: "Germany",
+                    sale: "3.900",
+                    bounce: "-.22%",
+                    flag: DE,
+                },
+                britain: {
+                    country: "Great Britain",
+                    sale: "1,478.93",
+                    bounce: "-0.34%",
+                    flag: GB,
+                },
+                brasil: {
+                    country: "Brasil",
+                    sale: "253.29",
+                    bounce: "-0.23%",
+                    flag: BR,
+                },
+                australia: {
+                    country: "Australia",
+                    sale: "911.08",
+                    bounce: "-0.39%",
+                    flag: AU,
+                },
+            }
         };
     },
 
@@ -121,7 +155,7 @@ export default {
                             <div class="card">
                                 <div class="p-3 pb-0 card-header">
                                     <div class="d-flex justify-content-between">
-                                        <h6 class="mb-0">Sales by Country</h6>
+                                        <h6 class="mb-0">오늘의 환율</h6>
                                     </div>
                                 </div>
                                 <div class="p-3 card-body">
@@ -143,7 +177,7 @@ export default {
                                                 </div>
                                                 <div class="text-center col">
                                                     <p class="mb-0 text-xs font-weight-bold">Bounce:</p>
-                                                    <h6 class="mb-0 text-sm">{{ bounce }}</h6>
+                                                    <h6 class="mb-0 text-sm text-primary">{{ bounce }}</h6>
                                                 </div>
                                             </div>
                                             <hr class="mt-3 mb-1 horizontal dark" />
