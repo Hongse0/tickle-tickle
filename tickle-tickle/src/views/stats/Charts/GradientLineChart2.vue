@@ -37,7 +37,7 @@ const props = defineProps({
 // });
 
 onUpdated(() => {
-  alert(props.chart.datasets[0]);
+  // alert(props.chart.datasets[0]);
   const ctx = document.getElementById(props.id)?.getContext("2d");
 
   if (!ctx) {
@@ -73,82 +73,96 @@ onUpdated(() => {
   console.log('datasets');
   console.log(datasets);
   console.log('end');
-  let datasets2 = [1,2,3,4,5,6];
-  let lable2 = ['1월','2월','3월','1월','1월','1월',];
-
+  // let datasets2 = [1,500,3,4,5,6];
+  // let lable2 = ['1월','2월','3월','1월','1월','1월',];
   new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: lable2,
-      datasets: datasets2,
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: false,
-        },
+      type: "line",
+      data: {
+        labels: props.chart.labels,
+        datasets: datasets
+        
+        // [
+        //   {
+        //     label: 'x',
+        //     tension: 0.4,
+        //     borderWidth: 0,
+        //     pointRadius: 0,
+        //     borderColor: "#4BB543 ",
+        //     backgroundColor: gradientStroke1,
+        //     // eslint-disable-next-line no-dupe-keys
+        //     borderWidth: 3,
+        //     fill: true,
+        //     data: datasets2,
+        //     maxBarThickness: 6,
+        //   },
+          
+        // ],
       },
-      interaction: {
-        intersect: false,
-        mode: "index",
-      },
-      scales: {
-        y: {
-          grid: {
-            drawBorder: false,
-            display: true,
-            drawOnChartArea: true,
-            drawTicks: false,
-            borderDash: [5, 5],
-          },
-          ticks: {
-            display: true,
-            padding: 10,
-            color: "#fbfbfb",
-            font: {
-              size: 11,
-              family: "Open Sans",
-              style: "normal",
-              lineHeight: 2,
-            },
-          },
-        },
-        x: {
-          grid: {
-            drawBorder: false,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
             display: false,
-            drawOnChartArea: false,
-            drawTicks: false,
-            borderDash: [5, 5],
           },
-          ticks: {
-            display: true,
-            color: "#ccc",
-            padding: 20,
-            font: {
-              size: 11,
-              family: "Open Sans",
-              style: "normal",
-              lineHeight: 2,
+        },
+        interaction: {
+          intersect: false,
+          mode: "index",
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: "#fbfbfb",
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: "normal",
+                lineHeight: 2,
+              },
+            },
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5],
+            },
+            ticks: {
+              display: true,
+              color: "#ccc",
+              padding: 20,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: "normal",
+                lineHeight: 2,
+              },
             },
           },
         },
       },
-    },
-  });
+    });
 });
 </script>
 
 <template>
   <div class="container">
     <div class="card z-index-2">
+     
       <div class="pb-0 card-header mb-0">
-        <h1>이 그래프는 홍세영님의 1년간 월별 소비를 보여주고 있어요.</h1>
-      </div>
-      <div class="pb-0 card-header mb-0">
-        <h6>{{ props.title }}</h6>
+        
         <!-- eslint-disable-next-line vue/no-v-html -->
         <p v-if="props.description" class="text-sm" v-html="props.description" />
       </div>
@@ -160,7 +174,7 @@ onUpdated(() => {
             :height="props.height"
           ></canvas>
         </div>
-        <h2>소비 분석을 통해 불필요한 지출을 줄이고, 저축을 늘려보세요.</h2>
+        
       </div>
     </div>
   </div>

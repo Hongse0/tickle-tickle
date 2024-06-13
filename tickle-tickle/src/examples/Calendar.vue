@@ -46,27 +46,47 @@ onMounted(async () => {
     const response = await axios.get('http://localhost:3000/transactions');
     if (response.data && response.data.length > 0) {
       const event = response.data; // title에 cost 결과값을 넣기
-
-
+     
       // 날짜별 cost 합산을 위한 객체
-      const groupedEvents = event.reduce((acc, event) => {
-        const date = event.start.split('T')[0]; // 날짜만 추출
-        if (!acc[date]) {
-          acc[date] = 0;
+      const groupedIncomeEvents = event.reduce((acc, event) => {
+        if (event.isIncome) { // isIncome이 true인 경우에만 cost를 더함
+          const date = event.start.split('T')[0]; // 날짜만 추출
+          if (!acc[date]) {
+            acc[date] = 0;
+          }
+          acc[date] += parseInt(event.cost);
         }
-        acc[date] += parseInt(event.cost);
+        return acc;
+      }, {});
+
+      const groupedExpenseEvents = event.reduce((acc, event) => {
+        if (!event.isIncome) { // isIncome이 false인 경우에만 cost를 더함
+          const date = event.start.split('T')[0]; // 날짜만 추출
+          if (!acc[date]) {
+            acc[date] = 0;
+          }
+          acc[date] += parseInt(event.cost);
+        }
         return acc;
       }, {});
 
       // 합산된 cost 값을 이벤트 객체 배열로 변환
-      const summedEvents = Object.keys(groupedEvents).map(date => ({
-        id: date,
+      const summedIncomeEvents = Object.keys(groupedIncomeEvents).map(date => ({
+        id: `+ ${date}`,
         start: date,
-        title: `+ ${groupedEvents[date]}`,
+        title: `+ ${groupedIncomeEvents[date]}`,
       }));
 
+      const summedExpenseEvents = Object.keys(groupedExpenseEvents).map(date => ({
+        id: `- ${date}`,
+        start: date,
+        title: `- ${groupedExpenseEvents[date]}`,
+        color: 'red', // 빨간색으로 지정
 
+      }));
 
+      // 두 개의 이벤트 배열을 합침
+      const summedEvents = [...summedIncomeEvents, ...summedExpenseEvents];
       calendar = new Calendar(document.getElementById(props.id), {
         contentHeight: "auto",
         plugins: [dayGridPlugin],
