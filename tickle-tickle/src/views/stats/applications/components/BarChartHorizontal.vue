@@ -39,7 +39,7 @@ onUpdated(() => {
   console.log(props.chart.datasets.data);
   console.log('data');
 
-  
+
   new Chart(ctx, {
     type: "bar",
     data: {
@@ -101,24 +101,19 @@ onUpdated(() => {
 </script>
 <template>
   <div class="container">
-  <div class="card z-index-2">
-    
-    <div class="p-3 pb-0 card-header">
-      <h1>별별 통계</h1>
-      <br>
-      <h2>이 그래프는 비슷한 수입을 가진 사람들의 자금 
-사용처를 분석한 결과에요.</h2>
-      <h6>{{ props.title }}</h6>
-    </div>
-    <div class="p-3 card-body">
-      <div class="chart">
-        <canvas
-          :id="props.id"
-          class="chart-canvas"
-          :height="props.height"
-        ></canvas>
+    <div class="card z-index-2">
+
+      <div class="p-3 pb-0 card-header mx-3 mt-3">
+        <h2 class="mb-2">별별 통계</h2>
+        <h3>이 그래프는 비슷한 수입을 가진 사람들의 자금
+          사용처를 분석한 결과에요.</h3>
+        <h6>{{ props.title }}</h6>
+      </div>
+      <div class="p-3 card-body">
+        <div class="chart">
+          <canvas :id="props.id" class="chart-canvas" :height="props.height"></canvas>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
