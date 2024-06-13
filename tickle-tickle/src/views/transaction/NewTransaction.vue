@@ -2,9 +2,12 @@
 import { onMounted } from "vue";
 import flatPickr from "vue-flatpickr-component";
 import axios from 'axios';
-//import Dropzone from "dropzone";
 import Quill from "quill";
 import Choices from "choices.js";
+import { ref } from "vue";
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const getChoices = (id) => {
   if (document.getElementById(id)) {
@@ -16,8 +19,6 @@ const getChoices = (id) => {
   }
 };
 
-import { ref } from "vue";
-
 const fetchData = async () => {
   try {
     const response = await axios.get("http://localhost:3000/transactions");
@@ -28,12 +29,6 @@ const fetchData = async () => {
     console.error(error)
   }
 };
-
-// const createData = async() =>{
-//   try{
-//     const response = await axios.post("http://localhost:3000/transactions")
-//   }
-// }
 
 const transactionName = ref("");
 const selectedCategory = ref("income"); // 초기값으로 수입을 선택함
@@ -58,12 +53,11 @@ const submitForm = async () => {
   try {
     await axios.post("http://localhost:3000/transactions", data);
     console.log("Transaction created successfully!")
+    await router.push('/transaction/TransactionList');
   } catch (error) {
     console.error("Error creating transaction:", error);
   }
 }
-
-
 
 // const date = "";
 const config = {
@@ -88,46 +82,6 @@ onMounted(() => {
   fetchData();
 });
 
-
-
-//   카테고리 미리 선택해놓는 코드
-// if (document.getElementById("choices-multiple-remove-button")) {
-//   var element = document.getElementById("choices-multiple-remove-button");
-//   const example = new Choices(element, {
-//     removeItemButton: true,
-//     allowHTML: true,
-//   });
-
-
-//   example.setChoices(
-//     [
-//       {
-//         value: "One",
-//         label: "Label One",
-//         disabled: true,
-//       },
-//       {
-//         value: "Two",
-//         label: "Label Two",
-//         selected: true,
-//       },
-//       {
-//         value: "Three",
-//         label: "Label Three",
-//       },
-//     ],
-//     "value",
-//     "label",
-//     false
-//   );
-//}
-
-// Dropzone.autoDiscover = false;
-// var drop = document.getElementById("dropzone");
-// new Dropzone(drop, {
-//   url: "/file/post",
-//   addRemoveLinks: true,
-// });
 
 </script>
 <template>
