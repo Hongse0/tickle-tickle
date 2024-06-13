@@ -2,10 +2,17 @@
 import { onMounted, ref } from "vue";
 import { DataTable } from "simple-datatables";
 import axios from 'axios';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+
+
 const route = useRoute();
 const result = ref([]);
 const date = route.params.date;
+const router = useRouter();
+const goToTransactionList = () => {
+    // TransactionList 페이지로 이동
+    router.push({ name: 'TransactionList' });
+}
 
 // 카테고리 변환 함수
 const getCategoryDisplayName = (category) => {
@@ -107,7 +114,12 @@ onMounted(async () => {
                         <p class="mb-0 text-sm">
                             오늘의 수입과 지출을 확인해보세요.
                         </p>
+                        <div class="col text-end mx-3 float-right">
+                            <a href="#" class="text-right btn btn-primary btn-sm active" role="button"
+                                aria-pressed="true" @click="goToTransactionList">목록</a>
+                        </div>
                     </div>
+
                     <div class="table-responsive">
                         <table id="datatable-basic" class="table table-flush">
                             <thead class="thead-light">
