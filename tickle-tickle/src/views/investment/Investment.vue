@@ -10,8 +10,9 @@ export default {
     data() {
         return {
             NewsListNaver: [],
-            title: '',
-            description: '',
+            titles: [],
+            description: [],
+            links: [],
             sales: {
                 us: {
                     country: "United States",
@@ -22,7 +23,7 @@ export default {
                 germany: {
                     country: "Germany",
                     sale: "3.900",
-                    bounce: "-.22%",
+                    bounce: "-0.22%",
                     flag: DE,
                 },
                 britain: {
@@ -53,6 +54,9 @@ export default {
 
     methods: {
         getNewsList() {
+            this.titles = []
+            this.descriptions = []
+            this.links = []
             const URL =
                 `/v1/search/news.json?query=${encodeURI('경제')}&start=1&display=10&sort=sim`;
             const clientId = "zkakaRsefw05VWLfk39a";
@@ -66,12 +70,14 @@ export default {
                     },
                 })
                 .then((response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     // this.NewsListNaver = this.NewsListNaver.concat(response.data.items);
                     // console.log(this.NewsListNaver);
-                    console.log(response.data.items[0].title)
-                    this.title = response.data.items[0].title;
-                    this.description = response.data.items[0].description;
+                    for (let i = 0; i < 6 && i < response.data.items.length; i++) {
+                        this.titles.push(response.data.items[i].title);
+                        this.descriptions.push(response.data.items[i].description);
+                        this.links.push(response.data.items[i].originallink);
+                    }
                 });
         },
     },
@@ -95,21 +101,21 @@ export default {
             <div class="mb-3 card">
                 <div class="p-3 card-body">
                     <div class="row mt-4">
-                        <div class="col-md-7">
-                            <div class="card">
+                        <div class="col-md-6">
+                            <div class="card h-100">
                                 <div class="card-header pb-0 px-3">
-                                    <h6 class="mb-0">오늘의 증시</h6>
+                                    <h6 class="ps-2 mb-0">오늘의 증시</h6>
                                 </div>
                                 <div class="card-body pt-4 p-3">
                                     <ul class="list-group">
                                         <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-sm"> 코스피 KOSPI </h6>
+                                            <h6 class="ps-2 mb-1 text-sm"> 코스피 KOSPI </h6>
 
-                                            <span class="text-dark font-weight-bold ms-sm-2">
+                                            <span class="ps-2 text-dark font-weight-bold ms-sm-2">
                                                 2,764.76 </span>
-                                            <span class="mb-2 text-danger text=xs">
+                                            <span class="ps-2 mb-2 text-danger text=xs">
                                                 🔺38.16
-                                                <span class="ms-3 ms-sm-2 text-danger font-weight-bold">
+                                                <span class="ps-2 ms-3 ms-sm-2 text-danger font-weight-bold">
                                                     +1.44% </span>
                                             </span>
                                         </div>
@@ -119,13 +125,13 @@ export default {
                                 <div class="card-body pt-4 p-3">
                                     <ul class="list-group">
                                         <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-sm"> 코스닥 KOSDAQ </h6>
+                                            <h6 class="ps-2 mb-1 text-sm"> 코스닥 KOSDAQ </h6>
 
-                                            <span class="text-dark font-weight-bold ms-sm-2">
+                                            <span class="ps-2 text-dark font-weight-bold ms-sm-2">
                                                 875.55 </span>
-                                            <span class="mb-2 text-danger text=xs">
+                                            <span class="ps-2 mb-2 text-danger text=xs">
                                                 🔺4.83
-                                                <span class="ms-3 ms-sm-2 text-danger font-weight-bold">
+                                                <span class="ps-2 ms-3 ms-sm-2 text-danger font-weight-bold">
                                                     +0.55% </span>
                                             </span>
                                         </div>
@@ -135,13 +141,13 @@ export default {
                                 <div class="card-body pt-4 p-3">
                                     <ul class="list-group">
                                         <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-sm"> 나스닥 NDAQ</h6>
+                                            <h6 class="mb-1 text-sm ps-2"> 나스닥 NDAQ</h6>
 
-                                            <span class="text-dark font-weight-bold ms-sm-2">
+                                            <span class="ps-2 text-dark font-weight-bold ms-sm-2">
                                                 59.55 USD </span>
-                                            <span class="mb-2 text-danger text=xs">
+                                            <span class="ps-2 mb-2 text-danger text=xs">
                                                 🔺38.16
-                                                <span class="ms-3 ms-sm-2 text-danger font-weight-bold">
+                                                <span class="ps-2 ms-3 ms-sm-2 text-danger font-weight-bold">
                                                     +0.90% </span>
                                             </span>
                                         </div>
@@ -151,7 +157,7 @@ export default {
 
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <div class="card">
                                 <div class="p-3 pb-0 card-header">
                                     <div class="d-flex justify-content-between">
@@ -191,44 +197,64 @@ export default {
                         <div class="col-12 col-lg-6">
                             <!-- 메인 뉴스 -->
                             <div class="card h-100">
-                                <div class="py-3 card-header d-flex align-items-center border-bottom">
-                                    <div class="d-flex align-items-center">
+                                <a href="https://imnews.imbc.com/replay/2024/nwtoday/article/6606941_36523.html">
+                                    <div class="py-3 card-header d-flex align-items-center border-bottom">
+                                        <div class="d-flex align-items-center">
 
-                                        <div class="mx-1">
-                                            <p class="text-xl text-dark font-black" style="font-weight: 900;">세계은행 "올해
-                                                세계
-                                                경제성장률
-                                                2.6%로 안정적"</p>
-                                            <small class="d-block text-muted">입력 2024-06-12 06:16 | 수정 2024-06-12
-                                                06:37</small>
+                                            <div class="mx-1">
+
+                                                <p class="text-2xl text-dark font-black" style="font-weight: 900;">
+                                                    세계은행 "올해
+                                                    세계
+                                                    경제성장률
+                                                    2.6%로 안정적"</p>
+
+                                                <small class="d-block text-muted">입력 2024-06-12 06:16 | 수정 2024-06-12
+                                                    06:37</small>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="card-body">
-                                    <img alt="Image placeholder"
-                                        src="https://pip-thumb.zumst.com/api/v1/tdbez_VC002_91207565_content.jpeg?w=640&h=360"
-                                        class="shadow-lg img-fluid border-radius-lg mb-3" />
-                                    <p class="mb-4">
-                                        올해 세계 경제는 작년과 비슷한 성장세를 유지하면서 안정될 것으로 전망됐습니다.<br><br>
-                                        지만 저소득 국가의 성장률은 작년보다 낮을 것으로 예상돼, 세계 경제 성장률이 코로나19 이전 수준을 회복하려면 앞으로 몇 년 더 필요할 것으로
-                                        예상됐습니다.<br><br>
-                                        세계은행은 현지시간 11일 세계경제전망을 발표하고 올해 세계 경제 성장률을 2.6%로 전망했습니다.<br><br>
-                                        지난해 세계 경제 성장률 추정치와 같은 수치로, 세계은행은 "올해 세계 경제가 코로나19 이후 3년 만에 처음으로 안정될 것으로 예상된다"고
-                                        밝혔습니다.<br><br>
-                                        이번 전망치는 세계은행이 지난 1월 발표한 2.4%보다 0.2% 포인트 높은 수치입니다.<br><br>
-                                        성장률 전망치 상승의 주요 원인은 미국 경제의 예상보다 강한 성장으로 분석됐습니다.<br><br>
-                                        올해 선진국 경제 성장률 전망치는 1.5%로 1월보다 0.3% 포인트 올랐고, 특히 미국은 0.9% 포인트 오른 2.5% 성장률로
-                                        전망됐습니다.<br>
-                                        하지만 신흥시장과 개발도상국의 성장률은 작년보다도 낮을 전망입니다.<br><br>
-                                        이들 국가의 성장률은 작년 4.2%에서 올해 4.0%로 전망됐습니다.<br><br>
-                                        MBC뉴스 김민욱입니다.<br><br>
-                                    </p>
+                                    <div class="card-body">
+                                        <img alt="Image placeholder"
+                                            src="https://pip-thumb.zumst.com/api/v1/tdbez_VC002_91207565_content.jpeg?w=640&h=360"
+                                            class="shadow-lg img-fluid border-radius-lg mb-3" />
+                                        <p class="mb-4">
+                                            올해 세계 경제는 작년과 비슷한 성장세를 유지하면서 안정될 것으로 전망됐습니다.<br><br>
+                                            지만 저소득 국가의 성장률은 작년보다 낮을 것으로 예상돼, 세계 경제 성장률이 코로나19 이전 수준을 회복하려면 앞으로 몇 년 더 필요할
+                                            것으로
+                                            예상됐습니다.<br><br>
+                                            세계은행은 현지시간 11일 세계경제전망을 발표하고 올해 세계 경제 성장률을 2.6%로 전망했습니다.<br><br>
+                                            지난해 세계 경제 성장률 추정치와 같은 수치로, 세계은행은 "올해 세계 경제가 코로나19 이후 3년 만에 처음으로 안정될 것으로
+                                            예상된다"고
+                                            밝혔습니다.<br><br>
+                                            이번 전망치는 세계은행이 지난 1월 발표한 2.4%보다 0.2% 포인트 높은 수치입니다.<br><br>
+                                            성장률 전망치 상승의 주요 원인은 미국 경제의 예상보다 강한 성장으로 분석됐습니다.<br><br>
+                                            올해 선진국 경제 성장률 전망치는 1.5%로 1월보다 0.3% 포인트 올랐고, 특히 미국은 0.9% 포인트 오른 2.5% 성장률로
+                                            전망됐습니다.<br>
+                                            하지만 신흥시장과 개발도상국의 성장률은 작년보다도 낮을 전망입니다.<br><br>
+                                            이들 국가의 성장률은 작년 4.2%에서 올해 4.0%로 전망됐습니다.<br><br>
+                                            MBC뉴스 김민욱입니다.<br><br>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="mt-4 mb-3 card mt-lg-0" v-for="(item, index) in titles" :key="index">
+                                <div class="pb-0 card-body">
+                                    <a :href="links[index]">
+                                        <div class="mb-3 row align-items-center">
+                                            <h5 class="mb-1 text-gradient text-success">
+                                                <div v-html="item"></div>
+                                            </h5>
+                                        </div>
+                                        <div class="mb-4" v-html="descriptions[index]">
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
