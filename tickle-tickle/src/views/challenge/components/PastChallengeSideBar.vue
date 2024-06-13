@@ -10,9 +10,9 @@
       >
         <div class="d-flex flex-column">
           <h6 class="text-dark font-weight-bold text-sm">
-            {{ challenge.name }}
+            {{ challenge.challengeName }}
           </h6>
-          <span class="text-xs"> {{ challenge.date }}</span>
+          <span class="text-xs"> {{ challenge.startDate }}</span>
         </div>
         <div class="d-flex align-items-center text-sm">
           <argon-button>선택</argon-button>
