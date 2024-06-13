@@ -81,6 +81,8 @@ onMounted(async () => {
         id: `- ${date}`,
         start: date,
         title: `- ${groupedExpenseEvents[date]}`,
+        color: 'red', // 빨간색으로 지정
+
       }));
 
       // 두 개의 이벤트 배열을 합침
