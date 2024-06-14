@@ -8,18 +8,18 @@
         <!-- 카드  -->
 
         <!-- Card header -->
-        <div class="my-1 card-header col-8">
+        <div class=" card-header col-8">
           <div class="text-center">
-            <h2 class="mb-0">{{ currentChallenge.challengeName }}</h2>
+            <h2 class="mb-0 mt-3">{{ currentChallenge.challengeName }}</h2>
           </div>
 
           <div class="card-body">
             <!-- 28개 컴포넌트 -->
             <div>
-              <MonthChallenge> </MonthChallenge>
+              <MonthChallenge class="mb-4"> </MonthChallenge>
               <br />
               <!-- 입력창 -->
-              <div class="card p-4" style="margin-left: 80px; width: 80%">
+              <div class="card p-4 ms-4 ps-5" style="width: 80%">
                 <EditChallenge
                   :editChallengeDay="editChallengeDay"
                 ></EditChallenge>
@@ -37,9 +37,9 @@
       </div>
 
       <!-- 아래 -->
-      <div>
+      <div  class="p-6 pt-0">
         <AuthorsTable
-          style="width: 80%; margin-left: 50px"
+          style="width: 100%;"
           :challengeList="challengeList"
         >
         </AuthorsTable>
