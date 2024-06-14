@@ -4,112 +4,98 @@ import { DataTable } from "simple-datatables";
 import axios from 'axios';
 import { useRoute, useRouter } from 'vue-router';
 
-
 const route = useRoute();
 const result = ref([]);
 const date = route.params.date;
 const router = useRouter();
+const dataTableBasic = ref(null);
+
 const goToTransactionList = () => {
-    // TransactionList 페이지로 이동
     router.push({ name: 'TransactionList' });
-}
+};
 
 // 카테고리 변환 함수
 const getCategoryDisplayName = (category) => {
     switch (category) {
-        case "education":
-            return "교육";
-        case "traffic":
-            return "교통";
-        case "cafe":
-            return "카페/간식";
-        case "alcohol":
-            return "술/유흥";
-        case "health":
-            return "의료/건강";
-        case "food":
-            return "식비";
-        case "life":
-            return "생활";
-        case "present":
-            return "경조/선물";
-        case "culture":
-            return "문화/여가";
-        case "finance":
-            return "금융";
-        case "shop":
-            return "쇼핑";
-
-
-        case "salary":
-            return "급여";
-        case "business":
-            return "사업수익";
-        case "pin":
-            return "용돈";
-        case "insurance":
-            return "보험금";
-        case "scholarship":
-            return "장학금";
-        case "used":
-            return "중고거래";
-        case "real":
-            return "부동산";
-        case "dutch":
-            return "더치페이";
-        case "etc":
-            return "기타";
-
-        default:
-            return "기타"; // 기본적으로 원래 값을 반환
+        case "education": return "교육";
+        case "traffic": return "교통";
+        case "cafe": return "카페/간식";
+        case "alcohol": return "술/유흥";
+        case "health": return "의료/건강";
+        case "food": return "식비";
+        case "life": return "생활";
+        case "present": return "경조/선물";
+        case "culture": return "문화/여가";
+        case "finance": return "금융";
+        case "shop": return "쇼핑";
+        case "salary": return "급여";
+        case "business": return "사업수익";
+        case "pin": return "용돈";
+        case "insurance": return "보험금";
+        case "scholarship": return "장학금";
+        case "used": return "중고거래";
+        case "real": return "부동산";
+        case "dutch": return "더치페이";
+        case "etc": return "기타";
+        default: return "기타";
     }
 };
 
-
-// const getData = async () => {
-
-// };
-onMounted(async () => {
+const fetchData = async () => {
     try {
         const response = await axios.get("http://localhost:3000/transactions");
         const allData = response.data;
-
         result.value = allData.filter((transaction) => transaction.start.split("T")[0] === date);
 
-
-        
-
-        const dataTableBasic = new DataTable("#datatable-basic", {
-            searchable: false,
-            fixedHeight: true,
-        });
-
-        const tableRows = result.value.map((obj) => {  // result.value를 사용
-            const { start, cost, title, memo, isIncome, category } = obj;
-            const deleteBtn = `<div class="col text-end mx-3 float-right">
-                            <a href="aaa" class="text-right btn btn-danger btn-sm active fw-light" role="button"
-                                aria-pressed="true" @click="goToTransactionList">삭제</a>
-                        </div>`
+        const tableRows = result.value.map((obj) => {
+            const { id, start, cost, title, memo, isIncome, category } = obj;
             return [
-                // 컬럼 순서 여기서 지정
                 title,
                 getCategoryDisplayName(category),
-                isIncome ? "수입" : "지출",  // isIncome 값을 기반으로 변환
-
+                isIncome ? "수입" : "지출",
                 start,
                 cost.toString(),
                 memo,
-                deleteBtn
+                `<button class="btn btn-danger btn-sm" data-id="${id}" @click="deleteTransaction(${id})">삭제</button>`
             ];
         });
 
-        if (tableRows.length > 0) {
-            dataTableBasic.rows.add(tableRows);
+        if (dataTableBasic.value) {
+            dataTableBasic.value.destroy();
         }
+
+        dataTableBasic.value = new DataTable("#datatable-basic", {
+            data: {
+                headings: ["내역", "카테고리", "수입/지출", "날짜", "금액", "메모", "삭제"],
+                data: tableRows
+            },
+            searchable: false,
+            fixedHeight: true
+        });
+
+        // 이벤트 위임 방식으로 삭제 버튼 클릭 이벤트 처리
+        document.querySelector("#datatable-basic tbody").addEventListener("click", async (event) => {
+            if (event.target.classList.contains("btn-danger")) {
+                const id = event.target.getAttribute("data-id");
+                await deleteTransaction(id);
+            }
+        });
+
     } catch (error) {
         console.error("Error fetching data:", error);
     }
-});
+};
+
+const deleteTransaction = async (id) => {
+    try {
+        await axios.delete(`http://localhost:3000/transactions/${id}`);
+        fetchData(); // 테이블 갱신
+    } catch (error) {
+        console.error("Error deleting transaction:", error);
+    }
+};
+
+onMounted(fetchData);
 </script>
 <template>
     <div class="py-4 container-fluid">
@@ -163,4 +149,6 @@ onMounted(async () => {
         </div>
 
     </div>
+
+
 </template>
