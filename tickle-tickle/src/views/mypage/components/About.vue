@@ -92,7 +92,7 @@ onMounted(fetchData);
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          <button type="button" class="btn btn-primary" @click="handleChangePassword">저장</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="handleChangePassword">저장</button>
         </div>
       </div>
     </div>

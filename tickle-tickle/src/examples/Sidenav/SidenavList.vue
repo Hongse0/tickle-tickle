@@ -3,7 +3,6 @@ import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 import SidenavItem from "./SidenavItem.vue";
 import SidenavCollapse from "./SidenavCollapse.vue";
-import SidenavCollapseItem from "./SidenavCollapseItem.vue";
 const store = useStore();
 const getRoute = () => {
   const route = useRoute();
@@ -15,23 +14,17 @@ const getRoute = () => {
   <div id="sidenav-collapse-main" class="collapse navbar-collapse w-auto h-auto h-100">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <sidenav-collapse collapse-ref="dashboardsExamples" nav-text="Dashboards"
+        <sidenav-collapse collapse-ref="dashboardsExamples" nav-text="마이페이지"
           :class="getRoute() === 'dashboards' ? 'active' : ''">
           <template #icon>
             <i class="ni ni-shop text-primary text-sm opacity-10"></i>
           </template>
           <template #list>
             <ul class="nav ms-4">
-              <!-- nav links -->
-              <sidenav-collapse-item refer="vrExamples" mini-icon="V" text="Virtual Reality">
-                <template #nav-child-item>
-                  <sidenav-item to="/" mini-icon="V" text="VR Default" />
-                  <sidenav-item to="/" mini-icon="V" text="VR Info" />
-                </template>
-              </sidenav-collapse-item>
-              <sidenav-item to="/" mini-icon="C" text="CRM" />
+              <sidenav-item to="/myPage" mini-icon="R" text="개인정보 수정" />
             </ul>
           </template>
+         
         </sidenav-collapse>
       </li>
       <li class="mt-3 nav-item">
