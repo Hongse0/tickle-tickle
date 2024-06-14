@@ -9,6 +9,7 @@ import Starstats from "../views/stats/dashboards/Starstats.vue";
 import TransactionDetail from "../views/transaction/TransactionDetail.vue";
 import SignIn from "../views/login/SignIn.vue";
 import Main from "../views/main/Main.vue";
+import SignUp from "../views/login/SignUp.vue";
 
 const routes = [
   {
@@ -73,6 +74,11 @@ const routes = [
     component: TransactionDetail,
     props: true,
   },
+  {
+    path: "/signup",
+    name: "signup",
+    component: SignUp,
+  }
 ];
 
 const router = createRouter({
