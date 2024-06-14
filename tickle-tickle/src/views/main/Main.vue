@@ -326,7 +326,7 @@ const top5AnalyticsData = computed(() => {
                         justify-content: space-between;
                       "
                     >
-                      <h4 style="color: #ff6ac2">3. 집밥 챌린지 챌린지</h4>
+                      <h4 style="color: #ff6ac2">3. 집밥 챌린지</h4>
                       <div @click="createChallenge()">
                         <argon-button style="height: 40px">Add</argon-button>
                       </div>

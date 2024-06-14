@@ -1,8 +1,8 @@
 <script setup>
 import { computed, ref, onBeforeUpdate } from "vue";
 import { useStore } from "vuex";
-import { useRoute } from "vue-router";
-import Breadcrumbs from "../Breadcrumbs.vue";
+//import { useRoute } from "vue-router";
+//import Breadcrumbs from "../Breadcrumbs.vue";
 
 const showMenu = ref(false);
 const store = useStore();
@@ -10,16 +10,16 @@ const isRTL = computed(() => store.state.isRTL);
 const isNavFixed = computed(() => store.state.isNavFixed);
 const darkMode = computed(() => store.state.darkMode);
 
-const route = useRoute();
+//const route = useRoute();
 
-const currentRouteName = computed(() => {
-  return route.name;
-});
+// const currentRouteName = computed(() => {
+//   return route.name;
+// });
 
-const currentDirectory = computed(() => {
-  let dir = route.path.split("/")[1];
-  return dir.charAt(0).toUpperCase() + dir.slice(1);
-});
+// const currentDirectory = computed(() => {
+//   let dir = route.path.split("/")[1];
+//   return dir.charAt(0).toUpperCase() + dir.slice(1);
+// });
 
 const navbarMinimize = () => store.commit("navbarMinimize");
 const toggleConfigurator = () => store.commit("toggleConfigurator");
@@ -45,7 +45,7 @@ onBeforeUpdate(() => {
     } left-auto top-2 z-index-sticky`
     } ${isRTL ? 'top-0 position-sticky z-index-sticky' : ''}`" v-bind="$attrs" data-scroll="true">
     <div class="px-3 py-1 container-fluid">
-      <breadcrumbs :current-page="currentRouteName" :current-directory="currentDirectory" />
+      <!-- <breadcrumbs :current-page="currentRouteName" :current-directory="currentDirectory" /> -->
       <div class="sidenav-toggler sidenav-toggler-inner d-xl-block d-none" :class="isRTL ? 'me-3' : ''">
         <a href="#" class="p-0 nav-link text-body" @click.prevent="navbarMinimize">
           <div class="sidenav-toggler-inner">
