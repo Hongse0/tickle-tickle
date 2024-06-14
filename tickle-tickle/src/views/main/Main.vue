@@ -221,9 +221,9 @@ const top5AnalyticsData = computed(() => {
         </div>
 
         <div class="card container">
-          <div class="card-body">
+          <div class="card-body  text-center mt-3 p-0">
             <h4 class="text-center">캘린더</h4>
-            <calendar id="calendar-table" />
+            <calendar id="calendar-table" class="p-0 mb-3" />
           </div>
         </div>
       </div>
