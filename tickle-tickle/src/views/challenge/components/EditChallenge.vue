@@ -6,28 +6,50 @@
       </div>
 
       <div class="col-3">
-        <argon-button color="success" size="md" variant="gradient"
+        <argon-button
+          @click="click"
+          color="success"
+          size="md"
+          variant="gradient"
           >완료</argon-button
         >
       </div>
     </div>
 
     <label class="form-label mb-2 text-sm">Day</label>
-    <label class="form-label mb-2 text-sm">{{ day.id }}</label>
+    <label class="form-label mb-2 text-sm" id="challengeDay">{{
+      day.id
+    }}</label>
     <div></div>
 
     <label class="form-label my-2 mt-2 text-sm">상태</label>
-    <argon-input v-model="day.status" style="width: 90%" placeholder="상태" />
+    <select
+      class="form-select"
+      v-bind="day.status"
+      @change="updateStatus"
+      style="width: 90%"
+      id="dayStatus"
+    >
+      <option value="true">true</option>
+      <option value="false">false</option>
+    </select>
     <label class="form-label my-2 text-sm">메모</label>
-    <argon-input v-model="day.memo" style="width: 90%" placeholder="메모" />
+
+    <argon-input
+      id="challengeMemo"
+      v-model="day.memo"
+      style="width: 90%"
+      placeholder="메모"
+    />
   </div>
 </template>
 
 <script setup>
 import ArgonInput from "@/components/ArgonInput.vue";
 import ArgonButton from "@/components/ArgonButton.vue";
-import { defineProps, ref } from "vue";
+import { defineProps, ref, onUpdated, onMounted } from "vue";
 import accessEmitter from "@/config/accessEmitter.js";
+
 const emitter = accessEmitter();
 
 const day = ref({
@@ -37,9 +59,50 @@ const day = ref({
   memo: "1일",
 });
 
+//자동으로 변경
+// function updateStatus(event) {
+//   day.value.status = event.target.value === "true";
+// }
+
 function handleDayChallengeInfo(event) {
   day.value = event;
 }
+
+function click() {
+  console.log(JSON.stringify(postChallengeDay));
+  alert("전송 완료!");
+}
+
+// 전역적으로 사용할 수 있는 DOM 요소를 저장합니다.
+const postChallengeDay = ref({
+  id: day.value.id,
+  status: "",
+  memo: day.value.memo,
+});
+
+// DOM 요소를 가져와 ref에 저장하는 함수입니다.
+function updateChallengeStatus() {
+  const status = document.getElementById("dayStatus");
+  const memo = document.getElementById("challengeMemo");
+  if (status) {
+    postChallengeDay.value.status = status.value;
+  }
+
+  if (memo) {
+    postChallengeDay.value.memo = memo.value;
+  } else {
+    postChallengeDay.value.memo = "오류";
+  }
+}
+
+onMounted(() => {
+  updateChallengeStatus();
+});
+
+// 컴포넌트가 업데이트된 후에 DOM 요소에 접근합니다.
+onUpdated(() => {
+  updateChallengeStatus();
+});
 
 // update ,
 // 다른변수, 갱신
