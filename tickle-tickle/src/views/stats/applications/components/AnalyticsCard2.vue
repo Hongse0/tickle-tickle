@@ -28,7 +28,7 @@ defineProps({
           <h1>지출 카테고리 순위</h1>
       </div>
       <div class="px-3 pt-0 pb-2 card-body">
-        <div class="p-0 table-responsive">
+        <div class="p-0 t,able-responsive">
           <table class="table mb-0 align-items-center justify-content-center">
             <thead>
               <tr>
