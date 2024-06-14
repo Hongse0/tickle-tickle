@@ -181,7 +181,7 @@ const top5AnalyticsData = computed(() => {
     <div>
         <br /><br />
         <div class="container">
-            <h4 style="color: white">{{ greeting }}</h4>
+            <h3 style="color: white">{{ greeting }} 😊</h3>
             <!-- <h5>안녕하세요</h5> -->
         </div>
 
@@ -247,8 +247,8 @@ const top5AnalyticsData = computed(() => {
                     <div class="col-md-6" @click="challenge()">
                         <div class="card h-100">
                             <div class="card-body pb-0 px-3">
-                                <h3 class="ps-2 mb-0 text-center">이달의 챌린지</h3>
-                                <MainChallenge></MainChallenge>
+                                <h3 class="p-3 text-center">이달의 챌린지</h3>
+                                <MainChallenge class="mb-5"></MainChallenge>
                             </div>
                         </div>
                     </div>
@@ -256,12 +256,12 @@ const top5AnalyticsData = computed(() => {
                         <div class="card">
                             <div class="p-3 pb-0 card-header">
                                 <div class="d-flex justify-content-between">
-                                    <h3 class="mb-0" style="color: #5d12d2">
+                                    <h3 class="pt-4 mb-0 w-100 text-center" style="color: #5d12d2">
                                         🔥 현재 20대에게 인기있는 챌린지
                                     </h3>
                                 </div>
                             </div>
-                            <div class="p-3 card-body">
+                            <div class="p-5 card-body">
                                 <div class="row align-items-center">
                                     <div class="text-start col ms-2">
                                         <div class="mx-5" style="
@@ -310,7 +310,7 @@ const top5AnalyticsData = computed(() => {
 
                 <br />
                 <div>
-                    <h2 style="margin-left: 30px">빅데이터 기반 티끌 카드 추천</h2>
+                    <h2 style="margin-left: 30px" class="text-center">빅데이터 기반 티끌 카드 추천</h2>
                     <div class="row p-3" style="margin-bottom: 30px">
                         <div class="mb-4 col-lg-4 mb-lg-0">
                             <div class="card">
