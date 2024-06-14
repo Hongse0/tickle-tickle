@@ -104,16 +104,18 @@ onUpdated(() => {
     <div class="card z-index-2">
 
       <div class="p-3 pb-0 card-header mx-3 mt-3">
-        <h2 class="mb-2">별별 통계</h2>
-        <h3>이 그래프는 비슷한 수입을 가진 사람들의 자금
-          사용처를 분석한 결과에요.</h3>
+        <h2 class="mb-2 text-center">별별 통계</h2>
+        
         <h6>{{ props.title }}</h6>
+        
       </div>
       <div class="p-3 card-body">
         <div class="chart">
           <canvas :id="props.id" class="chart-canvas" :height="props.height"></canvas>
         </div>
       </div>
+      <h3 class="pb-0 card-header mb-4 mx-3 mt-3 font-weight-lighter ">이 그래프는 비슷한 수입을 가진 사람들의 자금
+        사용처를 분석한 결과에요.</h3>
     </div>
   </div>
 </template>
