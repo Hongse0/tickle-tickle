@@ -9,7 +9,11 @@ import Starstats from "../views/stats/dashboards/Starstats.vue";
 import TransactionDetail from "../views/transaction/TransactionDetail.vue";
 import SignIn from "../views/login/SignIn.vue";
 import Main from "../views/main/Main.vue";
+<<<<<<< HEAD
 import Mypage from "../views/mypage/Mypage.vue";
+=======
+import SignUp from "../views/login/SignUp.vue";
+>>>>>>> c08d4efe63f78be1e820063757eeb23dc677690c
 
 const routes = [
   {
@@ -75,11 +79,18 @@ const routes = [
     props: true,
   },
   {
+<<<<<<< HEAD
     path: "/myPage", // 날짜 파라미터 추가
     name: "myPage",
     component: Mypage,
     props: true,
   },
+=======
+    path: "/signup",
+    name: "signup",
+    component: SignUp,
+  }
+>>>>>>> c08d4efe63f78be1e820063757eeb23dc677690c
 ];
 
 const router = createRouter({

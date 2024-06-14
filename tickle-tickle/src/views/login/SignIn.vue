@@ -47,6 +47,10 @@ const login = async () => {
     console.error("로그인 중 오류 발생:", error);
   }
 };
+
+const signup = () =>{
+  router.push({path:"/signup"});
+}
 </script>
 
 <template>
@@ -109,6 +113,7 @@ const login = async () => {
                     variant="gradient"
                     full-width
                     class="mt-2 mb-4"
+                    @click="signup()"
                   >
                     Sign up
                   </argon-button>
