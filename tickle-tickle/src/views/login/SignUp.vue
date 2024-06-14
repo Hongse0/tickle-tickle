@@ -42,24 +42,24 @@ const signup = async () => {
         <div class="col-lg-4 col-md-7 mt-2">
           <div class="card border-0 mb-0">
             <div class="card-header bg-transparent">
-              <h5 class="text-dark text-center mt-2 mb-3">Sign up</h5>
+              <h5 class="text-dark text-center mt-2 mb-3">회원가입</h5>
               <div class="btn-wrapper text-center"></div>
             </div>
             <div class="card-body px-lg-5 pt-0">
               <div class="text-center text-muted mb-4">
-                <small>Sign up and enjoy with us!</small>
+                <small>최소한의 정보로 회원이 되어보세요!</small>
               </div>
               <form @submit.prevent="signup" role="form" class="text-start">
                 <div class="mb-3">
-                  <argon-input v-model="name" id="name" type="name" placeholder="name" aria-label="name"
+                  <argon-input v-model="name" id="name" type="name" placeholder="이름" aria-label="name"
                     :isRequired="true" />
                 </div>
                 <div class="mb-3">
-                  <argon-input v-model="email" id="email" type="email" placeholder="Email" aria-label="Email"
+                  <argon-input v-model="email" id="email" type="email" placeholder="이메일" aria-label="Email"
                     :isRequired="true" />
                 </div>
                 <div class="mb-3">
-                  <argon-input v-model="password" id="password" type="password" placeholder="Password"
+                  <argon-input v-model="password" id="password" type="password" placeholder="비밀번호"
                     aria-label="Password" :isRequired="true" />
                 </div>
                 <div class="row my-3">
@@ -79,12 +79,12 @@ const signup = async () => {
                   </div>
                 </div>
                 <div class="mb-3">
-                  <argon-input v-model="age" id="age" type="number" placeholder="age" aria-label="age"
+                  <argon-input v-model="age" id="age" type="number" placeholder="나이" aria-label="age"
                     :isRequired="true" />
                 </div>
                 <div class="text-center">
                   <argon-button type="submit" color="success" variant="gradient" full-width class="my-4 mb-2">
-                    Sign up
+                    가입
                   </argon-button>
                 </div>
               </form>

@@ -15,6 +15,14 @@
       "password": "123456",
       "gender": "girl",
       "age": 20
+    },
+    {
+      "id": "test@test.com",
+      "name": "박민지",
+      "password": "1234",
+      "gender": "female",
+      "age": "24",
+      "userId": 3
     }
   ],
   "transactions": [

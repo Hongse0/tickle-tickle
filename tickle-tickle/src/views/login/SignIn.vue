@@ -56,16 +56,16 @@ const signup = () =>{
 <template>
   <div>
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row justify-content-center pt-7">
         <div class="col-lg-4 col-md-7 mt-2">
           <div class="card border-0 mb-0">
             <div class="card-header bg-transparent">
-              <h5 class="text-dark text-center mt-2 mb-3">Sign in</h5>
+              <h5 class="text-dark text-center mt-2 mb-3">로그인</h5>
               <div class="btn-wrapper text-center"></div>
             </div>
             <div class="card-body px-lg-5 pt-0">
               <div class="text-center text-muted mb-4">
-                <small>Or sign in with credentials</small>
+                <small>또래들이 돈을 어떻게 소비하는지 알아보세요!</small>
               </div>
               <form @submit.prevent="login" role="form" class="text-start">
                 <div class="mb-3">
@@ -73,7 +73,7 @@ const signup = () =>{
                     v-model="email"
                     id="email"
                     type="email"
-                    placeholder="Email"
+                    placeholder="이메일"
                     aria-label="Email"
                   />
                 </div>
@@ -82,12 +82,12 @@ const signup = () =>{
                     v-model="password"
                     id="password"
                     type="password"
-                    placeholder="Password"
+                    placeholder="비밀번호"
                     aria-label="Password"
                   />
                 </div>
                 <argon-switch v-model="rememberMe" id="rememberMe" name="rememberMe">
-                  Remember me
+                  자동 로그인
                 </argon-switch>
                 <div class="text-center">
                   <argon-button
@@ -97,7 +97,7 @@ const signup = () =>{
                     full-width
                     class="my-4 mb-2"
                   >
-                    Sign in
+                    로그인
                   </argon-button>
                 </div>
                 <div class="mb-2 position-relative text-center">
@@ -115,7 +115,7 @@ const signup = () =>{
                     class="mt-2 mb-4"
                     @click="signup()"
                   >
-                    Sign up
+                    회원가입
                   </argon-button>
                 </div>
               </form>
