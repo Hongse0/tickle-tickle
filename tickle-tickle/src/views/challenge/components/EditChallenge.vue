@@ -85,6 +85,16 @@ function updateStatus(event) {
   day.value.status = event.target.value === "true";
 }
 
+async function putFirstDay() {
+  try {
+    const response = await axios.get("http://localhost:3000/challengeDays/1");
+    console.log(response);
+    day.value.memo = response.data.memo;
+    day.value.status = response.data.status;
+  } catch (error) {
+    console.log("here");
+  }
+}
 // 전역적으로 사용할 수 있는 DOM 요소를 저장합니다.
 const postChallengeDay = ref({
   id: "",
@@ -110,6 +120,7 @@ function updateChallengeStatus() {
 }
 
 onMounted(() => {
+  putFirstDay();
   updateChallengeStatus();
 });
 
