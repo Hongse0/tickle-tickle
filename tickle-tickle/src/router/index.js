@@ -9,6 +9,7 @@ import Starstats from "../views/stats/dashboards/Starstats.vue";
 import TransactionDetail from "../views/transaction/TransactionDetail.vue";
 import SignIn from "../views/login/SignIn.vue";
 import Main from "../views/main/Main.vue";
+import Mypage from "../views/mypage/Mypage.vue";
 
 const routes = [
   {
@@ -71,6 +72,12 @@ const routes = [
     path: "/transaction/TransactionDetail/:date", // 날짜 파라미터 추가
     name: "TransactionDetail",
     component: TransactionDetail,
+    props: true,
+  },
+  {
+    path: "/myPage", // 날짜 파라미터 추가
+    name: "myPage",
+    component: Mypage,
     props: true,
   },
 ];

@@ -1,20 +1,20 @@
 {
   "users": [
     {
+      "id": "p1879@naver.com",
+      "userId": 2,
+      "name": "세영",
+      "password": "12345",
+      "gender": "man",
+      "age": 25
+    },
+    {
+      "id": "u1879@naver.com",
       "userId": 1,
       "name": "가희",
-      "id": "u1879@naver.com",
       "password": "123456",
       "gender": "girl",
       "age": 20
-    },
-    {
-      "userId": 2,
-      "name": "세영",
-      "id": "p1879@naver.com",
-      "password": "123456",
-      "gender": "man",
-      "age": 25
     }
   ],
   "transactions": [
@@ -736,23 +736,25 @@
       "pastTag": "노카페인 챌린지",
       "pastStartDate": "2024-03-01",
       "pastEndDate": "2024-03-31",
-      "pastMoney": 224224
+      "pastMoney": 224224,
+      "id": "132b"
     },
     {
       "pastId": 2,
       "pastTag": "집밥 챌린지",
       "pastStartDate": "2024-04-01",
       "pastEndDate": "2024-04-31",
-      "pastMoney": 5252521
+      "pastMoney": 5252521,
+      "id": "6f35"
     },
     {
       "pastId": 3,
       "pastTag": "금연 챌린지",
       "pastStartDate": "2024-05-01",
       "pastEndDate": "2024-05-31",
-      "pastMoney": 12000
+      "pastMoney": 12000,
+      "id": "3d94"
     }
   ],
-  "newChallenge": [
-  ]
+  "newChallenge": []
 }
