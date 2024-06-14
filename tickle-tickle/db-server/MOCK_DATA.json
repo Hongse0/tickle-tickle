@@ -546,196 +546,449 @@
       "name": "수정",
       "status": true,
       "date": "2024-06-1",
-      "memo": "1일차, 개힘드네"
+      "memo": "1일차, 개힘드네",
+      "challengeId": 1
     },
     {
       "id": "2",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-2",
-      "memo": "개휘"
+      "memo": "개휘",
+      "challengeId": 1
     },
     {
       "id": "3",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-3",
-      "memo": "3일자.."
+      "memo": "3일자..",
+      "challengeId": 1
     },
     {
       "id": "4",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-5",
-      "memo": "4일차"
+      "memo": "4일차",
+      "challengeId": 1
     },
     {
       "id": "5",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-5",
-      "memo": "디카페인은 괜찮지 않을까?"
+      "memo": "디카페인은 괜찮지 않을까?",
+      "challengeId": 1
     },
     {
       "id": "6",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-6",
-      "memo": "5일차"
+      "memo": "5일차",
+      "challengeId": 1
     },
     {
       "id": "7",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-7",
-      "memo": "이걸 참았다니.."
+      "memo": "이걸 참았다니..",
+      "challengeId": 1
     },
     {
       "id": "8",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-8",
-      "memo": "한달 참으면 10만원인데, 걍 먹을까"
+      "memo": "한달 참으면 10만원인데, 걍 먹을까",
+      "challengeId": 1
     },
     {
       "id": "9",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-9",
-      "memo": "삶의 낙 -100"
+      "memo": "삶의 낙 -100",
+      "challengeId": 1
     },
     {
       "id": "10",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-10",
-      "memo": "도전중 화이팅"
+      "memo": "도전중 화이팅",
+      "challengeId": 1
     },
     {
       "id": "11",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-11",
-      "memo": "2주일만 참으래.."
+      "memo": "2주일만 참으래..",
+      "challengeId": 1
     },
     {
       "id": "12",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-12",
-      "memo": "곧.. 2주다.. "
+      "memo": "곧.. 2주다.. ",
+      "challengeId": 1
     },
     {
       "id": "13",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-13",
-      "memo": "점점 생각 안나기 시작하는데,, "
+      "memo": "점점 생각 안나기 시작하는데,, ",
+      "challengeId": 1
     },
     {
       "id": "14",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-14",
-      "memo": "skr 2주 완성"
+      "memo": "skr 2주 완성",
+      "challengeId": 1
     },
     {
       "id": "15",
       "name": "커피 줄이기 챌린지",
-      "status": false,
+      "status": true,
       "date": "2024-06-15",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "16",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-16",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "17",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-17",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "18",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-18",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "19",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-19",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "20",
       "name": "커피 줄이기 챌린지",
-      "status": false,
+      "status": true,
       "date": "2024-06-20",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "21",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-21",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "22",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-22",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "23",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-23",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "24",
       "name": "커피 줄이기 챌린지",
-      "status": false,
+      "status": true,
       "date": "2024-06-24",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "25",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-25",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "26",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-26",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "27",
       "name": "커피 줄이기 챌린지",
       "status": true,
       "date": "2024-06-27",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
     },
     {
       "id": "28",
       "name": "커피 줄이기 챌린지",
-      "status": false,
+      "status": true,
       "date": "2024-06-28",
-      "memo": "안먹음 ㅋ "
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 1
+    },
+
+    {
+      "id": "1",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-1",
+      "memo": "1일차, 개힘드네",
+      "challengeId": 2
+    },
+    {
+      "id": "2",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-2",
+      "memo": "개휘",
+      "challengeId": 2
+    },
+    {
+      "id": "3",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-3",
+      "memo": "3일자..",
+      "challengeId": 2
+    },
+    {
+      "id": "4",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-5",
+      "memo": "4일차",
+      "challengeId": 2
+    },
+    {
+      "id": "5",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-5",
+      "memo": "디카페인은 괜찮지 않을까?",
+      "challengeId": 2
+    },
+    {
+      "id": "6",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-6",
+      "memo": "5일차",
+      "challengeId": 2
+    },
+    {
+      "id": "7",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-7",
+      "memo": "이걸 참았다니..",
+      "challengeId": 2
+    },
+    {
+      "id": "8",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-8",
+      "memo": "한달 참으면 10만원인데, 걍 먹을까",
+      "challengeId": 2
+    },
+    {
+      "id": "9",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-9",
+      "memo": "삶의 낙 -100",
+      "challengeId": 2
+    },
+    {
+      "id": "10",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-10",
+      "memo": "도전중 화이팅",
+      "challengeId": 2
+    },
+    {
+      "id": "11",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-11",
+      "memo": "2주일만 참으래..",
+      "challengeId": 2
+    },
+    {
+      "id": "12",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-12",
+      "memo": "곧.. 2주다.. ",
+      "challengeId": 2
+    },
+    {
+      "id": "13",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-13",
+      "memo": "점점 생각 안나기 시작하는데,, ",
+      "challengeId": 2
+    },
+    {
+      "id": "14",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-14",
+      "memo": "skr 2주 완성",
+      "challengeId": 2
+    },
+    {
+      "id": "15",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-15",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "16",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-16",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "17",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-17",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "18",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-18",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "19",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-19",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "20",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-20",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "21",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-21",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "22",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-22",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "23",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-23",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "24",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-24",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "25",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-25",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "26",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-26",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "27",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-27",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
+    },
+    {
+      "id": "28",
+      "name": "대중교통 챌린지",
+      "status": true,
+      "date": "2024-06-28",
+      "memo": "안먹음 ㅋ ",
+      "challengeId": 2
     }
   ],
   "pastChallenge": [

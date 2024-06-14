@@ -98,7 +98,9 @@ const getWeeks = async () => {
     const response = await axios.get("http://localhost:3000/challengeDays");
     const jsonData = response.data;
 
-    jsonData.forEach((day) => {
+    const filteredData = jsonData.filter((item) => item.challengeId === 1);
+
+    filteredData.forEach((day) => {
       if (Number(day.id) <= 7) {
         weeks.value.week1.push(day);
       } else if (Number(day.id) <= 14) {
