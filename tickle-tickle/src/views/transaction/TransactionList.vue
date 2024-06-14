@@ -79,7 +79,7 @@ const expendTotal = computed(() => {
           </div>
 
           <div class="card-body pt-2">
-            <p class="card-title h5 d-block text-darker">
+            <p class="card-title h3 d-block text-darker">
               월별 총합
             </p>
             <div v-if="transactions.length > 0" class="card-description mb-4">
@@ -95,7 +95,7 @@ const expendTotal = computed(() => {
             <!-- Card Header Content -->
           </div>
           <div class="card-body pt-2">
-            <p class="card-title h5 d-block text-darker">
+            <p class="card-title h3 d-block text-darker">
               월별 수익
             </p>
             
@@ -113,7 +113,7 @@ const expendTotal = computed(() => {
           </div>
 
           <div class="card-body pt-2">
-            <p class="card-title h5 d-block text-darker">
+            <p class="card-title h3 d-block text-darker">
               월별 지출
             </p>
             <p class="card-description mb-4">

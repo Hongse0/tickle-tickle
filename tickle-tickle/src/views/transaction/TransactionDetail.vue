@@ -56,7 +56,7 @@ const fetchData = async () => {
                 start,
                 cost.toString(),
                 memo,
-                `<button class="btn btn-danger btn-sm" data-id="${id}" @click="deleteTransaction(${id})">삭제</button>`
+                `<button class="btn btn-danger btn-md" data-id="${id}" @click="deleteTransaction(${id})">삭제</button>`
             ];
         });
 
@@ -104,44 +104,44 @@ onMounted(fetchData);
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
-                        <h5 class="mb-0">가계부 상세 조회</h5>
-                        <p class="mb-0 text-sm">
+                        <h3 class="mb-2">가계부 상세 조회</h3>
+                        <p class="mb-0 text-lg">
                             오늘의 수입과 지출을 확인해보세요.
                         </p>
                         <div class="col text-end mx-3 float-right">
-                            <a href="#" class="fw-light text-right btn btn-primary btn-sm active" role="button"
+                            <a href="#" class="fw-light text-right btn btn-primary btn-md active" role="button"
                                 aria-pressed="true" @click="goToTransactionList">목록</a>
                         </div>
                     </div>
 
                     <div class="table-responsive">
-                        <table id="datatable-basic" class="table table-flush">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                        <table id="datatable-basic" class="table table-flush text-center">
+                            <thead class="thead-light text-center">
+                                <tr class="text-center">
+                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7 text-center fs-5">
                                         내역
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7 text-center fs-5">
                                         카테고리
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7 text-center fs-5">
                                         수입/지출
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7 text-center fs-5">
                                         날짜
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7 text-center fs-5">
                                         금액
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7 text-center fs-5">
                                         메모
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7 text-center fs-5">
                                         삭제
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody></tbody>
+                            <tbody class="text-center"></tbody>
                         </table>
                     </div>
                 </div>
@@ -152,3 +152,22 @@ onMounted(fetchData);
 
 
 </template>
+
+
+<style>
+.dataTable-wrapper .dataTable-container .table thead tr th {
+    font-size: 1rem !important;
+    text-align: center;
+}
+.dataTable-wrapper .dataTable-container .table tbody td {
+    font-size: 1.1rem !important;
+    text-align: center;
+}
+.dataTable-info  {
+    display: none;
+}
+.dataTable-top{
+    display: none;
+
+}
+</style>
