@@ -33,7 +33,7 @@
               <div class="d-flex px-2 py-1">
                 <div>
                   <img
-                    src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-2.jpg"
+                    src="https://financialshopping-cdn.banksalad.com/coffee_takeout_cup_bef9bbec20.png"
                     class="avatar avatar-sm me-3"
                   />
                 </div>
