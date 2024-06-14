@@ -161,19 +161,22 @@ onUpdated(() => {
 <template>
   <div class="container">
     <div class="card z-index-2">
-      <div class="pb-0 card-header mb-0 mx-3 mt-3">
-        <h2>이 그래프는 {{ props.userName}}님의 1년간 월별 소비를 보여주고 있어요.</h2>
-      </div>
-      <div class="pb-0 card-header mb-0" style="padding-top:5px; important">
-        <h6 class="mx-3">{{ props.title }}</h6>
+      
+      <div class="pb-0 card-header mb-0 " style="padding-top:5px; important">
+        <h2 class="m-4 mx-3 text-center">{{ props.title }}</h2>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <p v-if="props.description" class="text-sm" v-html="props.description" />
       </div>
+      
       <div class="p-3 card-body">
         <div class="chart">
           <canvas :id="props.id" class="chart-canvas" :height="props.height"></canvas>
         </div>
-        <h3 class="mx-4 mb-3">소비 분석을 통해 불필요한 지출을 줄이고, 저축을 늘려보세요.😊</h3>
+        <div class="pb-0 card-header mb-0 mx-3 mt-3 font-weight-lighter" >
+          <h3 class="font-weight-lighter">이 그래프는 {{ props.userName}}님의 1년간 월별 소비를 보여주고 있어요.</h3>
+          <h4 class="mt-3 font-weight-lighter">소비 분석을 통해 불필요한 지출을 줄이고, 저축을 늘려보세요.😊</h4>
+        </div>
+        
       </div>
     </div>
   </div>

@@ -111,7 +111,7 @@ const top5AnalyticsData = computed(() => {
           <div class="col-lg-12 col-md-6 col-12">
             <analytics-card
               title="월별 지출 카테고리 순위"
-              :headers="['카테고리', '사용 금액']"
+              :headers="['순위','카테고리', '사용 금액']"
               :pages="top5AnalyticsData"
             />
           </div>

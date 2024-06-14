@@ -24,20 +24,18 @@ defineProps({
   <div class="container">
     <div class="mt-4 card h-100 mt-md-0">
       <div class="p-3 pb-0 card-header mx-3 mt-3">
-        <h2>개인 통계</h2>
-        <div class="d-flex align-items-center">
-
-          <h6>{{ title }}</h6>
-
+        <h2 class="text-center">개인 통계</h2>
+        <div class="d-flex justify-content-center w-100">
+          <h4 class="text-center w-100 font-weight-lighter p-2">{{ title }}</h4>
         </div>
       </div>
       <div class="px-3 pt-0 pb-2 card-body mx-3">
         <div class="p-0 table-responsive">
-          <table class="table mb-0 align-items-center justify-content-center">
+          <table class="table mb-0 align-items-center justify-content-center text-center">
             <thead>
               <tr>
                 <th v-for="(header, index) of headers" :key="index"
-                  class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  class="text-uppercase text-secondary text-s font-weight-lighter opacity-7 ps-2">
                   {{ header }}
                 </th>
               </tr>
@@ -45,12 +43,17 @@ defineProps({
             <tbody>
               <tr v-for="({ category, total }, index) of pages" :key="index">
                 <td>
-                  <p class="mb-0 text-sm font-weight-bold">
-                    {{ index + 1 }}. {{ category }}
+                  <p class="mb-0 text-lg font-weight-lighter">
+                    {{ index + 1 }}
                   </p>
                 </td>
                 <td>
-                  <p class="mb-0 text-sm font-weight-bold">{{ total }}</p>
+                  <p class="mb-0 text-lg font-weight-lighter">
+                     {{ category }}
+                  </p>
+                </td>
+                <td>
+                  <p class="mb-0 text-lg font-weight-lighter">{{ total }}</p>
                 </td>
                 <!-- <td>
                 <p class="mb-0 text-sm font-weight-bold">{{ time }}</p>
