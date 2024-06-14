@@ -3,6 +3,7 @@ import { ref, onMounted, computed } from 'vue';
 import axios from 'axios';
 import GradientLineChart from '../stats/Charts/GradientLineChart2.vue';
 import AnalyticsCard from '../stats/applications/components/AnalyticsCard2.vue';
+import Calendar from "../transaction/TransactionList.vue";
 
 // 차트 데이터 초기화
 const chartData = ref({
@@ -221,7 +222,8 @@ const top5AnalyticsData = computed(() => {
 
         <div class="card container">
           <div class="card-body">
-            <h1>캘린더</h1>
+            <h4 class="text-center">캘린더</h4>
+            <calendar id="calendar-table" />
           </div>
         </div>
       </div>
