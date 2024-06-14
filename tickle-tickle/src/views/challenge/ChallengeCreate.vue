@@ -1,7 +1,7 @@
 <template>
   <div class="card col-lg-11 container justify-content-center">
     <div class="row d-flex">
-      <!-- Card header -->
+      
       <div class="card-header">
         <div class="text-center">
           <h2 class="mb-0">챌린지 생성</h2>
@@ -163,10 +163,6 @@ import Modal from './components/Modal.vue'; //모달
 const router = useRouter();
 const isModalOpen = ref(false); //모달
 
-// const openModal = () => {
-//   isModalOpen.value = true;
-// };
-// const result = await getData();
 
 
 const challengeName = ref(""); // 챌린지 이름 설정
@@ -232,15 +228,3 @@ const createChallenge = async () => {
 }
 
 </script>
-
-
-
-<style> 
-/*모달 스타일 */
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

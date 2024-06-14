@@ -79,13 +79,12 @@ const routes = [
     props: true,
   },
   {
-
     path: "/myPage", // 날짜 파라미터 추가
     name: "myPage",
     component: Mypage,
     props: true,
   },
-{
+ {
     path: "/signup",
     name: "signup",
     component: SignUp,

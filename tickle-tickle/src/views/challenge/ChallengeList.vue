@@ -107,49 +107,49 @@
     </div>
   </div>
 
-
-    <!-- 여기부터 모달입니다 끗까지 -->
-    <div id="app">
-      <!-- <button @click="openModal">Open Modal</button> -->
-      <Modal :isOpen="isModalOpen" @update:isOpen="isModalOpen = $event">
-        <h1>Challenge Name</h1>
-        <hr class="my-3 horizontal dark" />
-          <div class="row">
-            <div class="mx-auto col-lg-9 col-12">
-              <form v-on:submit.prevent="submitForm">
-                <div class="col">
-                  <div class="d-flex justify-content-between align-items-center">
-                  <h5 class="mb-0">성공여부</h5>
-                  <span class="text-end">0일째 챌린지 성공중</span>
-                </div>
-                </div>
-                  <div class="row my-3">
-                    <div class="col-auto">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="income"
-                          v-model="sf" value="income" />
-                        <label class="form-check-label" for="income">Success</label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="expend"
-                          v-model="sf" value="expend" />
-                        <label class="form-check-label" for="expend">Fail</label>
-                      </div>
+  <!-- 여기부터 모달입니다 끗까지 -->
+  <div id="modal">
+    <!-- <button @click="openModal">Open Modal</button> -->
+    <Modal :isOpen="isModalOpen" @update:isOpen="isModalOpen = $event">
+      <h1>{{ currentChallenge.challengeName }}</h1>
+      <hr class="my-3 horizontal dark" />
+        <div class="row">
+          <div class="mx-auto col-lg-9 col-12">
+            <form v-on:submit.prevent="submitForm">
+              <div class="col">
+                <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">성공여부</h5>
+                <span class="text-end">{{}}일째 챌린지 성공중</span>
+              </div>
+              </div>
+                <div class="row my-3">
+                  <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="income"
+                        v-model="sf" value="income" />
+                      <label class="form-check-label" for="income">Success</label>
                     </div>
                   </div>
-  
-                  <label class="my-3">메모</label>
-      
-      
-                  <input v-model="inputMemo" id="inputMemo" type="text" class="form-control mb-3" style="height: 100px;" />
-              </form>
-            </div>
+                  <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="expend"
+                        v-model="sf" value="expend" />
+                      <label class="form-check-label" for="expend">Fail</label>
+                    </div>
+                  </div>
+                </div>
+
+                <label class="my-3">메모</label>
+    
+    
+                <input v-model="inputMemo" id="inputMemo" type="text" class="form-control mb-3" style="height: 100px;" />
+            </form>
           </div>
-      </Modal>
-    </div>
-  
+        </div>
+    </Modal>
+  </div>
+
+
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
@@ -206,12 +206,3 @@ const editChallengeDay = ref({
 </script>
 
 
-<style> 
-/*모달 스타일 */
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
