@@ -192,7 +192,7 @@ const top5AnalyticsData = computed(() => {
       <!-- ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
       <!-- 월별 수익 쪽  -->
       <div class="container col-4">
-        <div class="card container">
+        <div class="card container mb-3">
           <div class="card-body text-center mt-3">
             <div class="float-start ps-3">
               <h4>월별 수익</h4>
@@ -206,10 +206,10 @@ const top5AnalyticsData = computed(() => {
           </div>
         </div>
 
-        <div class="card container">
+        <div class="card container mb-3">
           <div class="card-body text-center mt-3">
             <div class="float-start ps-3">
-              <h4>월별 수익</h4>
+              <h4>월별 지출</h4>
               <p class="card-description mb-4">
                 {{ expendTotal }} 원
               </p>
