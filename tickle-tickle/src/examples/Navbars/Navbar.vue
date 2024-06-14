@@ -65,7 +65,7 @@ onBeforeUpdate(() => {
             <span class="input-group-text text-body">
               <i class="fas fa-search" aria-hidden="true"></i>
             </span>
-            <input type="text" class="form-control" :placeholder="isRTL ? 'أكتب هنا...' : 'Type here...'" />
+            <input type="text" class="form-control" :placeholder="isRTL ? 'أكتب هنا...' : '검색어 입력'" />
           </div>
         </div>
         <ul class="navbar-nav justify-content-end">
