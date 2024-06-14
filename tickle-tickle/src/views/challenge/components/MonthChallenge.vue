@@ -91,13 +91,24 @@ import axios from "axios";
 import accessEmitter from "@/config/accessEmitter.js";
 const emitter = accessEmitter();
 
-const weeks = ref({});
+const weeks = ref({ week1: [], week2: [], week3: [], week4: [] });
 
 const getWeeks = async () => {
   try {
     const response = await axios.get("http://localhost:3000/challengeDays");
     const jsonData = response.data;
-    weeks.value = jsonData;
+
+    jsonData.forEach((day) => {
+      if (Number(day.id) <= 7) {
+        weeks.value.week1.push(day);
+      } else if (Number(day.id) <= 14) {
+        weeks.value.week2.push(day);
+      } else if (Number(day.id) <= 21) {
+        weeks.value.week3.push(day);
+      } else {
+        weeks.value.week4.push(day);
+      }
+    });
   } catch (error) {
     console.log("Error fetch data ", error);
   }

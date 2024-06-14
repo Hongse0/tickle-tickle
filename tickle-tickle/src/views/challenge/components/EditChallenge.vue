@@ -25,7 +25,7 @@
     <label class="form-label my-2 mt-2 text-sm">상태</label>
     <select
       class="form-select"
-      v-bind="day.status"
+      v-model="day.status"
       @change="updateStatus"
       style="width: 90%"
       id="dayStatus"
@@ -49,7 +49,7 @@ import ArgonInput from "@/components/ArgonInput.vue";
 import ArgonButton from "@/components/ArgonButton.vue";
 import { defineProps, ref, onUpdated, onMounted } from "vue";
 import accessEmitter from "@/config/accessEmitter.js";
-
+import axios from "axios";
 const emitter = accessEmitter();
 
 const day = ref({
@@ -59,33 +59,47 @@ const day = ref({
   memo: "1일",
 });
 
-//자동으로 변경
-// function updateStatus(event) {
-//   day.value.status = event.target.value === "true";
-// }
-
 function handleDayChallengeInfo(event) {
   day.value = event;
 }
 
 function click() {
-  console.log(JSON.stringify(postChallengeDay));
-  alert("전송 완료!");
+  console.log(JSON.stringify(postChallengeDay.value));
+  postEditChallenge(postChallengeDay);
+}
+
+const postEditChallenge = async () => {
+  try {
+    const response = await axios.patch(
+      "http://localhost:3000/challengeDays/" + postChallengeDay.value.id,
+      postChallengeDay.value
+    );
+    console.log(response);
+  } catch (error) {
+    console.log("here");
+  }
+};
+
+//자동으로 변경
+function updateStatus(event) {
+  day.value.status = event.target.value === "true";
 }
 
 // 전역적으로 사용할 수 있는 DOM 요소를 저장합니다.
 const postChallengeDay = ref({
-  id: day.value.id,
-  status: "",
-  memo: day.value.memo,
+  id: "",
+  status: true,
+  memo: "",
 });
 
 // DOM 요소를 가져와 ref에 저장하는 함수입니다.
 function updateChallengeStatus() {
   const status = document.getElementById("dayStatus");
   const memo = document.getElementById("challengeMemo");
+
+  postChallengeDay.value.id = day.value.id;
   if (status) {
-    postChallengeDay.value.status = status.value;
+    postChallengeDay.value.status = status.value === "true";
   }
 
   if (memo) {
