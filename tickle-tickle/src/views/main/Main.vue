@@ -193,25 +193,29 @@ const top5AnalyticsData = computed(() => {
       <div class="container col-4">
         <div class="card container">
           <div class="card-body text-center mt-3">
-            <h4>월별 수익</h4>
-            <p class="card-description mb-4">
-              {{ incomeTotal }} 원
-            </p>
-            
-            <img src="../../assets/img/transIncome.png" class="img-fluid border-radius-lg">
-            
+            <div class="float-start ps-3">
+              <h4>월별 수익</h4>
+              <p class="card-description mb-4">
+                {{ incomeTotal }} 원
+              </p>
+            </div>
+
+            <img src="../../assets/img/transIncome.png" class="img-fluid border-radius-lg float-end px-3">
+
           </div>
         </div>
 
         <div class="card container">
           <div class="card-body text-center mt-3">
-            <h4>월별 지출</h4>
-            <p class="card-description mb-4">
-              {{ expendTotal }} 원
-            </p>
-            
-            <img src="../../assets/img/transExpend.png" class="img-fluid border-radius-lg">
-            
+            <div class="float-start ps-3">
+              <h4>월별 수익</h4>
+              <p class="card-description mb-4">
+                {{ expendTotal }} 원
+              </p>
+            </div>
+
+            <img src="../../assets/img/transExpend.png" class="img-fluid border-radius-lg float-end px-3">
+
           </div>
         </div>
 
