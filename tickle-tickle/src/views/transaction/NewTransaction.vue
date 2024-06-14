@@ -87,13 +87,13 @@ onMounted(() => {
 <template>
   <div class="py-4 container-fluid">
     <div class="row">
-      <div class="mx-auto col-lg-9 col-12">
+      <div class="mx-auto col-lg-12 col-12">
         <form v-on:submit.prevent="submitForm">
-          <div class="mt-4 card card-body">
-            <h6 class="mb-0">가계부 등록</h6>
-            <p class="mb-0 text-sm">오늘의 가계부를 등록해보세요.</p>
+          <div class="mt-4 card card-body p-5">
+            <h3 class="mb-3">가계부 등록</h3>
+            <p class="mb-0 text-lg">오늘의 가계부를 등록해보세요.</p>
             <hr class="my-3 horizontal dark" />
-            <label for="transactionName" class="form-label">내역</label>
+            <label for="transactionName" class="form-label text-lg font-weight-lighter">내역</label>
             <input v-model="transactionName" id="transactionName" type="text" class="form-control mb-3" />
             <div class="row my-3">
               <div class="col-auto">
@@ -113,7 +113,7 @@ onMounted(() => {
             </div>
 
             <div v-if="selectedCategory === 'expend'" class="my-3">
-              <label>카테고리</label>
+              <label class="text-lg font-weight-lighter">카테고리</label>
               <select v-model="selectedExpendCategory" class="form-control" name="choices-sizes">
                 <option value="education">교육</option>
                 <option value="traffic">교통</option>
@@ -130,7 +130,7 @@ onMounted(() => {
               </select>
             </div>
             <div v-else-if="selectedCategory === 'income'" class="my-3">
-              <label>카테고리</label>
+              <label class="text-lg font-weight-lighter">카테고리</label>
               <select v-model="selectedIncomeCategory" class="form-control" name="choices-sizes">
                 <option value="salary">급여</option>
                 <option value="business">사업수익</option>
@@ -147,19 +147,19 @@ onMounted(() => {
 
             <div class="row my-3">
               <div class="col-6">
-                <label class="form-label">날짜</label>
+                <label class="form-label text-lg font-weight-lighter">날짜</label>
                 <flat-pickr v-model="date" class="form-control datetimepicker" placeholder="날짜 선택"
                   :config="config"></flat-pickr>
               </div>
 
               <div class="col-6">
-                <label for="inputPrice" class="form-label">금액</label>
+                <label class="form-label text-lg font-weight-lighter">금액</label>
                 <input v-model="inputPrice" id="inputPrice" type="text" class="form-control mb-3" />
               </div>
             </div>
 
 
-            <label class="my-3">메모</label>
+            <label class="form-label text-lg font-weight-lighter">메모</label>
 
 
             <input v-model="inputMemo" id="inputMemo" type="text" class="form-control mb-3" style="height: 100px;" />
