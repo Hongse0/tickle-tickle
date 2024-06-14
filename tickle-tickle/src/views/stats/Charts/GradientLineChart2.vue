@@ -160,9 +160,9 @@ onUpdated(() => {
 <template>
   <div >
     <div class="card z-index-2">
-     
+
       <div class="pb-0 card-header mb-0">
-        <h1>연간 지출 그래프</h1>
+        <h1 class="text-center">연간 지출 그래프</h1>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <p v-if="props.description" class="text-sm" v-html="props.description" />
       </div>
