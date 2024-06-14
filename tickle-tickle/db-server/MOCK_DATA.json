@@ -530,6 +530,14 @@
       "endDate": "2024-04-13",
       "perDayCost": 180000,
       "id": "9fa5"
+    },
+    {
+      "id": "272d",
+      "challengeName": "",
+      "challengeTag": "",
+      "startDate": "",
+      "endDate": "",
+      "userId": 1
     }
   ],
   "challengeDays": [
@@ -634,7 +642,7 @@
     {
       "id": "15",
       "name": "커피 줄이기 챌린지",
-      "status": true,
+      "status": false,
       "date": "2024-06-15",
       "memo": "안먹음 ㅋ "
     },
@@ -669,7 +677,7 @@
     {
       "id": "20",
       "name": "커피 줄이기 챌린지",
-      "status": true,
+      "status": false,
       "date": "2024-06-20",
       "memo": "안먹음 ㅋ "
     },
@@ -697,7 +705,7 @@
     {
       "id": "24",
       "name": "커피 줄이기 챌린지",
-      "status": true,
+      "status": false,
       "date": "2024-06-24",
       "memo": "안먹음 ㅋ "
     },
@@ -725,7 +733,7 @@
     {
       "id": "28",
       "name": "커피 줄이기 챌린지",
-      "status": true,
+      "status": false,
       "date": "2024-06-28",
       "memo": "안먹음 ㅋ "
     }

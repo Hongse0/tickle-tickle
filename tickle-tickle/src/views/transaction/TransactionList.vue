@@ -4,11 +4,21 @@ import axios from 'axios';
 import { ref, onMounted, computed } from 'vue';
 const transactions = ref([]);
 
+const userId = Number(localStorage.getItem("userId"));
+
 // 데이터를 불러오는 비동기 함수를 정의합니다.
 const fetchTransactions = async () => {
   try {
     const response = await axios.get('http://localhost:3000/transactions');
-    transactions.value = response.data; // 가져온 데이터를 transactions에 할당합니다.
+    const users = response.data;
+    const user = users.find(user => user.userId === userId);
+    
+    if(user){
+      transactions.value = response.data;
+    }else {
+      console.log('error');
+    }
+    
   } catch (error) {
     console.error('Error fetching transactions:', error);
   }
