@@ -15,8 +15,27 @@ const chartData = ref({
 });
 
 const analyticsData = ref([]);
+const userName = ref('');
 
 const userId = Number(localStorage.getItem("userId"));
+
+const profile = async() => {
+  try {
+    const response = await axios.get("http://localhost:3000/users");
+    const users = response.data;
+    const user = users.find(user => user.userId === userId);
+
+    if(user) {
+      userName.value = user.name;
+    }else{
+      console.log('Error ');
+    }
+
+  }catch(error){
+    console.error('Error : ',error);
+
+  }
+}
 
 
 // 데이터를 가져와서 차트를 업데이트하는 함수
@@ -73,6 +92,7 @@ const fetchAnalyticsData = async () => {
 onMounted(() => {
   fetchChartData();
   fetchAnalyticsData();
+  profile();
 });
 
 // total 값을 기준으로 상위 5개 데이터를 추출
@@ -104,6 +124,7 @@ const top5AnalyticsData = computed(() => {
               id="chart-line"
               title="연간 지출 그래프"
               :chart="chartData"
+              :userName="userName"
             />
           </div>
         </div>

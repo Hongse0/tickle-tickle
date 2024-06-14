@@ -29,6 +29,7 @@ const props = defineProps({
       data: Array,
     },
   },
+  userName: String
 });
 
 // onUpdated(()=>{
@@ -161,7 +162,7 @@ onUpdated(() => {
   <div class="container">
     <div class="card z-index-2">
       <div class="pb-0 card-header mb-0 mx-3 mt-3">
-        <h2>이 그래프는 홍세영님의 1년간 월별 소비를 보여주고 있어요.</h2>
+        <h2>이 그래프는 {{ props.userName}}님의 1년간 월별 소비를 보여주고 있어요.</h2>
       </div>
       <div class="pb-0 card-header mb-0" style="padding-top:5px; important">
         <h6 class="mx-3">{{ props.title }}</h6>
