@@ -1,10 +1,10 @@
 <script setup>
-import { computed, ref, onBeforeUpdate } from "vue";
+import { computed, onBeforeUpdate } from "vue";
 import { useStore } from "vuex";
 //import { useRoute } from "vue-router";
 //import Breadcrumbs from "../Breadcrumbs.vue";
 
-const showMenu = ref(false);
+//const showMenu = ref(false);
 const store = useStore();
 const isRTL = computed(() => store.state.isRTL);
 const isNavFixed = computed(() => store.state.isNavFixed);
@@ -29,11 +29,11 @@ const toggleNavigationOnMobile = () => {
     navbarMinimize();
   }
 };
-const closeMenu = () => {
-  setTimeout(() => {
-    showMenu.value = false;
-  }, 100);
-};
+// const closeMenu = () => {
+//   setTimeout(() => {
+//     showMenu.value = false;
+//   }, 100);
+// };
 onBeforeUpdate(() => {
   toggleNavigationOnMobile();
 });
@@ -95,7 +95,7 @@ onBeforeUpdate(() => {
                 }`"></i>
             </a>
           </li>
-          <li class="nav-item dropdown d-flex align-items-center" :class="isRTL ? 'ps-2' : 'pe-2'">
+          <!-- <li class="nav-item dropdown d-flex align-items-center" :class="isRTL ? 'ps-2' : 'pe-2'">
             <a id="dropdownMenuButton" href="#" :class="`p-0 nav-link ${isNavFixed && !darkMode ? ' opacity-8 text-dark' : 'text-white'
               } ${showMenu && 'show'}`" data-bs-toggle="dropdown" aria-expanded="false" @click="showMenu = !showMenu"
               @blur="closeMenu">
@@ -177,7 +177,7 @@ onBeforeUpdate(() => {
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
