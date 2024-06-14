@@ -119,7 +119,7 @@
               <div class="col">
                 <div class="d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">성공여부</h5>
-                <span class="text-end">{{}}일째 챌린지 성공중</span>
+                <span class="text-end">{{ch}}일째 챌린지 성공중</span>
               </div>
               </div>
                 <div class="row my-3">
@@ -206,3 +206,12 @@ const editChallengeDay = ref({
 </script>
 
 
+<style scoped> 
+/*모달 스타일 */
+#modal {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
