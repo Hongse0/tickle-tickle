@@ -1,33 +1,36 @@
 <script setup>
+
 import { ref } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
 
 import ArgonButton from './components/ArgonButton.vue';
 import ArgonInput from './components/ArgonInput.vue';
+import MOCK_DATA from '../../../db-server/MOCK_DATA.json';
 
 const router = useRouter();
 
 const name = ref("");
 const email = ref("");
 const password = ref("");
-const selectedGender=ref("male");
-const age=ref("")
+const selectedGender = ref("male");
+const age = ref("")
 
-const signup =  async() => {
+const signup = async () => {
   const data = {
-    name:name.value,
-    id:email.value,
-    password:password.value,
+    name: name.value,
+    id: email.value,
+    password: password.value,
     gender: selectedGender.value,
-    age:age.value
+    age: age.value,
+    userId: MOCK_DATA.users.length + 1
   }
   try {
-    await axios.post("http://localhost:3000/users",data);
+    await axios.post("http://localhost:3000/users", data);
     console.log("회원가입 성공");
     await router.push('/login/signin')
-  } catch(error){
-        console.log(error)
+  } catch (error) {
+    console.log(error)
   }
 }
 </script>
@@ -48,34 +51,16 @@ const signup =  async() => {
               </div>
               <form @submit.prevent="signup" role="form" class="text-start">
                 <div class="mb-3">
-                    <argon-input
-                      v-model="name"
-                      id="name"
-                      type="name"
-                      placeholder="name"
-                      aria-label="name"
-                      :isRequired="true"
-                    />
-                  </div>
-                <div class="mb-3">
-                  <argon-input
-                    v-model="email"
-                    id="email"
-                    type="email"
-                    placeholder="Email"
-                    aria-label="Email"
-                    :isRequired="true"
-                  />
+                  <argon-input v-model="name" id="name" type="name" placeholder="name" aria-label="name"
+                    :isRequired="true" />
                 </div>
                 <div class="mb-3">
-                  <argon-input
-                    v-model="password"
-                    id="password"
-                    type="password"
-                    placeholder="Password"
-                    aria-label="Password"
-                    :isRequired="true"
-                  />
+                  <argon-input v-model="email" id="email" type="email" placeholder="Email" aria-label="Email"
+                    :isRequired="true" />
+                </div>
+                <div class="mb-3">
+                  <argon-input v-model="password" id="password" type="password" placeholder="Password"
+                    aria-label="Password" :isRequired="true" />
                 </div>
                 <div class="row my-3">
                   <div class="col-auto">
@@ -94,23 +79,11 @@ const signup =  async() => {
                   </div>
                 </div>
                 <div class="mb-3">
-                  <argon-input
-                    v-model="age"
-                    id="age"
-                    type="number"
-                    placeholder="age"
-                    aria-label="age"
-                    :isRequired="true"
-                  />
+                  <argon-input v-model="age" id="age" type="number" placeholder="age" aria-label="age"
+                    :isRequired="true" />
                 </div>
                 <div class="text-center">
-                  <argon-button
-                    type="submit"
-                    color="success"
-                    variant="gradient"
-                    full-width
-                    class="my-4 mb-2"
-                  >
+                  <argon-button type="submit" color="success" variant="gradient" full-width class="my-4 mb-2">
                     Sign up
                   </argon-button>
                 </div>
