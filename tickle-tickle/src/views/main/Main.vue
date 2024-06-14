@@ -332,7 +332,213 @@ const top5AnalyticsData = computed(() => {
 
         <br />
         <div>
-          <h1>빅데이터 기반 티끌 카드 추천</h1>
+          <h2 style="margin-left: 30px">빅데이터 기반 티끌 카드 추천</h2>
+          <div class="row p-3">
+            <div class="mb-4 col-lg-4 mb-lg-0">
+              <div class="card">
+                <div class="pt-4 pb-3 text-center card-header">
+                  <h5 class="text-uppercase font-weight-bold text-dark">
+                    신한카드 B.Big(삑)
+                  </h5>
+                </div>
+                <div class="pt-0 text-center card-body text-lg-start">
+                  <div
+                    class="p-2 d-flex justify-content-lg-start justify-content-center"
+                  >
+                    <div>
+                      <span class="ps-3">
+                        <ul>
+                          <a
+                            href="https://www.banksalad.com/product/cards/CARD000117?prev-payment-amount=500000"
+                          >
+                            <img
+                              src="https://financialshopping-cdn.banksalad.com/shihan_b_big_5acbb579eb.png"
+                              width="300"
+                              height="190"
+                          /></a>
+                        </ul>
+                        <ul>
+                          주요 혜택
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/bus_3f92db0b67.png"
+                            width="30"
+                            height="30"
+                          />대중교통 최대 1만 8천원
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/taxi_81203498f1.png"
+                            width="30"
+                            height="30"
+                          />택시 10%
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/coffee_takeout_cup_bef9bbec20.png"
+                            width="30"
+                            height="30"
+                          />커피10%
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/shopping_bag_with_wrapped_gift_380f344561.png"
+                            width="30"
+                            height="30"
+                          />4대 백화점 5%
+                        </ul>
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    class="mt-3 mb-0 btn bg-gradient-success ms-2 d-lg-block"
+                    href="https://www.banksalad.com/product/cards/CARD000117?prev-payment-amount=500000"
+                  >
+                    카드 신청
+                    <i class="fas fa-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- 카드1 -->
+            <div class="mb-4 col-lg-4 mb-lg-0">
+              <div class="card">
+                <div class="pt-4 pb-3 text-center card-header">
+                  <h5 class="text-uppercase font-weight-bold text-dark">
+                    원더카드(원더Life)
+                  </h5>
+                </div>
+                <div class="pt-0 text-center card-body text-lg-start">
+                  <div
+                    class="p-2 d-flex justify-content-lg-start justify-content-center"
+                  >
+                    <div>
+                      <span class="ps-3">
+                        <ul>
+                          <a
+                            href="https://www.banksalad.com/product/cards/CARD004294?prev-payment-amount=500000"
+                          >
+                            <img
+                              src="https://financialshopping-cdn.banksalad.com/b69dce8d_b974_44df_afbf_954a82085c23_32c0011bbe.png"
+                              width="300"
+                              height="190"
+                          /></a>
+                        </ul>
+                        <ul>
+                          주요 혜택
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/toggle_coin_won_1d07100d79.png"
+                            width="30"
+                            height="30"
+                          />영상 스트리밍 40%
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/receipt_5ef490633e.png"
+                            width="30"
+                            height="30"
+                          />생활요금 10%
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/motor_scooter_64d93d4787.png"
+                            width="30"
+                            height="30"
+                          />딜리버리 10%
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/bus_3f92db0b67.png"
+                            width="30"
+                            height="30"
+                          />대중교통 10%
+                        </ul>
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    class="mt-3 mb-0 btn bg-gradient-success ms-2 d-lg-block"
+                    href="https://www.banksalad.com/product/cards/CARD004294?prev-payment-amount=500000"
+                  >
+                    카드 신청
+                    <i class="fas fa-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- 카드2 -->
+            <div class="mb-4 col-lg-4 mb-lg-0">
+              <div class="card">
+                <div class="pt-4 pb-3 text-center card-header">
+                  <h5 class="text-uppercase font-weight-bold text-dark">
+                    IBK hi 카드
+                  </h5>
+                </div>
+                <div class="pt-0 text-center card-body text-lg-start">
+                  <div
+                    class="p-2 d-flex justify-content-lg-start justify-content-center"
+                  >
+                    <div>
+                      <span class="ps-3">
+                        <ul>
+                          <a
+                            href="https://www.banksalad.com/product/cards/CARD000051?prev-payment-amount=500000"
+                          >
+                            <img
+                              src="https://financialshopping-cdn.banksalad.com/ibk_hi_9351cdb6f3.png"
+                              width="300"
+                              height="190"
+                          /></a>
+                        </ul>
+                        <ul>
+                          주요 혜택
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/bus_3f92db0b67.png"
+                            width="30"
+                            height="30"
+                          />대중교통 최대 1만원
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/oil_barrel_5fc6eb13e1.png"
+                            width="30"
+                            height="30"
+                          />주유 리터당 60원
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/fork_knife_88450ad7c0.png"
+                            width="30"
+                            height="30"
+                          />외식 10%
+                        </ul>
+                        <ul>
+                          <img
+                            src="https://financialshopping-cdn.banksalad.com/film_reel_31197b89aa.png"
+                            width="30"
+                            height="30"
+                          />영화 2천원
+                        </ul>
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    class="mt-3 mb-0 btn bg-gradient-success ms-2 d-lg-block"
+                    href="https://www.banksalad.com/product/cards/CARD000051?prev-payment-amount=500000"
+                  >
+                    카드 신청
+                    <i class="fas fa-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- 카드3 -->
+          </div>
         </div>
       </div>
     </div>
