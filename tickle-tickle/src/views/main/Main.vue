@@ -186,70 +186,59 @@ const top5AnalyticsData = computed(() => {
     </div>
 
     <br />
-    <div class="container row justify-content-center d-flex">
-      <!-- 연간 지출 그래프 쪽 -->
-      <div class="container col-8 justify-content-center border border-dark">
-        <!-- 연간 지출 그래프  -->
+    <div class="container">
+      <div class="card">
+        <div class="container row justify-content-center d-flex" style="margin-bottom: 15px;">
+          <!-- 연간 지출 그래프 쪽 -->
+          <div class="container col-7 justify-content-center mt-4">
+            <!-- 연간 지출 그래프  -->
 
-        <gradient-line-chart
-          id="chart-line"
-          title="연간 지출 그래프"
-          :chart="chartData"
-        />
+            <gradient-line-chart id="chart-line" title="연간 지출 그래프" :chart="chartData" />
 
-        <br />
+            <br />
 
-        <br />
-        <!-- 지출 카테고리 순위 -->
+            <br />
+            <!-- 지출 카테고리 순위 -->
 
-        <analytics-card
-          title="월별 지출 카테고리 순위"
-          :headers="['카테고리', '사용 금액']"
-          :pages="top5AnalyticsData"
-        />
-        <br />
-      </div>
+            <analytics-card title="월별 지출 카테고리 순위" :headers="['카테고리', '사용 금액']" :pages="top5AnalyticsData" />
+            <br />
+          </div>
 
-      <!-- ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
-      <!-- 월별 수익 쪽  -->
-      <div class="container col-4">
-        <div class="card container mb-3">
-          <div class="card-body text-center mt-3">
-            <div class="float-start ps-3">
-              <h4>월별 수익</h4>
-              <p class="card-description mb-4">{{ incomeTotal }} 원</p>
+          <!-- ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
+          <!-- 월별 수익 쪽  -->
+          <div class="container col-5 mt-4">
+            <div class="card container mb-3">
+              <div class="card-body text-center mt-3">
+                <div class="float-start ps-3">
+                  <h4>월별 수익</h4>
+                  <p class="card-description mb-4">{{ incomeTotal }} 원</p>
+                </div>
+
+                <img src="../../assets/img/transIncome.png" class="img-fluid border-radius-lg float-end px-3" />
+              </div>
             </div>
 
-            <img
-              src="../../assets/img/transIncome.png"
-              class="img-fluid border-radius-lg float-end px-3"
-            />
-          </div>
-        </div>
+            <div class="card container mb-3">
+              <div class="card-body text-center mt-3">
+                <div class="float-start ps-3">
+                  <h4>월별 지출</h4>
+                  <p class="card-description mb-4">{{ expendTotal }} 원</p>
+                </div>
 
-        <div class="card container mb-3">
-          <div class="card-body text-center mt-3">
-            <div class="float-start ps-3">
-              <h4>월별 지출</h4>
-              <p class="card-description mb-4">{{ expendTotal }} 원</p>
+                <img src="../../assets/img/transExpend.png" class="img-fluid border-radius-lg float-end px-3" />
+              </div>
             </div>
 
-            <img
-              src="../../assets/img/transExpend.png"
-              class="img-fluid border-radius-lg float-end px-3"
-            />
-          </div>
-        </div>
-
-        <div class="card container">
-          <div class="card-body text-center mt-3 p-0">
-            <h4 class="text-center">캘린더</h4>
-            <calendar id="calendar-table" class="p-0 mb-3" style="font-size: 9pt;"/>
+            <div class="card container">
+              <div class="card-body text-center mt-3 p-0">
+                <h4 class="text-center">캘린더</h4>
+                <calendar id="calendar-table" class="p-0 mb-3" style="font-size: 9pt;" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
     <br />
     <div class="container">
       <div class="card">
@@ -274,50 +263,38 @@ const top5AnalyticsData = computed(() => {
               <div class="p-3 card-body">
                 <div class="row align-items-center">
                   <div class="text-start col ms-2">
-                    <div
-                      class="mx-5"
-                      style="
+                    <div class="mx-5" style="
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                      "
-                    >
+                      ">
                       <h2 style="color: #5d12d2">1. 노카페인 챌린지</h2>
                       <argon-button style="height: 40px">Add</argon-button>
                     </div>
                     <hr class="mt-1 mb-3 horizontal dark" />
-                    <div
-                      class="mx-5"
-                      style="
+                    <div class="mx-5" style="
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                      "
-                    >
+                      ">
                       <h3 style="color: #b931fc">2. 대중교통 챌린지</h3>
                       <argon-button style="height: 40px">Add</argon-button>
                     </div>
                     <hr class="mt-1 mb-3 horizontal dark" />
-                    <div
-                      class="mx-5"
-                      style="
+                    <div class="mx-5" style="
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                      "
-                    >
+                      ">
                       <h4 style="color: #ff6ac2">3. 집밥 챌린지 챌린지</h4>
                       <argon-button style="height: 40px">Add</argon-button>
                     </div>
                     <hr class="mt-1 mb-3 horizontal dark" />
-                    <div
-                      class="mx-5"
-                      style="
+                    <div class="mx-5" style="
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                      "
-                    >
+                      ">
                       <h4 style="color: #ff6ac2">4. 금연 챌린지</h4>
                       <argon-button style="height: 40px">Add</argon-button>
                     </div>
@@ -342,59 +319,39 @@ const top5AnalyticsData = computed(() => {
                   </h5>
                 </div>
                 <div class="pt-0 text-center card-body text-lg-start">
-                  <div
-                    class="p-2 d-flex justify-content-lg-start justify-content-center"
-                  >
+                  <div class="p-2 d-flex justify-content-lg-start justify-content-center">
                     <div>
                       <span class="ps-3">
                         <ul>
-                          <a
-                            href="https://www.banksalad.com/product/cards/CARD000117?prev-payment-amount=500000"
-                          >
-                            <img
-                              src="https://financialshopping-cdn.banksalad.com/shihan_b_big_5acbb579eb.png"
-                              width="300"
-                              height="190"
-                          /></a>
+                          <a href="https://www.banksalad.com/product/cards/CARD000117?prev-payment-amount=500000">
+                            <img src="https://financialshopping-cdn.banksalad.com/shihan_b_big_5acbb579eb.png"
+                              width="300" height="190" /></a>
                         </ul>
                         <ul>
                           주요 혜택
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/bus_3f92db0b67.png"
-                            width="30"
-                            height="30"
-                          />대중교통 최대 1만 8천원
+                          <img src="https://financialshopping-cdn.banksalad.com/bus_3f92db0b67.png" width="30"
+                            height="30" />대중교통 최대 1만 8천원
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/taxi_81203498f1.png"
-                            width="30"
-                            height="30"
-                          />택시 10%
+                          <img src="https://financialshopping-cdn.banksalad.com/taxi_81203498f1.png" width="30"
+                            height="30" />택시 10%
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/coffee_takeout_cup_bef9bbec20.png"
-                            width="30"
-                            height="30"
-                          />커피10%
+                          <img src="https://financialshopping-cdn.banksalad.com/coffee_takeout_cup_bef9bbec20.png"
+                            width="30" height="30" />커피10%
                         </ul>
                         <ul>
                           <img
                             src="https://financialshopping-cdn.banksalad.com/shopping_bag_with_wrapped_gift_380f344561.png"
-                            width="30"
-                            height="30"
-                          />4대 백화점 5%
+                            width="30" height="30" />4대 백화점 5%
                         </ul>
                       </span>
                     </div>
                   </div>
-                  <a
-                    class="mt-3 mb-0 btn bg-gradient-success ms-2 d-lg-block"
-                    href="https://www.banksalad.com/product/cards/CARD000117?prev-payment-amount=500000"
-                  >
+                  <a class="mt-3 mb-0 btn bg-gradient-success ms-2 d-lg-block"
+                    href="https://www.banksalad.com/product/cards/CARD000117?prev-payment-amount=500000">
                     카드 신청
                     <i class="fas fa-arrow-right ms-1"></i>
                   </a>
@@ -410,59 +367,39 @@ const top5AnalyticsData = computed(() => {
                   </h5>
                 </div>
                 <div class="pt-0 text-center card-body text-lg-start">
-                  <div
-                    class="p-2 d-flex justify-content-lg-start justify-content-center"
-                  >
+                  <div class="p-2 d-flex justify-content-lg-start justify-content-center">
                     <div>
                       <span class="ps-3">
                         <ul>
-                          <a
-                            href="https://www.banksalad.com/product/cards/CARD004294?prev-payment-amount=500000"
-                          >
+                          <a href="https://www.banksalad.com/product/cards/CARD004294?prev-payment-amount=500000">
                             <img
                               src="https://financialshopping-cdn.banksalad.com/b69dce8d_b974_44df_afbf_954a82085c23_32c0011bbe.png"
-                              width="300"
-                              height="190"
-                          /></a>
+                              width="300" height="190" /></a>
                         </ul>
                         <ul>
                           주요 혜택
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/toggle_coin_won_1d07100d79.png"
-                            width="30"
-                            height="30"
-                          />영상 스트리밍 40%
+                          <img src="https://financialshopping-cdn.banksalad.com/toggle_coin_won_1d07100d79.png"
+                            width="30" height="30" />영상 스트리밍 40%
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/receipt_5ef490633e.png"
-                            width="30"
-                            height="30"
-                          />생활요금 10%
+                          <img src="https://financialshopping-cdn.banksalad.com/receipt_5ef490633e.png" width="30"
+                            height="30" />생활요금 10%
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/motor_scooter_64d93d4787.png"
-                            width="30"
-                            height="30"
-                          />딜리버리 10%
+                          <img src="https://financialshopping-cdn.banksalad.com/motor_scooter_64d93d4787.png" width="30"
+                            height="30" />딜리버리 10%
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/bus_3f92db0b67.png"
-                            width="30"
-                            height="30"
-                          />대중교통 10%
+                          <img src="https://financialshopping-cdn.banksalad.com/bus_3f92db0b67.png" width="30"
+                            height="30" />대중교통 10%
                         </ul>
                       </span>
                     </div>
                   </div>
-                  <a
-                    class="mt-3 mb-0 btn bg-gradient-success ms-2 d-lg-block"
-                    href="https://www.banksalad.com/product/cards/CARD004294?prev-payment-amount=500000"
-                  >
+                  <a class="mt-3 mb-0 btn bg-gradient-success ms-2 d-lg-block"
+                    href="https://www.banksalad.com/product/cards/CARD004294?prev-payment-amount=500000">
                     카드 신청
                     <i class="fas fa-arrow-right ms-1"></i>
                   </a>
@@ -478,59 +415,38 @@ const top5AnalyticsData = computed(() => {
                   </h5>
                 </div>
                 <div class="pt-0 text-center card-body text-lg-start">
-                  <div
-                    class="p-2 d-flex justify-content-lg-start justify-content-center"
-                  >
+                  <div class="p-2 d-flex justify-content-lg-start justify-content-center">
                     <div>
                       <span class="ps-3">
                         <ul>
-                          <a
-                            href="https://www.banksalad.com/product/cards/CARD000051?prev-payment-amount=500000"
-                          >
-                            <img
-                              src="https://financialshopping-cdn.banksalad.com/ibk_hi_9351cdb6f3.png"
-                              width="300"
-                              height="190"
-                          /></a>
+                          <a href="https://www.banksalad.com/product/cards/CARD000051?prev-payment-amount=500000">
+                            <img src="https://financialshopping-cdn.banksalad.com/ibk_hi_9351cdb6f3.png" width="300"
+                              height="190" /></a>
                         </ul>
                         <ul>
                           주요 혜택
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/bus_3f92db0b67.png"
-                            width="30"
-                            height="30"
-                          />대중교통 최대 1만원
+                          <img src="https://financialshopping-cdn.banksalad.com/bus_3f92db0b67.png" width="30"
+                            height="30" />대중교통 최대 1만원
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/oil_barrel_5fc6eb13e1.png"
-                            width="30"
-                            height="30"
-                          />주유 리터당 60원
+                          <img src="https://financialshopping-cdn.banksalad.com/oil_barrel_5fc6eb13e1.png" width="30"
+                            height="30" />주유 리터당 60원
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/fork_knife_88450ad7c0.png"
-                            width="30"
-                            height="30"
-                          />외식 10%
+                          <img src="https://financialshopping-cdn.banksalad.com/fork_knife_88450ad7c0.png" width="30"
+                            height="30" />외식 10%
                         </ul>
                         <ul>
-                          <img
-                            src="https://financialshopping-cdn.banksalad.com/film_reel_31197b89aa.png"
-                            width="30"
-                            height="30"
-                          />영화 2천원
+                          <img src="https://financialshopping-cdn.banksalad.com/film_reel_31197b89aa.png" width="30"
+                            height="30" />영화 2천원
                         </ul>
                       </span>
                     </div>
                   </div>
-                  <a
-                    class="mt-3 mb-0 btn bg-gradient-success ms-2 d-lg-block"
-                    href="https://www.banksalad.com/product/cards/CARD000051?prev-payment-amount=500000"
-                  >
+                  <a class="mt-3 mb-0 btn bg-gradient-success ms-2 d-lg-block"
+                    href="https://www.banksalad.com/product/cards/CARD000051?prev-payment-amount=500000">
                     카드 신청
                     <i class="fas fa-arrow-right ms-1"></i>
                   </a>
